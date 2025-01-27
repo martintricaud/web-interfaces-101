@@ -457,7 +457,7 @@ activite>h5 {
 
 
 #fig-box-model>div {
-  width: calc(100%-1em);
+  width: calc(100% - 1em);
   margin: 1em;
   z-index: -1;
   height: 15rlh;
