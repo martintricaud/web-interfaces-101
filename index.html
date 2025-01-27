@@ -1,14 +1,2275 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/web-interfaces-101/vite.svg" />
+<html lang="fr">
+<head>
+    <title>Interfaces Web</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <script type="module" crossorigin src="/web-interfaces-101/assets/index-Cfmzpd2t.js"></script>
-    <link rel="stylesheet" crossorigin href="/web-interfaces-101/assets/index-DRNMkqs8.css">
-  </head>
-  <body>
-    <div id="app"></div>
-  </body>
+    <link rel="icon" type="image/svg+xml" href="/web-interfaces-101/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Fira+Code:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./highlight/styles/default.css"> -->
+    <!-- <script src="./highlight/highlight.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('code').forEach((el) => {
+                hljs.highlightElement(el);
+            });
+        });
+    </script> -->
+    <script>
+     
+    </script>
+
+
+  <script type="module" crossorigin src="/web-interfaces-101/assets/index-ChmvylU6.js"></script>
+  <link rel="stylesheet" crossorigin href="/web-interfaces-101/assets/index-BD5j8RSe.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div id="page-title">Introduction aux Technologies Web pour le
+                Design Interactif</div>
+            <div class="navitems">
+                <div class="navitem"><a href="#intro">Introduction</a></div>
+                <div class="navitem"><a href="#html">HTML</a>
+                </div>
+                <div class="navitem"><a href="#css">CSS</a>
+                </div>
+                <div class="navitem"><a href="#javascript">JavaScript</a>
+                </div>
+                <div class="navitem"><a href="#ressources">Ressources</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="chapter cours">
+            <hgroup>
+                <h3>D'Internet au Web</h3>
+            </hgroup>
+            <p>
+                On utilise souvent les mots <strong>internet</strong> et <strong>web</strong> de façon interchangeable, mais ils désignent deux réalités différentes.
+                <strong>Internet</strong> est le réseau physique formé par l'ensemble des appareils qui adhèrent aux mêmes "règles de communication" ou <strong>protocole</strong>, alors que le <strong>web</strong> est l'ensemble des contenus rendus disponible via ces règles de communication.
+            </p>
+            <p>
+                Pour prendre une comparaison, si on imagine un réseau postal d'échange de livres entre particuliers, Internet serait le réseau postal, le Web serait l'ensemble des bibliothèques des individus qui participent au service.
+            </p>
+
+            <!-- <p>
+        Par exemple, si vous m'envoyez du texte sur une feuille de papier je vais spontanément le lire de gauche à droite et de haut en bas - c'est une convention.
+        Si la suite d'opération effectuée par un agent (humain ou non) pour émettre un message est compatible avec la suite d'opération effectuée par un autre agent pour le décoder, on dit qu'ils <i>adhèrent</i> au même <strong>protocole</strong>.
+    </p> -->
+            <hr>
+            <section id="ip">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#ip">La naissance de l'Internet Protocol
+                            (IP)</a>
+
+                    </h4>
+                    <div class="list-icon">≡</div>
+                </hgroup>
+                <p>
+                    Internet est né de la volonté de certains états, en
+                    particulier les USA, le Royaume Uni et la France, de disposer d'une technologie d'interconnexion entre ordinateurs pour qu'ils puissent s'échanger des données et y accéder de façon partagée.
+                    Pour cela, les données sont envoyées en paquets, c'est à dire un conteneur de taille et format standardisé qui circulent dans les cables et connexions du réseau.
+                </p>
+                <p>
+                    Étant donné que la taille de chacun de ces paquets est standardisée, le transfert d'une ressource dont la taille dépasse cette limite nécessite un système capable de la découper en morceaux plus petits et de la reconstituer correctement à l'arrivée.
+                </p>
+                <p>
+                    Cela fonctionne un peu comme lorsqu'on commande un meuble à monter soi-même et que ses composants arrivent en plusieurs colis séparés et dans le désordre - à quelques différence près:
+                    <br>
+                    La carte réseau - qui s'occupe de traiter les données entrantes et sortantes d'un ordinateur - n'a pas la capacité d'ouvrir les paquets ni de comprendre leur contenu.
+                    Elle se base uniquement sur leurs informations d'en-tête pour les réarranger dans le bon ordre, de façon à ce que la ressource puisse être reconstruite correctement.
+                    La technologie permettant de gérer cela de manière automatisée est appelée <i>packet switching</i>.
+                </p>
+                <figure class="intext-image">
+                    <img src="./docs/assets/packet-switching.gif" alt="" style="background-color: rgb(255, 251, 236);">
+                </figure>
+                <p>
+                    Le premier réseau qui implémente ce principe de <i class="keyword">packet switching</i>, c'est ARPANET, développé aux États Unis à partir de 1969 par la DARPA, la division R&D du ministère de la défense américain.
+                    Mais la technologie de <i>packet switching</i> utilisée dans l'internet moderne a été développée en France, dans le cadre du projet CYCLADES dans les années 1970, et incorporée dans les versions suivantes.
+                </p>
+            </section>
+            <hr>
+            <section id="packet-tracking">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#packet-tracking">Le trajet d'un message à travers le réseau internet</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>
+                    Pour mieux comprendre l'intérêt de la technologie TCP/IP, voyons pas à pas ce qu'il se passe lorsque vous tapez une adresse dans votre barre de recherche.
+                </p>
+                <ol>
+                    <li>
+                        <h6>Requête DNS (Optionnel)</h6>
+                        <p>
+                            Lorsque l'on tape une url (par exemple,
+                            <code>www.example.com</code>), l'ordinateur envoie
+                            une requête à un serveur <strong>DNS</strong>
+                            pour
+                            obtenir l'adresse <strong>IP</strong> du site : Un
+                            peu comme si vous consultiez Google Maps pour
+                            avoir
+                            les coordonnées GPS de l'adresse recherchée.
+                            <br />
+                            Le serveur DNS renvoie l'adresse IP (par exemple,
+                            <code>93.184.216.34</code>), et maintenant
+                            l'ordinateur sait où envoyer les futures requêtes.
+                        </p>
+                    </li>
+                    <li>
+                        <h6>Empaquettage de la requête serveur</h6>
+                        <p>
+                            L'ordinateur crée une requête HTTP, l'encapsule
+                            dans ce qu'on appelle un paquet TCP/IP.
+                            C'est grosso modo l'équivalent électronique d'une
+                            courier en recommandé:
+                            Il est composé d'un <i>header</i> (ou en-tête) -
+                            comportant les addresse IP du destinataire et de
+                            l'emetteur, ainsi que tout en tas de certificat -
+                            et d'une zone de contenu, qui comme une
+                            enveloppe,
+                            impose des limites sur la taille de ce que l'on
+                            peut envoyer.
+                        </p>
+                    </li>
+                    <li>
+                        <h6>Premier routage</h6>
+                        <p>
+                            Le paquet est envoyé vers le <strong>routeur</strong> (la boîte Wifi). Le routeur consulte sa table de routage. Si l'IP de
+                            destination n'est pas sur le réseau local, le paquet est envoyé au réseau du <strong>Fournisseur d'Accès à Internet</strong>.
+                        </p>
+                    </li>
+                    <li>
+                        <h6>Routage par le FAI</h6>
+                        <p>
+                            Le paquet circule à travers plusieurs routeurs du
+                            réseau du <strong>FAI</strong>, sachant que
+                            chaque
+                            routeur ignore à quoi sont connectés les autres.
+                            Ces routeurs examinent l'IP de destination et
+                            décident du routeur auquel envoyer le paquet pour
+                            le
+                            rapprocher de sa destination finale.
+                        </p>
+
+                    </li>
+                    <li>
+                        <h6>Routage à travers la Dorsale d'internet</h6>
+                        <p>
+
+                            Une fois que le paquet quitte le réseau du FAI, il
+                            passe dans la dorsale d'internet (le
+                            backbone),
+                            un réseau de routeurs haute capacité reliés par des
+                            fibres optiques à travers le globe. Le
+                            paquet
+                            peut transiter par plusieurs régions et opérateurs
+                            selon la destination.
+                        </p>
+                        <br>
+                        <figure>
+                            <img src="/web-interfaces-101/assets/wikipedia-internet-backbone-CDu555vY.png" alt="">
+                            <figcaption class="numbered">La Dorsale d'internet</figcaption>
+                        </figure>
+                    </li>
+
+
+                    <li>
+                        <h6>Réseau du serveur Web</h6>
+                        <p>
+                            Le paquet arrive finalement au réseau appartenant au fournisseur d'hébergement du site internet.
+                            De là il atteint le serveur qui <em>sert</em> la page web (e.g., <code>www.example.com</code>).
+                        </p>
+                    </li>
+                    <li>
+                        <h6>Paquet de réponse</h6>
+                        <p>
+                            Le serveur traite la requête, génère une réponse (par exemple une page web), qu'il encapsule dans un paquet et la renvoie à l'ordinateur en suivant un processus de routage symétrique.
+                        </p>
+                    </li>
+                </ol>
+            </section>
+            <hr>
+            <section id="worldwideweb">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#worldwideweb">Le Web, une bibliothèque partagée
+                        </a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>
+                    Contrairement à Internet, le <strong class="keyword">web</strong> n'est pas un réseau physique, mais un réseau virtuel, formé par un ensemble de documents multimedias <strong>interconnectés</strong> via des liens "hypertexte", <strong>localisables</strong> de façon unique par une addresse, et accessibles de façon (en générale)
+                    <strong>persistente</strong> via un protocole dédié.
+                </p>
+                <p>
+                    On doit son invention à Tim Berners-Lee (également fondateur de Wikipedia) à la fin des années 1980, alors qu'il travaillait au <abbr title="Centre Européen de Recherche Nucléaire">CERN</abbr>.
+                    Déjà à l'époque, un grand nombre de scientifiques collaboraient dans cet institut de recherche, et ce fut l'un des premiers à être équipé d'un réseau Internet.
+                    Mais étant donné le caractère collectif des activités de recherche du CERN, il devint rapidement indispensable de s'équiper d'un système d'information qui permette de rendre des documents numériques accessibles de façon persistente.
+                </p>
+                <p>
+                    Tim Berners-Lee proposa une solution basée sur trois technologies essentielles, qui forment la base de ce qu'on appelle aujourd'hui le World Wide Web.
+                </p>
+                <ul>
+                    <li id="web-backbone-url">
+                        <h6>le standard <strong class="keyword">url</strong></h6>
+                        <p>pour identifier et localiser de façon unique des ressources sur le web.
+                            <br>
+                            Si l'on reprend la métaphore du service d'échange de livre par courier postal, le standard URL serait l'équivalent du standard de mise en forme des addresses physiques.
+                            <br>
+                            Pour une addresse physique ce standard prend la forme: <code> [numero de la rue] [voie] [nom de la voie] [code postal] [ville] </code>.
+                            <br>
+                            Pour une addresse web, ce standard prend la forme : <code>[protocole]://[nom de domaine]/[chemin]/[ressource]</code>.
+                            <br>
+                        </p>
+                        <p>
+                            Le protocole ( par exemple <code>http</code> ou <code>https</code> ) indique la méthode de communication.
+                            <br>
+                            Le nom de domaine ( par exemple <code>bonjour.com</code> ) identifie le serveur ou
+                            le site web.
+                            <br>
+                            Le <strong class="keyword">chemin</strong> et la <strong class="keyword">ressource</strong> (par exemple <code>/dossier/page.html</code>) précisent l'emplacement exact du contenu souhaité sur le serveur.
+
+                        </p>
+                    </li>
+                    <li id="web-backbone-http">
+                        <h6>Le protocole <strong class="keyword">http</strong></h6> pour
+                        structurer les requêtes et les réponses
+                        entre clients et serveurs.
+                        Sur la figure ci-dessous, la requête émise par l'utilisateur est très simple: il s'agit d'une requête d'accès à une ressource, donc elle nécessite simplement de préciser son addresse url.
+                        <br>
+                        Il existe d'autres types de requêtes pour demander au serveur d'effectuer des opérations de création, suppression ou modification de ressources.
+                        Elles nécessitent plus d'informations de la part du client, par exemple pour authentifier l'utilisateur.
+                        <br>
+                        <figure>
+                            <img src="/web-interfaces-101/assets/wikipedia-requete-http-C5EtRRBE.png" alt="">
+                            <figcaption class="numbered">
+                                Une requête HTTP et sa réponse
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li id="web-backbone-html">
+                        <h6>Le langage <strong class="keyword">html</strong> </h6>
+                        <p>pour la mise en forme de documents multimédias:
+                            <br>
+                            Il permet d'encoder textuellement l'ensemble des infos relatives à la structure et au contenu d'une page
+                        </p>
+                    </li>
+                </ul>
+                <p>
+                    Pour faire la démonstration de ce nouveau système, Tim Berners-Lee développa également le premier navigateur web grâce auquel on pouvait consulter des pages mises à disposition par un serveur - dès lors qu'on était connecté au même réseau que celui-ci.
+                </p>
+
+                <figure>
+                    <div class="sidebyside">
+                        <div>
+                            <img style="object-fit: cover; max-width:100%; height: 100%;" src="/web-interfaces-101/assets/next-browser-Bf-v17gI.jpg" alt="" style="background-color: rgb(255, 251, 236);">
+                        </div>
+                        <div> <img style="object-fit: cover;width: 100%;" src="/web-interfaces-101/assets/next-server-DnfJl2m_.jpg" alt="" style="background-color: rgb(255, 251, 236);"></div>
+
+
+                    </div>
+
+                </figure>
+                <section class="activite cutout-style">
+                    <h5><a href="">Tuto: Examiner comment se charge une page Web en utilisant l'inspecteur</a></h5>
+                </section>
+            </section>
+        </section>
+
+        <hr>
+        <section class="chapter cours">
+            <h3>Fondamentaux du HTML</h3>
+            <section id="structure-html">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#structure-html">Structure d'un fichier HTML</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>
+                    La structure d'un fichier HTML est arborescente, un peu
+                    comme une hiérarchie de dossier dans
+                    l'explorateur
+                    de fichiers d'un ordinateur.
+                </p>
+                <figure>
+                    <pre>
+                        <code>
+        project_space/
+        ├── media/
+        │   ├── photos/
+        │   │   ├── sunset_beach.jpg
+        │   │   ├── mountain_view.jpg
+        │   │   ├── city_lights.jpg
+        │   │   └── family_picnic.jpg
+        │   └── videos/
+        │       ├── travel_diary.mp4
+        │       ├── drone_shot.mp4
+        │       ├── concert_highlights.mp4
+        │       └── birthday_celebration.mp4
+        └── documents/
+            ├── reports/
+            │   │   ├── budget_overview.pdf
+            │   │   ├── project_proposal.pdf
+            │   │   └── meeting_minutes.pdf
+            │   │   ├── annual_summary.pdf
+            └── drafts/
+                ├── vision_statement.docx
+                ├── campaign_plan.docx
+                ├── speech_outline.docx
+                └── storyboard_ideas.docx
+                        </code>
+                    </pre>
+                    <figcaption class="numbered">
+                        Une arborescence de fichiers
+                    </figcaption>
+                </figure>
+                <p>
+                    En informatique, on appelle les éléments d'une structure
+                    arborescente des nodes ou noeuds.
+                    Chaque node peut avoir plusieurs descendants ou enfants
+                    (children), mais par définition, n'a qu'un seul
+                    parent, sinon ce ne serait pas un arbre.
+                    Les noeuds d'une arborescence html sont appelé des
+                    éléments.
+                </p>
+                <p>
+                    Tout comme pour les dossiers d'un ordinateur, une autre
+                    façon de se représenter mentalement une
+                    structure
+                    d'arbre consiste à voir les choses comme un emboitement de
+                    tiroirs.
+                    Dans les deux cas la hiérarchie est la même: Un tiroir peut
+                    contenir plusieurs tiroirs (ses enfants),
+                    mais
+                    ne peut être contenu que par un seul tiroir (le parent).
+                </p>
+
+                <section class="activite cutout-style">
+                    <h5><a href="">Tuto: se débarasser des pubs en taillant des arbres</a></h5>
+                </section>
+
+                <p>Voici un exemple de document au format HTML.
+                    Le contenu est structuré de façon hiérarchique en
+                    imbriquant des éléments à l'intérieur d'autres.
+                    <br>
+                    Pour délimiter ces "tiroirs" que sont les éléments, la
+                    syntaxe du langage HTML utilise ce qu'on appelle
+                    des
+                    <strong class="keyword">balises</strong> - ou plus
+                    précisément des paires constituées d'une balise
+                    d'ouverture et de sa balise de fermeture
+                    correspondante.
+                    Une balise d'ouverture s'écrit (presque) toujours
+                    <code>&lt;</code> + <code>type de la balise</code> +
+                    <code>&gt;</code>, et une balise de fermeture s'écrit
+                    toujours: <code>&lt;/</code> +
+                    <code>type de la balise</code> + <code>&gt;</code>
+
+                </p>
+                <figure id="sample-html-doc">
+                    <pre>
+                        <code class="language-html">&lt;!DOCTYPE html&gt;
+    &lt;html lang="fr"&gt;
+        &lt;head&gt; ... &lt;/head&gt;
+        &lt;body&gt;
+            &lt;div class="my-container"&gt;
+                &lt;h1&gt;Bienvenue sur le Projet Dummy&lt;/h1&gt;
+                &lt;section&gt;
+                    &lt;h2&gt;Introduction&lt;/h2&gt;
+                    &lt;div class="card"&gt;
+                        &lt;p&gt;Voici un paragraphe contenant un texte factice en français. Saviez-vous que le &quot;&lt;i&gt;Lorem Ipsum&lt;/i&gt;&quot; est parfois remplacé par : &lt;q&gt;Portez ce vieux whisky au juge blond qui fume&lt;/q&gt;, car cette phrase contient &lt;strong&gt;tous&lt;/strong&gt; les caractères de l'alphabet?&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class="card"&gt;
+                        &lt;img src="https://picsum.photos/400/200" alt="Image dummy 1"&gt;
+                        &lt;p&gt;Un visuel aléatoire issu de Picsum car une image vaut mieux qu'un long discours.&lt;/p&gt;
+                    &lt;/div&gt;
+            &lt;/section&gt;
+        &lt;/body&gt;
+    &lt;/html&gt;
+                        </code>
+                    </pre>
+
+                    <figcaption class="numbered">
+                        Un example minimaliste de document HTML
+                    </figcaption>
+                </figure>
+                <p>
+                    Attention: l'inclusion hierarchique d'un bloc HTML dans un autre ne signifie pas forcément que l'élément graphique correspondant au second sera à l'intérieur du premier.
+                    Il est tout à fait possible de modifier les propriétés d'affichage de l'un ou l'autre pour que ce ne soit pas le cas lors du rendu.
+
+                </p>
+            </section>
+            <section id="balises-semantiques">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#balises-semantiques">Quelle balise utiliser? </a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>
+                    Dans <a href="#sample-html-doc">l'exemple précédent</a>, on a utilisé plusieurs balises différentes pour définir la hiérarchie de contenu: <code>&lt;div&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;img&gt;</code>... - et ce n'est qu'une poignée de possibilités dans une liste qui contient des disaines et des disaines de types de balises différentes !
+                    <br>
+                    Dans l'absolu, on aurait très bien pu définir une hiérarchie de contenu équivalente en utilisant que des balises du même type, par exemple <code>&lt;div&gt;</code>.
+                    D'ailleurs, si vous prenez l'habitude d'utiliser l'inspecteur pour examiner les pages que vous visitez, vous remarquerez parfois que c'est le cas sur certains sites web.
+                    <br>
+                    Alors pourquoi utiliser différentes balises pour structurer son code?
+                    Il y a deux réponses à cette question.
+                </p>
+                <h5>Considérations stylistiques</h5>
+                <p>
+                    Premièrement, de nombreuses balises sont associées à une mise en forme par défaut.
+                    C'est un héritage des débuts du web, à l'époque ou la technologie aujourd'hui utilisée pour personnaliser l'apparence d'une page - le <a href="">langage CSS</a> n'existait pas.
+                    <br>
+                    Par exemple, en l'absence de mise en forme CSS, la page générée par le code de la <a href="#sample-html-doc">Figure 3</a> ressemblerait à celà
+                </p>
+                <iframe class="raw" style="margin-top: 1rem;" src="/src/pages/sample-html-doc.html" frameborder="0" style="height: 20rlh;"></iframe>
+                <p>
+                    C'est assez sommaire, mais on remarque que les balises choisies pour structurer le contenu - certaines en tout cas - ont une influence sur l'apparence du texte.
+                    <!-- Si vous voulez un exemple encore plus parlant, vous pouvez cliquer sur <button>ce bouton</button> pour visualiser à quoi ressemblerait ce site sans mise en forme personalisée. -->
+                    La figure ci-dessous illustre la mise en forme par défaut associée à quelques balises de contenu usuelles.
+                </p>
+
+                <figure id="tag-styles">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Balise</th>
+                                    <th>
+                                        <div>Usage</div>
+                                        <div>Résultat</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>h2</code></td>
+                                    <td>
+                                        <div>
+                                            <pre>
+                                                <code class="language-html">&lt;h2&gt;Chapitre 2&lt;/h2&gt;</code>
+                                            </pre>
+                                        </div>
+                                        <div>
+                                            <h2 class="raw">Chapitre 2</h2>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>a</code></td>
+                                    <td>
+                                        <div>
+                                            <pre>
+                                                <code class="language-html">L'information que vous cherchez se trouve peut-être sur &lt;a href=""&gt;wikipedia &lt;/a&gt;</code>
+                                            </pre>
+                                        </div>
+                                        <div class="raw">
+                                            L'information que vous cherchez se trouve peut-être sur <a href="">wikipedia</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>cite</code></td>
+                                    <td>
+                                        <div>
+                                            <pre>
+                                                <code class="language-html">Je l'ai lu dans  &lt;cite&gt;Alice au pays des merveilles &lt;/cite&gt;</code>
+                                            </pre>
+                                        </div>
+                                        <div class="raw">
+                                            Je l'ai lu dans <cite>Alice au pays des
+                                                merveilles</cite>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>i</code></td>
+                                    <td>
+                                        <div>
+                                            <pre><code>le mot &lt;i&gt;mot&lt;/i&gt; est un nom commun</code></pre>
+                                        </div>
+                                        <div class="raw">
+                                            le mot <i>mot</i> est un nom commun
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>s</code></td>
+                                    <td>
+                                        <div>
+                                            <pre><code>&lt;s&gt;Tickets early bird: 50.00€&lt;/s&gt; Sold Out !</code></pre>
+                                        </div>
+                                        <div class="raw">
+                                            <s>Tickets early bird: 50.00€</s> Sold Out !
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <figcaption class="numbered">
+                        Style par défaut de quelques balises.
+                    </figcaption>
+                </figure>
+                <br>
+                <section id="tag-semantics">
+                    <h5>Considérations sémantiques</h5>
+                    <p>
+                        Vous remarquerez surement que certaines de ces balises ont exactement le même effet sur la mise en forme appliqué par défaut.
+                        Par exemple les contenus des balises <code>&lt;i&gt;</code>, <code>&lt;em&gt;</code> et <code>&lt;cite&gt;</code> sont affichés par défaut en italique.
+                        Ce qui les distingue, c'est leur fonction sémantique, c'est à dire le rôle qu'ils jouent dans la compréhension du sens de la phrase: <br>
+                        Par exemple, dans la phrase: <b><q>Je l'ai lu dans <cite>Alice au Pays des Merveilles</cite></q></b>, l'usage de la balise <code>&lt;cite&gt;</code> indique que le contenu de la balise est une référence à une oeuvre, alors que dans la phrase <b><q>le mot <i>mot</i> est un mot</q></b>, on utilise la balise <code>&lt;i&gt;</code> (ou <i>i</i> signifie <i>idiomatique</i>) pour indiquer que le contenu de l'élément correspondant est utilisé hors de son contexte standard.
+                        La balise <code>&lt;em&gt;</code> signifie <i>emphasis</i> (<i>emphase</i> en français), et indique une accentuation du mot.
+                    </p>
+                    <p>
+                        En fait, le rôle sémantique du contenu est ce qui doit déterminer en priorité le choix du type de balise, car pour ce qui est de l'apparence, elle peut être redéfinie comme on veut quelle que soit la balise.
+                        C'est d'ailleurs pour cette raison que certaines balises qui avaient été introduites dans les premières versions de HTML avec un rôle purement stylistique ont été ultérieurement redéfinies pour les doter d'un rôle sémantique - le tableau ci-dessous en donne quelques examples.
+                        Les balises qui n'avaient pas d'autre raison d'être que l'apparence visuelle ont tout simplement été abandonnées, comme l'explique plus en détail l'<a href="https://en.wikipedia.org/wiki/HTML_element#Presentation">article Wikipedia</a> sur le sujet.
+
+                    </p>
+                    <figure>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Balise historique</th>
+                                        <th>Signification historique</th>
+                                        <th>Balise moderne</th>
+                                        <th>Définition actuelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td><code>&lt;i&gt;</code></td>
+                                        <td>italic</td>
+                                        <td><code>&lt;i&gt;</code></td>
+                                        <td>idiomatic</td>
+                                    </tr>
+                                    <tr>
+                                        <td>bold</td>
+                                        <td>texte en gras</td>
+                                        <td>b</td>
+                                        <td>bring attention</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>&lt;strike&gt;</code> (déprécié)</td>
+                                        <td>strikethrough</td>
+                                        <td><code>&lt;s&gt;</code></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>u</td>
+                                        <td>underline</td>
+                                        <td>u</td>
+                                        <td>unarticulated element</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <figcaption class="numbered">Evolution sémantique de quelques balises HTML historiques</figcaption>
+                    </figure>
+                    <p>
+                        En effet, les pages web ne sont pas seulement destinées à être lues par des humains, mais également interprétées par des machines. En tant qu'humains, nous sommes capables de déduire le rôle que joue chaque élément et chaque informationdans une page à partir de son apparence : <br> Par exemple, nous nous basons sur la taille des caractères pour savoir que telle portion du texte joue un rôle de titre, sur le style des bordures pour comprendre qu'un élément est un bouton cliquable.
+                    </p>
+                    <p>
+                        La capacité des machines à traiter de l'information, elle, ne s'appuie pas sur des facultés d'interprétation visuelle. Toute information additionnelle sur le rôle ou la signification, ou de façon plus formelle, sur la fonction <strong class="keyword">sémantique</strong> de tel ou tel élément dans la page doit être spécifiée.
+                    </p>
+                    <p>
+                        Il y a deux exemples emblématiques qui reviennent souvent pour illustrer l'importance de spécifier correctement la sémantique d'un contenu multimédia.
+                        <br>
+
+                    </p>
+                    <section id="semantics-accessibility">
+                        <h6>Accessibilité. </h6>
+                        <p>
+                            Il faut bien avoir en tête que les utilisateurs du web - ou d'applications informatiques en général n'ont pas tous les mêmes facultés sensorielles.
+                            Par exemple, les utilisateurs malvoyants ont besoin d'un lecteur d'écran - une sorte d'assistant vocal capable de leur décrire le contenu de la page.
+                            Mais un assistant vocal ne peut pas simplement se contenter de lire d'une traite l'intégralité du contenu de la page:
+                            Comme lorsqu'on lit en diagonale, un utilisateur de technologies assistives vocales a besoin de se faire une idée de la structure de la page, d'identifier rapidement quels sont les différents types de contenu qu'il peut y trouver, avant d'éventuellement rentrer dans les détails.
+                        </p>
+                        <figure>
+                            <div class="sidebyside" style="font-size: small; overflow: scroll;">
+                                <div style="padding:1em;">
+                                    <h5 style="margin: 0">Scénario avec balises sémantiques</h5>
+                                    <ol>
+                                        <li>Marie active le mode de navigation avec son lecteur d'écran.</li>
+                                        <li>NVDA détecte les balises sémantiques dans le code HTML, notamment
+                                            <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, et <code>&lt;article&gt;</code>.
+                                        </li>
+                                        <li>Elle appuie sur la touche de raccourci pour lister les en-têtes (générés par <code>&lt;h1&gt;</code> et <code>&lt;h2&gt;</code>).
+                                            NVDA annonce : "En-tête niveau 1, Actualités du jour", puis "En-tête niveau 2, Économie", "En-tête niveau 2, Technologie".
+                                        </li>
+                                        <li>Intéressée par la technologie, elle utilise la commande "Aller au prochain en-tête de niveau 2".
+                                            Le lecteur d'écran l'amène directement à l'article correspondant structuré avec <code>&lt;article&gt;</code> et <code>&lt;h2&gt;</code>.
+                                        </li>
+                                        <li>Marie navigue ensuite à l’intérieur de l'article grâce à des sections balisées en <code>&lt;p&gt;</code> et <code>&lt;ul&gt;</code>.
+                                        </li>
+                                    </ol>
+                                </div>
+                                <div style="padding:1em">
+                                    <h5 style="margin: 0;">Scénario sans balises sémantiques</h5>
+                                    <ol>
+                                        <li>Marie active le mode de navigation.</li>
+                                        <li>NVDA commence à lire le contenu séquentiellement, sans pouvoir structurer les informations.
+                                            Il dit, par exemple : "Conteneur. Conteneur. Texte : Actualités du jour. Conteneur. Texte : Économie. Conteneur. Texte : Technologie."
+                                        </li>
+                                        <li>Marie essaie les raccourcis pour naviguer par en-têtes, mais NVDA ne trouve aucun en-tête valide,
+                                            car le site n'a pas utilisé de <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, etc.
+                                        </li>
+                                        <li>Les sections des articles ne sont pas distinguées.</li>
+                                        <li>Pour trouver la section "Technologie", elle doit écouter tout le contenu de la page dans l'ordre ou utiliser laborieusement la fonction "rechercher".
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </figure>
+                    </section>
+                    <section id="semantics-indexing">
+                        <h6>Indexation par les moteurs de recherche.</h6>
+                        <p>
+                            Un <strong class="keyword">moteur de recherche</strong> comme Google utilise des programmes appelés <i>crawlers</i> qui parcourent automatiquement le Web pour constituer une base de données appelée un <strong class="keyword">index</strong>.
+                            L'index est un peu comme un annuaire téléphonique sous
+                            stéroïdes: Il associe à chaque URL de
+                            nombreuses informations contextuelles - ou meta-données
+                            indispensables pour répondre de façon
+                            pertinente aux recherches des utilisateurs: mots-clefs
+                            de recherche, résumé du contenu de la page, liste de liens entrants ou sortants, etc.
+                            <br>
+                            Et c'est justement l'information sémantique fournie par les balises et leurs attributs qui est
+                            utilisée par les <i>crawlers</i> pour constituer cet
+                            index.
+                        </p>
+                    </section>
+                </section>
+                <section class="activite cutout-style">
+                    <h5><a href="">Tuto: Définir une arborescence html à partir d'une maquette visuelle</a></h5>
+                </section>
+                <!-- , <code> ruby </code> ,, <code> rp </code> ,  ,  , <code> br </code> , <code> wbr </code>, -->
+            </section>
+            <hr>
+            <section id="tag-attributes">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#tag-attributes">Attributs des balises</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>
+                    La balise d'ouverture d'un élément html contient souvent un ensemble attribut que l'on déclare en utilisant la syntaxe suivante:
+                    <code class="language-html"> &lt;attribut1="valeur" attribut2="valeur"&gt;...&lt;/balise&gt;</code>
+                </p>
+                <p>
+                    Ces attributs sont indispensables dans plusieurs cas de figure. Premièrement, ils permettent aux éléments de jouer pleinement leur rôle sémantique.
+                    Par exemple, l'attribut <code>alt</code> de la balise <code>img</code> est destiné à stocker une description de l'image qui remplit plusieurs fonctions:
+                <ul>
+                    <li>
+                        Elle permet l'audio-description de l'image pour les utilisateurs mal-voyant;
+                    </li>
+                    <li>Elle garantit que la page demeure compréhensible si jamais la connexion est mauvaise et que l'image ne charge pas;</li>
+                    <li>Elle permet que ce que représente l'image soit pris en compte facilement par les moteurs de recherche.</li>
+                </ul>
+                <p>Pour une balise comme <code>meter</code>, les attributs permettent de décrire des paramètres qui - outre leur rôle sémantique - déterminent la configuration visuelle du composant correspondant</p>
+
+
+                <!-- Prenons l'exemple de la balise <code>&lt;meter&gt;</code>.
+                    Elle requiert au moins trois attributs -->
+                </p>
+                <figure>
+                    <div class="sidebyside">
+                        <div>
+                            <pre>
+                                    <code class="language-html">&lt;meter min="0" max="100" low="33" high="66" optimum="80" value="50"&gt;
+    &lt;/meter&gt;</code>
+                                </pre>
+                        </div>
+                        <div class="html-output" style="text-align: center; display:table-cell; vertical-align: middle;">
+                            <meter min="0" max="100" low="33" high="66" optimum="80" value="50"></meter>
+                        </div>
+                    </div>
+
+                    <figcaption class="numbered"></figcaption>
+                </figure>
+                <section id="ressource-attributes">
+                    <h6>Références et ressources</h6>
+                    <p>
+                        D'autre part, de nombreux éléments dont l'affichage ou le comportement nécessite une référence à une ressource extérieure: Par exemple, l'élément ancre, ou <strong class="keyword">anchor</strong> - dont la balise d'ouverture est <code>&lt;a&gt;</code> - est utilisé lorsque l'on veut que sont contenu "pointe" vers un lien cible, par exemple l'adresse d'une autre page web.
+                        La balise de l'élément ancre est donc dotée d'un attribut qui stocke la <strong class="keyword">référence hypertexte</strong>, dénotée <code>href</code>.
+                        <br>
+                        Un élément comme <code>&lt;img&gt;</code> nécessite un attribut <code>src</code> qui pointe vers son fichier source.
+                    </p>
+                </section>
+                <section class="activite cutout-style">
+
+                    <h5><a href="">Tuto: créer un bloc de navigation en langage naturel</a></h5>
+
+                </section>
+                <section id="style-behaviour-attributes">
+                    <h6>Interactivité et mise en forme avancée</h6>
+                    <p>
+                        Enfin, les attributs facilitent grandement la manipulation des éléments d'une page Web par du code Javascript, ce qui est essentiel pour ajouter de l'interactivité aux pages.
+                        Ils permettent également d'affecter aux éléments des règles de mise en forme avancée.
+                    </p>
+                </section>
+            </section>
+
+            <hr>
+            <section id="styling">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#styling">Apparence et mise en forme</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>
+                    Comme on l'a vu précédemment, à chaque balise correspond une mise en forme par défaut, qui permet de d'enrichir visuellement le texte et d'aider l'utilisateur à hiérarchiser l'information.
+                    Mais cela reste assez sommaire, et le web serait un endroit assez ennuyeux si il n'était pas possible d'ajuster ces styles - comme c'est le cas sur un editeur de texte classique.
+                </p>
+                <p>
+                    Une première façon de configurer l'apparence du contenu d'une balise html est d'utiliser l'attribut <code class="keyword">style</code>, en lui assignant des instructions de mise en forme, de la façon suivante:
+                    <code class="language-html">&lt;div style=&quot;...&quot;&gt; Lorem Ipsum &lt;/div&gt;</code>
+                </p>
+
+                <p>
+                    Une instruction de mise en forme s'écrit en règle générale de la façon suivante: <code>propriété: valeur(unité)</code> - l'unité étant optionnelle selon le type de propriété que l'on veut modifier. Voici quelques exemples de propriétés de styles avec une valeur compatible:
+                </p>
+
+                <figure>
+                    <pre>
+                        <code class="language-css">border-width: 2px;
+    background-color: rgba(255,128,0,0.5);
+    padding-left: 10px;</code>
+                    </pre>
+                </figure>
+                <p>
+                    Si l'on regroupe tout cela ensemble, le code a cette tête
+                    là:
+                </p>
+                <figure>
+                    <pre>
+                        <code class="language-html">&lt;div style=&quot; border-width: 2px; background-color: rgba(255,128,0,0.5); padding-left:10px;&quot;&gt; Lorem Ipsum &lt;/div&gt;</code>
+                    </pre>
+
+                </figure>
+                <p>
+                    Mais comme vous l'avez peut-être anticipé, cette façon d'assigner un style à un élément montre rapidement ses limites.
+                    <br>
+                    D'une part parce que le nombre de propriétés relatives à l'apparence que l'on peut configurer se compte en dizaines. On pourrait envisager de toutes les déclarer dans l'attribut "style", mais cela alourdirait considérablement le code, rendant le travail de développement extrêmement fastidieux.
+                    <br>
+                    D'autre part parce que cette manière de procéder ne permet d'appliquer des instructions de mise en forme qu'élément par élément.
+                    Si l'on veut assigner un même style à plusieurs éléments, il faut répéter l'instruction pour chacun d'entre eux.
+                </p>
+                <p>
+                    C'est pour éviter ces deux écueils qu'un langage à part entière - CSS - a été introduit.
+                    Les nombreuses fonctionnalités qu'il offre font l'objet d'un <a href="#css">cours dédié</a>
+                </p>
+
+            </section>
+            <section id="interaction-elements">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#interaction-elements">Éléments interactifs</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>
+                    HTML fournit plusieurs éléments qui se distinguent des autres par leur capacité à recevoir des inputs de la part de l'utilisateur, et à déclencher des évènements en conséquence.
+                    D'une certaine façon nous en avons déjà vu un: il s'agit de l'élément <code>&lt;a&gt;</code>, qui réagit au clic en déclenchant le chargement de la page située à l'addresse précisée dans son attribut <code>href</code>.
+                </p>
+                <p>Voici les autres éléments interactifs disponibles en html</p>
+
+                <figure>
+                    <div class="table-container">
+                        <table>
+                            <thead></thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <code>&lt;textarea&gt;</code>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <textarea name="" id=""></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <code>&lt;button&gt;</code>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <button>Cliquez moi</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <code>&lt;input type="text"&gt;</code>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <input type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <code>&lt;input type="date"&gt;</code>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <input type="date">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <code>&lt;input type="range"&gt;</code>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <input type="range">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </figure>
+            </section>
+            <section id="navigation">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#navigation">Navigation et architecture de
+                            l'information</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>
+                    La navigation désigne de façon générale l'ensemble des moyens mis en oeuvre pour permettre à un utilisateur d'accéder à un contenu qui n'est pas affiché sur la page.
+                </p>
+                <p>
+                    Soit parce qu'on ne peut pas afficher tout le contenu pertinent - par manque de place, soit parce qu'on ne veut pas afficher tout le contenu, pour ne pas surcharger l'attention des visiteurs de la page.
+                </p>
+            </section>
+
+        </section>
+        <hr>
+
+        <section id="css" class="chapter cours">
+            <hgroup>
+                <h3>Fondamentaux du CSS</h3>
+            </hgroup>
+
+            <section id="stylesheet-structure">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#stylesheet-structure">Structure d'une feuille de style</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>
+                    CSS est le langage qui permet de déclarer les règles de mise en forme et de style à appliquer aux différents éléments d'une page HTML.
+                    Ces règles sont écrite de la façon suivante:
+                    <code>propriété:valeur(unité optionnelle)</code> et sont regroupées à l'intérieurs de <strong class="keyword">sélecteurs</strong>, qui permettent de cibler le ou les éléments HTML auquels s'appliquent les instructions de mise en forme.
+                    <br>
+                    par exemple
+                <figure>
+                    <pre>
+                                <code class="language-css">h1{
+    color: rgb(255,0,0);
+    font-size: 20px;
+}
+
+.framed-box{
+    border: 2px solid black;
+}</code>
+                            </pre>
+                </figure>
+                </p>
+
+                </li>
+                <li>
+                    Le code CSS peut être déclaré directement dans le fichier HTML, à l'intérieur de l'en-tête, en imbriquant les instructions de style dans la balise dédiée: <code class="language-html">&lt;style&gt; ... &lt;/style&gt;</code>
+                </li>
+                <li>
+                    Il peut également être défini dans un fichier à part appelé <strong class="keyword">feuille de style</strong>.
+                    Il s'agit d'un fichier muni de l'extension <code>.css</code> que l'on référence dans l'en-tête du document HTML auquel on veut qu'il s'applique.
+                </li>
+                <li>
+                    L'avantage d'utiliser une feuille de style est de pouvoir réutiliser les même règles de mise en forme sur plusieurs pages différentes.
+                </li>
+                </ul>
+            </section>
+            <section id="selectors">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#selectors">Fonctionnement d'un sélecteur</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>
+                    Un fichier css est structuré par des sélecteurs, qui ciblent des éléments du DOM et leur attribuent des propriétés de style.
+                    Leur syntaxe a la structure suivante:
+                </p>
+                <figure>
+                    <pre>
+                    <code class="language-css">
+    reference{
+        propriete1: valeur;
+        propriete2: valeur;
+        ...
+    }
+                    </code>        
+                </pre>
+                </figure>
+                <p>
+                    La référence est une instruction qui dit au navigateur quels sont les éléments du DOM auxquelles les propriétés spécifiées entre accolades doivent s'appliquer.
+                    Les sélecteurs incontournables sont
+                <ul>
+                    <li>
+                        Le <strong class="keyword">sélecteur universel</strong> <code>*</code> qui cible tous les éléments de la page
+                    </li>
+                    <li>
+                        le <strong class="keyword">sélecteur racine</strong> <code>:root</code> qui cible l'élément le plus haut hiérarchiquement
+                    </li>
+                    <li>
+                        Le <strong class="keyword">sélecteur d'identifiant</strong>, préfixé par <code>#</code> qui cible l'élément d'identifiant correspondant
+                    </li>
+                    <li> Le <strong class="keyword">sélecteur de classe</strong> préfixé par <code>.</code>, qui sélectionne tous les éléments dotés de la classe spécifiée après le point.</li>
+                    <li>
+                        le <strong class="keyword">sélecteur de balise</strong> qui sélectionne tous les éléments du type spécifié (par
+                        exemple, <code>div</code>, <code>a</code>,
+                        <code>ul</code>, etc...)
+                    </li>
+                </ul>
+                </p>
+                <figure>
+                    <pre>
+                    <code class="language-css">/* Sélecteur universel */
+* { 
+    max-width:30em
+}
+
+/* Sélecteur racine */
+:root { 
+    font-size:16px;
+}
+
+/* Sélecteur par balise */
+section { 
+    padding left: 1rem;
+}
+
+/* Sélecteur par classe */
+.encadrement{ 
+    border: 3px solid red;
+}
+
+/* Sélecteur par identifiant */
+#introduction{ 
+    background-color:rgba(255,255,255,0.5)
+}</code>
+                </pre>
+                    <figcaption class="numbered"> Sélecteurs essentiels avec des exemples de propriétés</figcaption>
+                </figure>
+
+                <!-- <div class="todo">
+                    <p>Figure avec à gauche des sélecteurs et à droite un bout
+                        de code html ou s'illuminent les éléments
+                        ciblés par le sélecteur</p>
+                </div> -->
+            </section>
+            <hr>
+            <section id="cascade">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#cascade">Pourquoi des feuilles de style en
+                            "cascade"?</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+
+                <h5>Règles de précédence</h5>
+                <p>
+                    La cascade est un algorithme conçu pour déterminer quelle instruction de style appliquer dans le cas de figure ou il reçoit des instructions qui entrent en concurrence les unes avec les autres.
+                    Il applique des règles assez subtiles qui sont décrites en détail sur le <a href="https://developer.mozilla.org/fr/docs/Web/CSS/Cascade"> site de Mozilla</a>
+                </p>
+                <p>
+                    Par exemple, les styles définis par l'utilisateur sont prioritaires sur les styles par défaut définis par le navigateur (qui sont déclarés dans une feuille de style non modifiable appelée <i>user-agent-stylesheet</i>)
+                </p>
+                <p>
+                    Les règles complètes sont assez subtile, mais à ce stade, il suffit de retenir que lorsque plusieurs instructions ciblent la même propriété d'un même élément, c'est la dernière instruction déclarée qui a la priorité.
+                </p>
+                <figure>
+                    <pre><code class="language-css">
+    
+                    </code></pre>
+                </figure>
+                <h5>Héritabilité des propriétés</h5>
+                <p>
+                    Certaines propriétés sont dites <i>héritables</i>, c'est à dire que si elles sont définies pour un élément, elles s'appliqueront automatiquement à tous ses descendants, à moins qu'il n'en soit indiqué autrement.
+                </p>
+
+            </section>
+            <!-- Attention, la ==**référence du selecteur ne peut pas contenir de majuscule, ni d'espace**== ! -->
+            <!-- Un des principes fondamentaux en développement web - et en informatique en général - est ce qu'on appelle en
+            anglais la <strong class="keyword"><i>separation of concerns</i></strong> - ou séparation des problèmes en
+            français. -->
+            <hr>
+            <section id="units">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#units">Unités Absolues et Relatives</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>
+                    Toutes les propriétés du styles qui définissent des tailles
+                    et des distances doivent avoir leur valeur
+                    déclarée dans une unité donnée:
+                    Par exemple, si je décrète que les bordures d'un élément
+                    doivent faire 5 de largeur, c'est une
+                    information insuiffisante car elle ne précise pas si il
+                    s'agit de centimètres, de pixels ou d'autre
+                    chose.
+                </p>
+                <p>
+                    Pour apporter ce niveau de précision, CSS propose plusieurs
+                    unités de grandeur.
+                    Certaines sont dites absolues: elles ont une valeur fixe,
+                    qui ne varie pas avec le support, alors que
+                    d'autres sont relatives à une référence.
+                </p>
+                <figure>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Unité</th>
+
+                                    <th>Commentaire</th>
+                                    <th>Relation avec d'autres unités</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        px (pixel)
+                                    </td>
+                                    <td>
+                                        La taille réelle (telle que perçue par l'utilisateur) d'un pixel dépend de la résolution de l'appareil utilisé.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>pt (point)</td>
+                                    <td rowspan="5">Ce sont des unités physiques, à n'utiliser que pour la mise en forme de contenu destiné à être imprimé</td>
+                                    <td>1pt = 0.3515 mm</td>
+                                </tr>
+                                <tr>
+                                    <td>mm, cm (Milimètre, Centimètre)</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>in (Inch)</td>
+
+                                    <td>1in = 25.4 mm</td>
+                                </tr>
+                                <tr>
+                                    <td>pc (Picas)</td>
+
+                                    <td>1pc = 4.2175 mm</td>
+                                </tr>
+
+                                <tr>
+                                    <td>ch (characters)</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>%</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>vh (<b>v</b>iewport <b>h</b>eight)</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>vw</td>
+                                    <td>Viewport Width</td>
+                                </tr>
+                                <tr>
+                                    <td>em</td>
+                                    <td>Largeur du caractère M majuscule dans le
+                                        style et la taille de police de
+                                        l'élément
+                                        sélectionné </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>rem (root em)</td>
+                                    <td>Largeur du caractère espace dans le
+                                        style et la taille de police de
+                                        l'élément racine
+                                    </td>
+                                    <td>Souvent, par défaut <code style="background-color: yellow;">1rem = 16px</code></td>
+
+                                </tr>
+                                <tr>
+                                    <td>lh (<b>l</b>ine <b>h</b>eight)</td>
+                                    <td>Hauteur de ligne</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>rlh (<b>r</b>oot <b>l</b>ine <b>h</b>eight)</td>
+                                    <td>Hauteur de ligne de l'élément racine
+                                    </td>
+                                </tr>
+                            </tbody>
+
+
+                        </table>
+                    </div>
+
+                    <figcaption class="numbered"></figcaption>
+                </figure>
+
+
+            </section>
+            <hr>
+            <section id="text-layout">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#text-layout">Mise en page de texte</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>
+                    Même si la mise en page n'est pas une science exacte, il y
+                    a quelques règles incontournables pour
+                    garantir que la lecture d'un texte soit la plus agréable
+                    posible.
+                    Nous allons voir comment exprimer ces règles en CSS
+                </p>
+                <section>
+                    <h6>Largeur d'un texte</h6>
+                    <p>Plusieurs études (
+                        <a href="https://doi.org/10.1037/h0073597" title="Tinker & Paterson (1929): Studies of typographical factors influencing speed of reading. III. Length of line.">1</a>,
+                        <a href="" title="Dyson & Kipping (1998). The Effects of Line Length and Method of Movement on Patterns of Reading from Screen">2</a>
+                        <a href="" title="Nanavati & Bias (2005). Optimal line length in reading - a literature review.">3</a>
+                        <a href="" title="Ling & Van Schaik (2006). The influence of font type and line length on visual search and information retrieval in web pages">4</a>
+                        ) la perception visuelle ont observé qu'il existe une largeur de paragraphe optimale pour la lecture, qui varie <strong>entre 50 et 75 caractères par ligne</strong> selon les personnes et la typographie utilisée.
+                        Vous vous en êtes peut-être rendus comptes intuitivement dans l'exemple <a href="">XXX</a> qui n'a aucune autre mise en forme que celles appliquée par défaut:
+                        Lorsque'on consulte la page en plein écran sur ordinateur, les lignes de textes prennent toute la largeur de la fenêtre, ce qui n'est pas très agréable.
+                    </p>
+                    <p>
+                        Également pour des raisons de lisibilité, il est utile de définir des largeurs minimales pour les éléments qui contiennent du texte.
+                    </p>
+                    <figure>
+                        <pre>
+                            <code class="language-css">h1, h2, h3, h4, h5, h6, p {
+        max-width: 75ch;
+        min-width: 30ch;
+    }
+                            </code>
+                        </pre>
+                    </figure>
+                    <p>
+                        On pourrait également exprimer ces règles en utilisant l'unité <code> em </code> car <code> 1ch <variable>=</variable> 0.5em </code>
+                    </p>
+                </section>
+
+
+                <section>
+                    <h6>Taille de texte lisible.</h6>
+                    <p>
+                        La taille de texte optimale dépend essentiellement de la distance à laquel on consulte un écran, selon des règles d'accessibilités que vous pouvez trouver par exemple sur le site du <a href="https://ci.droitsdelapersonne.ca/graphic-standards-for-exhibits/text-hierarchy-and-readability/">Musée Canadien pour les Droits de la Personne</a>
+                    </p>
+                    <figure>
+                        <img src="/web-interfaces-101/assets/text-viewing-distance-BV91LFyQ.png" alt="">
+                        <figcaption class="numbered">Taille de texte optimale selon la distance de visionnage</figcaption>
+                    </figure>
+                    <p>
+                        La bonne pratique a adopter est d'exprimer toutes les tailles de textes à partir de cette taille racine, avec l'unité <code>rem</code>, plutôt que d'utiliser l'unité <code>px</code>
+                    </p>
+
+                    <figure>
+                        <div class="sidebyside">
+                            <pre>
+                                <code class="language-css">p{
+    font-size: 16px;
+}
+
+h1{
+    font-size: 40px;
+}
+
+h2{
+    font-size: 32px;
+}
+
+h3{
+    font-size: 24px;                             
+}</code>
+        <figcaption class="numbered">
+            <span class="icon" style="background-color: rgba(255,0,0,0.6);">⨯</span> Unités absolues
+        </figcaption>
+                            </pre>
+                            <pre>
+                                <code class="language-css">p{
+    font-size: 1rem;
+}
+
+h1{
+    font-size: 2.5rem
+}
+
+h2{
+    font-size: 2rem
+}
+
+h3{
+    font-size: 1.5rem                    
+}</code>
+        <figcaption>
+            <span class="icon" style="background-color: rgba(0,255,0,0.6);">✓</span> Unités relatives
+        </figcaption>
+                            </pre>
+                        </div>
+
+                    </figure>
+                </section>
+
+                <section>
+                    <h6>Marges et Padding. </h6>
+                    <p class="todo">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe doloremque aspernatur pariatur doloribus recusandae voluptate voluptatibus, commodi laboriosam autem! Adipisci voluptate provident fugit asperiores dicta assumenda nisi. Voluptates, dolore veniam?</p>
+
+
+                </section>
+                <section class="activite cutout-style">
+                    <h5><a href="">Optimisation de la lisibilité d'un texte</a></h5>
+                </section>
+            </section>
+            <hr>
+            <section id="box-model">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#box-model">Le Box Model</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+
+
+                <p>La technologie de rendu utilisée par les navigateurs associe à tout élément HTML un conteneur rectangulaire, potentiellement invisible, qui contient quatre zones:
+
+                </p>
+                <ul>
+                    <li>
+                        La zone de contenu (Content)
+                    </li>
+                    <li>La marge intérieure (<strong class="keyword">padding</strong>)</li>
+                    <li>
+                        La bordure (<strong class="keyword">border</strong>)
+                    </li>
+                    <li>
+                        La marge extérieure (<strong class="keyword">margin</strong>)
+                    </li>
+                </ul>
+                <figure id="fig-box-model">
+                    <div style="height: 15rlh">
+                        <span>Margin</span>
+                        <div>
+                            <span>Border</span>
+                            <div>
+                                <span>Padding</span>
+                                <div>
+                                    <span>Content</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption class="numbered">
+                        Les zones du Box Model
+                    </figcaption>
+                </figure>
+
+                <p>Voici quelques points à retenir.
+                </p>
+                <ul>
+                    <li>Les paddings de deux éléments hiérarchiquement adjacents s'additionnent</li>
+                    <li>Les marges de deux éléments hiérarchiquement adjacents se recouvrent</li>
+                    <li>Si un élément <u><b>n'a pas de padding</b></u>, sa marge se recouvre avec (1) la marge du haut de son premier descendant, (2) la marge du bas de son dernier descendant.</li>
+                    <li>La marge ne compte pas dans la définition de la taille ou de la hauteur d'un élément</li>
+                    <li>On peut décider si la bordure est inclue ou non dans la définition de la hauteur et la largeur d'un élément avec l'instruction: <code>box-sizing:content-box</code> ou <code>box-sizing:border-box</code></li>
+                    <li>
+                        Le point de coordonnées <var>0;0</var> d'une boite se situe en haut à gauche de la zone de bordure,
+                    </li>
+                </ul>
+
+
+            </section>
+            <hr>
+            <section id="positioning">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#positioning">Positionnement d'éléments</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>
+                    La façon dont se positionnent les éléments dans la page est affectée principalement par deux propriétés:
+                    <code>display</code> et <code>position</code>.
+                    Tous les éléments sont dotés d'une propriété <code>display</code>, qui prend par défaut comme valeur soit <code>block</code> soit <code>inline</code>.
+                </p>
+                <figure id="fig-display-options">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <th>valeur</th>
+                                <th>positionnement</th>
+                                <th>hauteur</th>
+                                <th>largeur</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>inline</td>
+                                    <td>À droite du bloc précédent du même niveau hiérarchique alignée sur la <i>baseline</i> du texte</td>
+                                    <td>déterminée par la hauteur du contenu uniquement. height n'a pas d'effet</td>
+                                    <td>déterminée par la largeur du contenu uniquement. width n'a pas d'effet</td>
+                                </tr>
+                                <tr>
+                                    <td>block</td>
+                                    <td>En dessous du bloc précédent du même niveau hiérarchique</td>
+                                    <td>déterminée par la propriété <u>height</u>, ou par la hauteur du contenu si <u>height</u> n'est pas spécifié</td>
+                                    <td>déterminée par la propriété <u>width</u>, ou égale à 100% si du contenu si <u>width</u> n'est pas spécifié</td>
+                                </tr>
+                                <tr>
+                                    <td>inline-block</td>
+                                    <td>À droite du bloc précédent du même niveau hiérarchique alignée sur la <i>baseline</i> du texte</td>
+                                    <td>déterminée par la propriété height, ou par la hauteur du contenu si <u>height</u> n'est pas spécifié</td>
+                                    <td>déterminée par la largeur du contenu uniquement. <u>width</u> n'a pas d'effet</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <figcaption class="numbered">Valeurs possibles de la propriété <span style="font-style: normal;">display</span></figcaption>
+                </figure>
+                <p>
+                    Tous les éléments sont également dotés d'une propriéte <code>position</code> dont la valeur par défaut est <code>static</code>.
+                </p>
+                <figure>
+                    <table>
+                        <thead>
+
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>static</td>
+                                <td>La position de l'élément est automatiquement déterminée à partir de la position de l'élément qui le précède</td>
+                            </tr>
+                            <tr>
+                                <td>fixed</td>
+                                <td>L'élément est placé à l'aide des propriétés <code>top</code>, <code>left</code> <code>right</code>, <code>bottom</code> par rapport à la fenêtre.
+                                    Il ne bougera pas si on scroll la page</td>
+                            </tr>
+                            <tr>
+                                <td>absolute</td>
+                                <td>L'élément est placé à l'aide des propriétés <code>top</code>, <code>left</code> <code>right</code>, <code>bottom</code> par rapport à la position du plus proche parent positionné (c'est à dire du plus proche parent avec une position autre que <code>static</code>).</td>
+                            </tr>
+                            <tr>
+                                <td>relative</td>
+                                <td>L'élément est positionné avec un décalage par rapport à la position qu'il aurait occupé avec <code>position:static</code>.
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    <figcaption class="numbered">Valeurs possibles de la propriété <span style="font-style: normal;">position</span></figcaption>
+                </figure>
+                <p>
+                    Vous pouvez examiner l'effet des différentes valeurs des propriétés <code class="language-css">display</code> et <code class="language-css">position</code> en jouant avec l'exemple suivant
+                </p>
+                <div class="full-width">
+                    <div class="sidebyside" id="display-and-position">
+                        <section id="controls">
+                            <form>
+                                <h1><code>position</code> property for div 2</h1>
+                                <fieldset class="radio-group">
+                                    <label><input type="radio" name="position" value="static" checked> static</label>
+                                    <label><input type="radio" name="position" value="fixed"> fixed</label>
+                                    <label><input type="radio" name="position" value="relative"> relative</label>
+                                    <label><input type="radio" name="position" value="absolute"> absolute</label>
+                                    <label><input type="radio" name="position" value="sticky"> sticky</label>
+                                </fieldset>
+                                <h1><code>top</code> and <code>left </code> property for div 2</h1>
+                                <fieldset id="position-controls" class="inactive range-group">
+                                    <label>top: <input type="range" id="top-range" min="0" max="100" value="0"></label>
+                                    <label>left: <input type="range" id="left-range" min="0" max="100" value="0"></label>
+                                </fieldset>
+                            </form>
+                            <form>
+                                <h1> <code>display</code> property for all colored blocks</h1>
+                                <fieldset class="radio-group">
+                                    <label><input type="radio" name="display" value="block" checked> block</label>
+                                    <label><input type="radio" name="display" value="inline"> inline</label>
+                                    <label><input type="radio" name="display" value="inline-block"> inline-block</label>
+                                </fieldset>
+                                <h1> <code>width</code> and <code>height</code> for all colored blocks</h1>
+                                <fieldset id="size-controls" class="range-group">
+                                    <label>width: <input type="range" id="width-range" min="50" max="200" value="100"></label>
+                                    <label>height: <input type="range" id="height-range" min="50" max="200" value="100"></label>
+                                </fieldset>
+                            </form>
+                        </section>
+                        <section id="output" class="container">
+
+                            <div class="demo-block dummy" id="dummy1">one</div>
+                            <div class="demo-block target" id="dummy2">two</div>
+                            <div class="demo-block dummy" id="dummy3">three</div>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula turpis ut accumsan iaculis. Morbi et imperdiet libero. Sed in lectus velit. Aliquam id tristique sapien. Nullam nulla dui, venenatis sit amet consectetur id, vestibulum non tortor. Duis ac imperdiet risus. Curabitur lacinia ac quam vitae tincidunt. Curabitur vitae condimentum nulla, nec feugiat orci. Nam sit amet sodales sem. Integer malesuada tempor dui, id malesuada nibh dictum a. Donec varius feugiat pellentesque. Pellentesque risus ante, dapibus non lectus et, commodo fringilla quam. Integer sollicitudin feugiat porttitor. Curabitur cursus risus nec nisl fringilla rutrum elementum consequat nulla.</p>
+                            <p>
+                                Praesent fringilla tincidunt turpis, eu lobortis felis condimentum sit amet. Donec neque diam, lacinia id sodales at, sodales sit amet justo. Nam in mi laoreet ex iaculis viverra. Morbi lacinia ac neque in cursus. Aenean id nibh congue diam commodo sollicitudin et nec dolor. Aenean eget dui nibh. Vestibulum sit amet suscipit odio. Ut faucibus congue nibh nec euismod. Phasellus metus enim, tincidunt vel rutrum non, consectetur ut neque. Sed porta metus sit amet tincidunt dapibus.</p>
+                            <p>
+
+                                Nulla facilisi. Nunc ut tincidunt nunc. Curabitur sapien dolor, volutpat id aliquet eu, cursus sed eros. In at rhoncus nisi. Donec fermentum justo commodo urna hendrerit, at vulputate dui euismod. Nunc placerat neque at lorem aliquet, et vestibulum augue semper. Vivamus odio dui, accumsan nec mauris vel, egestas vehicula augue.
+                            </p>
+                            <p>
+                                Maecenas blandit magna eu cursus euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et urna non odio auctor ullamcorper. Praesent semper, dolor in vestibulum tristique, risus risus aliquet augue, quis finibus quam felis eget dui. Nullam non diam commodo, facilisis dui ac, blandit libero. Nullam tortor velit, pellentesque nec ultricies in, ullamcorper sit amet velit. Curabitur vulputate, urna ut gravida tincidunt, dolor metus lobortis sapien, a ultrices odio tellus in dui. Ut consectetur placerat porttitor. Nulla commodo, lectus id luctus commodo, massa turpis mattis ante, non egestas eros nulla vitae mauris. Nam vitae enim rutrum, lacinia nisi et, tempus lacus. Nam molestie nisi non quam vulputate condimentum.
+                            </p>
+                            <p>
+                                In vitae lobortis lectus. Donec in laoreet nisl. Vivamus laoreet convallis lacus, eget tincidunt lectus gravida sed. Etiam non lorem lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent molestie gravida tortor. Curabitur vel eros nec neque imperdiet interdum. In sagittis, purus sit amet viverra rhoncus, libero nisi auctor nibh, vitae fringilla tortor urna at erat. In ultrices fringilla leo in varius. Phasellus varius feugiat risus eget finibus.</p>
+                        </section>
+                    </div>
+                </div>
+                <section class="activite cutout-style">
+                    <h5>
+                        Centrage d'éléments de contenus
+                    </h5>
+                </section>
+                <section class="activite cutout-style">
+                    <h5>
+                        Mettre en forme un bloc de contenu au format carte ou
+                        vignette
+                    </h5>
+                </section>
+            </section>
+            <hr>
+            <section id="interaction-pseudo-classes">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#interaction-pseudo-classes">Feedback, feedforward</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>
+                    En CSS, il est possible d'appliquer des styles de façon contextuelle, notamment en prenant en compte des interactions qui ont lieu (ou ont eu lieu) sur la page.
+                    <br>
+                    Par exemple, on comprend beaucoup plus facilement qu'un élément est cliquable si son apparence change lorsque la souris passe dessus, ou alors qu'un lien a déjà été visité si il est de couleur différente des liens qui ne l'ont pas été.
+                </p>
+                <p>
+                    On utilise pour celà ce qu'on appelle des pseudo-classes, qui sont des sélecteurs qui ne s'activent que dans certaines conditions automatiquement détectées par le navigateur.
+
+                    Par exemple, les instructions de style contenues dans <code>.foobar:active</code> ne s'activent que un élément de classe <code class="language-html">foobar</code> est "activé" par le pointeur (c'est à dire lorsque l'on clique dessus)
+                </p>
+                <figure>
+                    <div class="sidebyside">
+                        <pre>
+                            <code class="language-css">.foobar:active{
+    position: relative;
+    top: 20px;
+    font-weight: bold;
+}</code>
+                        </pre>
+                        <div style="display:flex; justify-content: center; align-items: center;">
+                            <span id="clickMe" class="foobar">Click Me!</span>
+                        </div>
+                    </div>
+                </figure>
+
+                <p>
+                    En design d'interaction, on utilise souvent le terme de <strong class="keyword">feedback</strong> pour désigner l'évènement sensoriel qui se produit en réaction à une action - et qui souvent aide à comprendre ce qui vient de se passer.
+                </p>
+                <p>
+                    On rencontre aussi parfois le terme de <strong class="keyword">feedforward</strong> pour parler d'un évènement sensoriel qui indique ce qu'il va se passer en réaction à une action que l'on s'apprête à faire.
+                    Par exemple, le fait de modifier l'apparence d'un élément lorsque la souris le survole est fréquemment utilisé pour indiquer que cet élément est cliquable.
+                </p>
+
+                <figure>
+                    <div class="sidebyside">
+                        <pre>
+                            <code class="language-css">.foobar:hover{
+    .foobar:hover{
+        position: relative;
+        top: 3px;
+        cursor: pointer;
+        border-bottom: 2px solid black;
+    }
+                                
+.foobar:active{
+        position: relative;
+        top: 20px;
+        font-weight: bold;
+        border-bottom: 8px solid black;
+    }
+}</code>
+                        </pre>
+                        <div style="display:flex; justify-content: center; align-items: center;">
+                            <span id="hoverMe" class="foobar">Hover Me!</span>
+                        </div>
+                    </div>
+                </figure>
+
+
+
+                <section class="activite cutout-style">
+                    <h5>
+                        Utiliser les tranistions pour améliorer le feedback
+                    </h5>
+                </section>
+
+
+
+            </section>
+            <hr>
+            <section id="advanced-selectors">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#advanced-selectors">Sélecteurs avancés</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <section>
+                    <h5>Combinaison de sélecteurs</h5>
+                    <p>
+                        On peut cibler plus précisément certains éléments en combinant les sélecteurs de différentes façon:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong class="keyword">
+                                Groupage de sélecteurs
+                            </strong>
+                            <br>
+
+                        </li>
+                        <li>
+                            <strong class="keyword">Addition de sélecteurs</strong>
+                            <br>
+                            Si j'accolle des sélecteurs de classe de la façon suivante:
+                            <code class="language-css">.classe1.classe2.classe3{ ... }</code> cela cible tous les éléments dotés de la classe <code>classe1</code> <u><b>et</b></u> de la classe <code>classe2</code> <u><b>et</b></u> de la classe <code>classe3</code>
+                        </li>
+                        <li>
+                            <strong class="keyword">Sélecteur de descendant</strong>
+                            <br>
+                            Si j'accolle deux sélecteurs en les séparant d'un espace, le deuxième sélecteur ne s'appliquera qu'aux éléments descendants des éléments ciblés par le premier. <br>
+                            Par exemple: <code class="language-css">#shopping-list * { ... }</code></pre> cible tous les éléments descendants de l'élément portant l'identifiant <code>shopping-list</code>; <br>
+                            <code class="language-css">p img { ... }</code></pre> cible tous les éléments de type image descendants d'un élément de type paragraphe.
+                        </li>
+                        <li>
+                            <strong class="keyword">Sélecteur de descendant direct</strong>
+                            <br>
+                            Si j'accolle deux sélecteurs en les séparant d'un <code>&gt;</code>, le deuxième sélecteur ne s'appliquera qu'aux éléments descendants <em>directs</em> des éléments ciblés par le premier.
+                        </li>
+                        <li>
+                            <strong class="keyword">Sélecteur de successeur</strong>
+                            <br>
+                            Si j'accolle deux sélecteurs A et B en les séparant d'un <code>~</code>, B ne ciblera que les éléments situés après et au même niveau hiérarchique qu'un élément ciblé par le selecteur A.
+                            <br>
+                            Par exemple <code class="language-css">li.separateur~li{ ... }</code> ciblera tous les éléments de type <code>li</code> situés après les élément <code>li</code> portant la classe <code>separateur</code>
+                        </li>
+                        <li>
+                            <strong class="keyword">Sélecteur de successeur direct</strong>
+                            <br>
+                            Si j'accolle deux sélecteurs A et B en les séparant d'un <code>+</code>, B ne ciblera que les éléments situés directement après et au même niveau hiérarchique qu'un élément ciblé par le selecteur A.
+                        </li>
+                    </ul>
+                </section>
+                <section id="pseudo-classes">
+                    <h5>Pseudo-classes de sélection structurelle et conditionnelle </h5>
+                    <p>Il est possible de cibler certains éléments en fonctions de critères avancés, comme leur rang d'apparition parmi les éléments similaires situés sous un même parent, la nature de leurs descendants, ou encore leur rôle dans une hiérarchie HTML.
+                        <br>
+                        On utilise pour cela des pseudo-classes, repérables par le préfixe <code> : </code>
+                    </p>
+                    <p>
+                        <todo>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo ad at, in soluta consectetur voluptate dolor quod itaque laboriosam suscipit impedit nobis aliquam minima, culpa magni et corporis officiis voluptatibus.</todo>
+                    </p>
+                </section>
+            </section>
+            <hr>
+            <section>
+                <hgroup>
+                    <h4 class="clip-background"><a href="#">Arrières plans et superpositions
+                            d'éléments</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+            </section>
+            <hr>
+            <section id="flex-and-grid">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#flex-and-grid">
+                            Conteneurs flexibles et en grille
+                        </a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <section class="activite cutout-style">Disposer des éléments en mosaïque </section>
+            </section>
+            <hr>
+            <section id="media-queries">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#media-queries">Contextualiser la mise en forme
+                            à l'aide des media queries</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>
+                    Comme souligné dans les parties précédentes, avoir une
+                    mise en page dynamique qui adapte la
+                    présentation du contenu aux conditions de visionnage
+                    est fondamental.
+
+                    Utiliser des unités relative, définir des largeurs
+                    minimales
+                </p>
+                <p>
+                    <i>Media query </i> signifie requête media en anglais -
+                    autrement dit il s'agit d'une requête
+                    d'informations sur les propriétés du medium de
+                    consultation, afin de pouvoir ajuster la mise en
+                    forme en fonction du résultat de cette requête.
+
+                </p>
+                <figure>
+                    <pre>
+                            <code class="language-css">
+        @media print {
+            /* … */
+        }
+                            </code>
+                
+                        </pre>
+                </figure>
+
+                </p>
+
+                <section class="activite cutout-style">
+                    <h5><a href="">Réaliser un thème jour/nuit avec des media-queries</a></h5>
+                </section>
+            </section>
+            <hr>
+            <section id="modular-css">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#modular-css">Bonnes pratiques pour la modularisation
+                            de code CSS</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+            </section>
+        </section>
+        <hr>
+        <section id="javascript">
+            <hgroup>
+                <h3>Javascript</h3>
+            </hgroup>
+
+            <p>
+                Javascript est un langage de programmation qui a été inventé pour permettre la manipulation de contenu multimédia par les navigateurs lors d'une session utilisateur.
+                Auparavant, l'interactivité des pages Web reposait essentiellement sur Flash - qui a été pratiquement remplacée par Javascript.
+                La génération automatique de contenu en réaction a des actions utilisateurs était gérée bien souvent par des programmes écrit en PHP, qui génèrent des pages HTML depuis un serveur.
+            </p>
+            <!-- <figure>
+                <div class="sidebyside">
+                    <canvas>
+
+                    </canvas>
+                </div>
+            </figure> -->
+            <section id="js-concepts">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#js-concepts">Concepts de base</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>Un programme est un ensemble d'instructions écrites dans un langage doté de règles strictes - en tout cas plus strictes que le langage humain - afin de garantir que les instructions puissent être interprétées et executées de façon prévisible par un ordinateur.</p>
+
+                <p>
+                    Une variable est un conteneur d'information identifiable par un nom, que l'on appelle également l'<strong class="keyword">identifiant</strong> de la variable.
+                    Le contenu de ce conteneur d'information est appelé valeur.
+
+                </p>
+
+
+                <p> L'action de créer une variable s'appelle la <strong class="keyword">déclaration</strong>, et le fait de lui attribuer une valeur s'appelle l'<strong class="keyword">assignation</strong>
+                    La déclaration se fait avec le mot clef <code class="language-js">let</code> et l'assignation avec le symbole <code>=</code> comme dans <code class="language-js">let a = 124</code>
+                </p>
+
+                <p>
+                    Certains langages imposent lors de la déclaration d'une variable de rajouter une annotation qui précise le <strong class="keyword">type</strong> d'informations qu'elle est autorisée à contenir.
+                    <br>
+                    JavaScript n'impose pas une telle précision, car le langage déduit automatiquement le type de la variable à partir de sa valeur.
+                    Ce type peut être
+                </p>
+                <ul>
+                    <li>Un nombre (number) comme dans <figure class="inline-fig">
+                            <code class="language-js">let x = 123</code>
+                        </figure>
+                    </li>
+                    <li>Une chaine de caractère (string), comme dans <figure class="inline-fig">
+                            <code class="language-js">let nom = "Nadia"</code>
+                        </figure>
+                    </li>
+                    <li>
+                        Une valeur <strong class="keyword">booléenne</strong>, qui ne peut prendre que deux valeurs: <code>true</code> ou <code>false</code>, comme dans:
+                        <figure class="inline-fig">
+                            <code class="language-js">let ouvert = false</code>
+                        </figure>
+                    </li>
+                </ul>
+
+            </section>
+
+
+            <section>
+                <hgroup>
+                    <h4 class="clip-background"><a href="#">Interaction en ligne de commande</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+
+                <p>
+                    Par défaut lorsque l'on crée une variable et qu'on lance le programme qui la contient, cette variable n'existe nulle part ailleurs que dans la mémoire de l'ordinateur: elle n'a aucune manifestation visible - que ce soit sous forme de texte, d'élément d'interface ou autre.
+                </p>
+                <p>
+
+                </p>
+
+                <p>
+
+                <ul>
+                    <li>Utiliser l'inspecteur pour accéder à la console</li>
+                    <li>
+                        Lire la valeur d'une variable avec <code>console.log()</code>
+                    </li>
+                    <li>
+                        Solliciter un <i>input</i> de l'utilisateur avec <code>window.prompt()</code>
+                    </li>
+                </ul>
+                </p>
+
+            </section>
+
+
+            <section id="js-operators">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#js-operators">Opérateurs</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>
+                    Un opérateur est un est un symbole qui indique à la machine un calcul ou une action à effectuer à partir des valeurs indiquées à sa gauche, à sa droite ou les deux.
+                </p>
+
+                <section>
+                    <h6>Les opérateurs arithmétiques</h6>
+                    <p> sont probablement l'exemple le plus familier, et permettent de combiner de valeurs de type <code class="language-js">number</code> pour obtenir un autre valeur de type <code class="language-js">number</code>.
+                    </p>
+
+                    <figure>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <td>Opérateur</td>
+                                    <td>Symbole</td>
+                                    <td>Exemple</td>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>addition</td>
+                                        <td>+</td>
+                                        <td><code class="language-js">console.log(2 + 4)</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>soustraction</td>
+                                        <td>-</td>
+                                        <td><code class="language-js">console.log(2 - 4)</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>multiplication</td>
+                                        <td>*</td>
+                                        <td><code class="language-js">console.log(2 * 4)</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>division</td>
+                                        <td>/</td>
+                                        <td><code class="language-js">console.log(2 / 4)</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>puissance</td>
+                                        <td>**</td>
+                                        <td><code class="language-js">console.log(2 ** 4)</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>modulo</td>
+                                        <td>%</td>
+                                        <td><code class="language-js">console.log(2 ** 4)</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </figure>
+
+                </section>
+
+                <section>
+                    <h6>Les opérateurs booleens </h6>
+                </section>
+
+                <section>
+                    <h6>Les opérateurs de comparaison </h6>
+                </section>
+
+                <section>
+                    <h6>Les opérations sur les chaines de caractère </h6>
+                </section>
+            </section>
+            <section id="control-structures">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#control-structures">Structures conditionnelles</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>Une structure conditionnelle est une instruction qui permet de définir si oui on non le bloc d'instruction qui suit doit être exécuté, en fonctions de la condition précisée.</p>
+            </section>
+            <section id="loops">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#loops">Boucles</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>Une boucle est une structure de contôle qui permet de répéter un bloc d'instructions de façon répétitive un certain nombre de fois.
+                    Le nombre de répétitions - ou itérations, peut être défini de façon explicite par un compteur, ou de façon implicite, en fonction de si oui ou non une certaine condition a été atteinte.
+
+                </p>
+
+                <figure>
+                    <div class="sidebyside">
+                        <div>
+                            <pre><code class="language-js">let i = 0;
+while(i&lt;5){
+    console.log(i+" fois");
+    i++;
+}</code></pre>
+                            <hr>
+                            <pre><code class="language-js">for(let i=0; i&lt;5; i++){
+    console.log(i + "fois")
+}</code></pre>
+                        </div>
+
+
+                        <pre>
+                                <code class="console">
+0 fois;
+1 fois;
+2 fois;
+3 fois;
+                                </code>
+                            </pre>
+
+
+
+                </figure>
+
+            </section>
+
+            <section id="objects-and-lists">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#">Objets et listes</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>
+                    Les objets et les listes sont des structures de données qui se distinguent des types primitifs par leur rôle de conteneur.
+                    On peut les voir comme des meubles à tiroirs, dont chaque tiroir peut contenir d'autres tiroirs, ou bien une valeur.
+                </p>
+                <p>Deux choses distinguent les objets des listes.
+                <ul>
+                    <li>
+                        Premièrement, la syntaxe: un objet est signalé par des accolades: <code>{}</code>, alors qu'une liste est signalé par des crochets carrés" <code>[]</code> (mais dans les deux cas les éléments qu'ils contiennent sont séparés par des virgules <code>,</code> )
+                    </li>
+                    <li>
+                        Deuxièmement, chaque "tiroir" d'un objet doit obligatoirement avoir un nom, un peu comme une étiquette, alors que les éléments d'une liste n'en ont pas.
+
+                        Ce nom également appelée clef (<strong class="keyword">key</strong>) ou champ (<strong class="keyword">field</strong>) doit être unique à l'intérieur d'un tiroir.
+                    </li>
+                    <figure>
+                        <pre><code class="language-js">// un exemple d'objet
+let identite = {
+    nom : "Razowski",
+    prenom: "Bob",
+    profession: "monstre",
+    nombreYeux: 1
+}
+
+// un exemple de liste
+let competences = ["Figma","Blender","shitposting","origamis"]</code></pre>
+                    </figure>
+                    <li>
+                        Enfin, dans un objet l'ordre dans lequel on déclare les propriétés n'a pas d'importance - car pour accéder au contenu d'un tiroir on a seulement besoin de connaitre sa clef (ou son étiquette).
+                        Au contraire, l'ordre dans lequel apparaissent les éléments d'une liste est très important, car c'est via leur position qu'on peut y accéder individuellement.
+                    </li>
+                </ul>
+                </p>
+                <p>
+                    Nous disposons d'une syntaxe pour stocker et organiser de l'information dans des conteneur dédiés, mais dans un programme comme dans une maison, le rangement n'est utile que si l'on peut ré-accéder à ce que l'on a rangé.
+                </p>
+                <p>
+                    JavaScript fourni une syntaxe pour accéder au contenus des listes via la position de l'élément recherché, et au contenu des objets via sa clef.
+                    <br>Pour accéder au premier élément d'une liste dont l'identifiant serait <code>maListe</code>, on écrit <code>maListe[0]</code>, car en JavaScript le décompte des éléments commence à partir de 0 et non de 1.
+                </p>
+                <p>
+
+                </p>
+                <figure>
+                    <pre><code class="language-js">let monHamster = {
+    nom : "Poppy",
+    age : 3,
+    vaccins: [{
+        date: "2023-04-12",
+        type: "grippe aviaire"
+    },
+    {
+        date: "2019-02-24",
+        type: "tetanos"
+    }]
+}</code></pre>
+                </figure>
+            </section>
+
+            <section id="functions">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#functions">Fonctions</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>
+                    Lorsqu'une même suite d'instruction est fréquemment utilisée dans un programme, on peut la regrouper dans un sous-programme appelé <strong class="keyword">fonction</strong> - qui joue le rôle de raccourci.
+                    Au lieu de devoir répéter la suite d'instruction à chaque fois que l'on en a besoin, il suffit de demander au programme d'exécuter le sous-programme qui contient cette séquence.
+                </p>
+                <p>
+                    L'action de regrouper des instructions à l'intérieur d'un bloc réutilisable s'appelle la <strong class="keyword">déclaration de la fonction</strong>.
+                    <br>
+                    Ces instructions s'exécutent lors d'une étape qu'on appelle - selon les cas de figure - l'<strong class="keyword">évaluation</strong>, l'<strong class="keyword">appel</strong> ou l'<strong class="keyword">exécution de la fonction</strong>.
+                    Voici une façon de déclarer une fonction, suivi d'un appel
+                </p>
+                <figure>
+                    <pre><code class="language-js">//Declaration de la fonction
+    function maFonction(x){
+        console.log("bonjour, je m'appelle: "+x)
+    }
+    
+    //Appel de la fonction
+    maFonction("Claude")
+    
+    //La console affiche: "Je m'appelle Claude"
+    </code></pre>
+                </figure>
+                <p>La déclaration commence ici par le mot clef <code>function</code>, suivi du nom de la fonction, que l'on peut choisir comme on veut tant que cela respecte les règles de syntaxe.</p>
+                <p>Une fonction peut prendre un ou des <strong class="keyword">paramètres d'entrée</strong>, donnés entre parenthèse juste après le nom de la fonction, qui permette de moduler l'effet de la fonction selon la valeur qui sera affectée à ce paramètre lors de l'appel</p>
+                <p>
+                    Par exemple, admettons que je veuille calculer l'hypothénuse de trois triangles rectangles qui ont tous des bases et des hauteurs différentes.</p>
+                <figure>
+                    <pre><code class="language-js">let b1 = 4
+let h1 = 3
+let b2 = 10
+let h2 = 2.5
+let b3 = 3.4
+let h3 = 6</code></pre>
+                </figure>
+
+                <p>Pour afficher l'hypothénuse du triangle de dimensions h1, b1, on pourrait écrire:</p>
+                <figure>
+                    <pre><code class="language-js">console.log((b1**2 + h1**2)**(1/2))
+console.log((b2**2 + h2**2)**(1/2))
+console.log((b3**2 + h3**2)**(1/2))</code></pre>
+                </figure>
+                <p>
+                    Mais on remarque que ces trois expressions ont la même structure.
+                    On pourrait donc les remplacer par un appel de fonction de calcul d'hypothénuse - préalablement définie - et dont on ferait varier les paramètres à chaque exécution.
+                </p>
+                <figure>
+                    <pre><code class="language-js">function hypothenuse(b,h){
+    return (b**2 + h**2)**(1/2)
+}
+console.log(hypothenuse(b1,h1))
+console.log(hypothenuse(b2,h2))
+console.log(hypothenuse(b3,h3))</code></pre>
+                </figure>
+                </p>
+            </section>
+
+            <section id="methods" data-topic="javascript">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#methods">Méthodes</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>
+                    Une fonction peut être fournie par un objet, c'est à dire stockée dans l'un de ses champs (qu'on a appelé de façon imagée ses "tiroirs").
+                    On y accède donc de la même manière qu'on accède à la valeur d'un champ.
+                </p>
+                <p>
+                    Par exemple, dans le code suivant, je dote mon objet <code class="language-js">personnage</code> d'une méthode <code class="language-js">direBonjour</code>
+                </p>
+                <figure>
+               
+                        <pre><code class="language-js">let personnage = {
+    prenom: "Britney",
+    direBonjour: function(){
+        console.log("it's Britney, b****")
+    }
+                        
+    personnage.direBonjour()
+</code></pre>
+                </figure>
+
+                <p>
+                    Si l'on veut que le comportement d'une méthode dépende des propriétés de l'objet à laquelle elle appartient, on peut se référer à celui-ci en utilisant le mot-clef <code>this</code>
+                </p>
+                <p>
+                    Par exemple, dans l'exemple précédent, si je veux que la fonction <code class="language-js">direBonjour</code>
+                    affiche un message qui dépende de la propriété <code class="language-js">prenom</code>, il faut que je modifie mon objet de la façon suivante.
+                </p>
+                <figure>
+                    <pre><code class="language-js">let personnage = {
+prenom: "Britney",
+direBonjour: function(){
+    console.log("it's" + this.prenom + ", b****")
+}
+                    
+personnage.direBonjour()
+</code></pre>
+            </figure>
+            </section>
+            <section id="dom-api" data-topic="javascript">
+                <hgroup>
+                    <h4 class="clip-background"><a href="#dom-api">Les interfaces applicatives de l'objet Document</a>
+                        <div class="list-icon">≡</div>
+                    </h4>
+                </hgroup>
+                <p>
+                    Lors du chargement d'une page web, le navigateur crée un objet qui sert en quelque sorte "jumeau" de la page HTML en JavaScript, qu'on appelle l'objet document, ou <i>Document Object</i> en anglais.
+                    Lorsque nos actions affectent la page par l'intermédiaire de scripts, c'est cet objet qui est manipulé.
+                    Le navigateur s'occupe à tout instant de répercuter les modifications faites sur l'un vers l'autre.
+                </p>
+                <p>
+                    Cet objet Document n'a pas besoin d'être chargé ou déclaré manuellement dans un script.
+                    Il est mis à disposition par défaut par le navigateur - tout comme d'autres objets comme l'objet <i>fenêtre</i> (<strong class="keyword">Window</strong>)
+                    Il donne accès à toute l'arborescence des blocs de contenu, leurs attributs et propriétés de style, et fournit de nombreuses fonctions pour les parcourir et les modifier.
+                </p>
+                <p>
+                    Quelle que soit la page, l'objet Document correspondant donnera toujours accès aux mêmes propriétés et méthodes, car sa structure respecte le Modèle d'objet document - ou <strong class="keyword">Document Object Model</strong> défini par le World Wide Web Consortium.
+                </p>
+                <p>
+                    Par exemple, la méthode suivante permet de récupérer l'élément HTML portant l'identifiant <code>ex1</code> et de le stocker dans une variable appelée <code>a</code>
+                </p>
+
+                <figure>
+                    <pre>
+                        <code class="language-js">let a = document.getElementById("ex1")</code>
+                    </pre>
+                </figure>
+                <p>
+                    L'ensemble des fonctionnalités mise à disposition par un objet externe au programme que l'on écrit est appelée <i>Interface de Programmation Applicative</i>, ou en anglais <strong class="keyword">API: Application Programming Interface</strong>.
+                </p>
+                <p>
+                    Chacun des éléments de l'arborescence de contenu HTML stockée dans l'objet document est lui même un objet JavaScript, dont les propriétés reflètent (entre autres) les attributs de l'élément HTML correspondant.
+                </p>
+                <p>
+                    Par exemple, la propriété <code>classList</code> regroupe l'ensemble des classes déclarées dans l'attribut <code>class</code> de l'élément HTML correspondant.
+                    On peut l'afficher en utilisant la syntaxe d'accès à une propriété d'un objet.
+                    En admettant que l'on s'intéresse à l'élément stocké dans la variable <code>a</code> de l'exemple précédent, celà donne:
+                </p>
+                <figure>
+                    <pre>
+                        <code class="language-js">console.log(a.classList)</code>
+                    </pre>
+                </figure>
+                <figure>
+                    <pre>
+                        <code class="language-js">// Crée une variable qui stocke le premier élément de type div trouvé dans la page
+
+let monDiv = document.querySelector("div")
+
+// Crée une variable qui stocke une liste de tous les éléments de type div trouvés dans la page
+
+let elements = document.querySelectorAll("div")
+
+// Crée une variable qui stocke une liste de tous les éléments avec la classe "sticker" à l'intérieur de monDiv
+
+let stickersDuDiv = monDiv.querySelectorAll(".sticker")
+                        </code>
+                    </pre>
+                </figure>
+
+
+
+                <!-- <section data-topic="javascript html" class="activite cutout-style">Ecrire un script pour supprimer du contenu sur une page </section>
+                <section data-topic="javascript css" class="activite cutout-style">Ecrire un script pour injecter une feuille de style sur une page </section>
+    
+                <section class="activite cutout-style">Générer du contenu HTML répétitif de façon automatisée à partir d'un jeu de données </section> -->
+            </section>
+
+
+
+            <!-- <figure>
+                <pre>
+                    <code class="language-js">
+    document.querySelectorAll('div[class^="ad-"]').forEach(div => div.remove());
+                    </code>
+                </pre>
+            </figure> -->
+
+            <!--        
+            <section id="event-listeners">
+                <h4 href="#">Détecteurs d'évènements
+                </h4>
+            </section>
+            <section class="activite cutout-style">
+                Appliquer des styles à des images
+            </section>
+    
+            <section id="event-api">
+                <h4 href="#event-api">
+                    L'API Event
+                </h4>
+            </section>
+            -->
+
+        </section>
+        <hr>
+        <section>
+            <hgroup>
+                <h3>Tutoriels</h3>
+            </hgroup>
+
+            <section class="activite cutout-style">Réaliser une liste dépliable </section>
+            <section class="activite cutout-style">Créer une barre de menu </section>
+            <section class="activite cutout-style">Faire un carroussel défilable horizontalement </section>
+            <section class="activite cutout-style">Event handlers: scroll-reactive animation </section>
+            <section class="activite cutout-style">Interaction drag and drop </section>
+            <section class="activite cutout-style">Créer une interface de tri </section>
+            <section class="activite cutout-style">Interface instrumentale pour personaliser son site </section>
+        </section>
+        <hr>
+        <section id="ressources">
+            <hgroup>
+                <h3>Ressources</h3>
+            </hgroup>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a href="https://cbracco.github.io/html5-test-page/">Exemple de document HTML utilisant toutes les balises de contenu</a>
+                    </li>
+                    <li>
+                        <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Guide pour Flexbox #1</a>
+                    </li>
+                    <li>
+                        <a href="http://www.robot24.fr/wp-content/3eme/siteweb/chapitre4/memento-des-proprietes-css.html">Memento des propriétés CSS</a>
+                    </li>
+                    <li>
+                        <a href="https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/">Guide pour Flexbox #2</a>
+                    </li>
+                    <li>Editeurs de code
+                        <ul>
+                            <li>Replit (en ligne)</li>
+                            <li>JSFiddle (en ligne)</li>
+                            <li><a href="https://codepen.io/">CodePen (en ligne)</a></li>
+                            <li>SublimeText</li>
+                        </ul>
+                    </li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics">Bases de la mise en forme avec CSS</a></li>
+                    <li>
+                        <a href="https://picsum.photos">Picsum - l'équivalent de Lorem Ipsum pour les images</a>
+                    </li>
+                    <li>
+                        <a href="./examen.html">Lien vers le corrigé de l'examen</a>
+                    </li>
+                    <li>
+                        <a href="http://www.robot24.fr/wp-content/3eme/siteweb/chapitre4/memento-des-proprietes-css.html">Résumé des principales propriétés de style</a>
+                    </li>
+                </ul>
+
+                <!-- Pour de l'inspiration https://www.awwwards.com/websites/sites_of_the_day/ -->
+                <!-- https://web.archive.org/web/20181024111631/https://www.grow.paris/ -->
+            </nav>
+        </section>
+        <section id="ressources">
+            <hgroup>
+                <h3>Inspiration</h3>
+            </hgroup>
+
+            <nav>
+                Le Web Crado
+                <ul>
+                    <li>
+                        <a href="https://arngren.net">Arngren.net</a>
+                        <a href="http://www.seiryu-kan.com">Seiryu Kan</a>
+                        <a href="https://www.lingscars.com">Lings Cars</a>
+                    </li>
+
+                </ul>
+                Le Web Cool
+                <ul>
+                    <li>
+                        <a href="https://web.archive.org/web/20181024111631/https://www.grow.paris/">Festival GROW 2018</a>
+                    </li>
+                </ul>
+                <!-- Pour de l'inspiration https://www.awwwards.com/websites/sites_of_the_day/ -->
+                <!-- https://web.archive.org/web/20181024111631/https://www.grow.paris/ -->
+            </nav>
+        </section>
+    </main>
+    <!-- <div id="app"></div> -->
+   
+</body>
+
+<script>
+    function changeColor() {
+        let a = document.querySelectorAll("h4>a");
+        for (let i = 0; i < a.length; i++) {
+            a[i].style.color = "red";
+        }
+
+    }
+
+    function displayContent(e) {
+        let h4 = e.target.parentElement
+        const initialOffset = h4.getBoundingClientRect().top;
+        document.querySelectorAll("*").forEach(element => element.classList.remove("hidden", "content-list-item", "shrink"))
+        const newOffset = h4.getBoundingClientRect().top + window.scrollY;
+        h4.parentElement.scrollIntoView()
+
+    }
+    function toggleMenu(e) {
+        let target = e.target
+        let h4 = e.target.parentElement
+        let hgroup = h4.parentElement
+        let section = hgroup.parentElement
+        const initialOffset = hgroup.getBoundingClientRect().top;
+
+        document.querySelectorAll('hr').forEach(element => (
+            element.classList.add("shrink")
+        ))
+        collapseSectionToTitleLevels(["h4", "h5", "h6"]);
+        document.querySelectorAll("hgroup:has(h4), h4, h4>a, h4>.list-icon").forEach(element => element.classList.add("content-list-item"))
+
+        section.scrollIntoView()
+    }
+
+    function collapseSectionToTitleLevels(titleTags) {
+        titleTags.forEach(
+            titleTag => { document.querySelectorAll("hgroup:has(" + titleTag + ")~*").forEach(elem => { elem.classList.add("shrink") }) }
+        )
+    }
+    Array.from(document.querySelectorAll("h4>.list-icon")).forEach(x => {
+        x.addEventListener("click", toggleMenu);
+    })
+
+    Array.from(document.querySelectorAll("h4>a")).forEach(x => {
+        x.addEventListener("click", displayContent);
+    })
+
+
+
+</script>
+<!-- <script src="/src/pages/display-and-position.js"></script> -->
+
+
 </html>
