@@ -10,17 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Fira+Code:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/style.css">
     <link rel="stylesheet" href="/src/pages/display-and-position.css">
-    <!-- <link rel="stylesheet" href="./highlight/styles/default.css"> -->
-    <!-- <script src="./highlight/highlight.js"></script>
-    <script>hljs.highlightAll();</script>
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            document.querySelectorAll('code').forEach((el) => {
-                hljs.highlightElement(el);
-            });
-        });
-    </script> -->
-
 </head>
 
 <body>
@@ -121,44 +110,29 @@
                     <li>
                         <h6>Empaquettage de la requête serveur</h6>
                         <p>
-                            L'ordinateur crée une requête HTTP, l'encapsule
-                            dans ce qu'on appelle un paquet TCP/IP.
-                            C'est grosso modo l'équivalent électronique d'une
-                            courier en recommandé:
-                            Il est composé d'un <i>header</i> (ou en-tête) -
-                            comportant les addresse IP du destinataire et de
-                            l'emetteur, ainsi que tout en tas de certificat -
-                            et d'une zone de contenu, qui comme une
-                            enveloppe,
-                            impose des limites sur la taille de ce que l'on
-                            peut envoyer.
+                            L'ordinateur crée une requête HTTP, l'encapsule dans ce qu'on appelle un paquet TCP/IP.
+                            C'est grosso modo l'équivalent électronique d'une courier en recommandé:
+                            Il est composé d'un <i>header</i> (ou en-tête) - comportant les addresse IP du destinataire et de l'emetteur, ainsi que tout en tas de certificat - et d'une zone de contenu, qui comme une enveloppe, impose des limites sur la taille de ce que l'on peut envoyer.
                         </p>
                     </li>
                     <li>
                         <h6>Premier routage</h6>
                         <p>
-                            Le paquet est envoyé vers le <strong>routeur</strong> (la boîte Wifi). Le routeur consulte sa table de routage. Si l'IP de
-                            destination n'est pas sur le réseau local, le paquet est envoyé au réseau du <strong>Fournisseur d'Accès à Internet</strong>.
+                            Le paquet est envoyé vers le <strong>routeur</strong> (la boîte Wifi).
+                            Le routeur consulte sa table de routage. Si l'IP de destination n'est pas sur le réseau local, le paquet est envoyé au réseau du <strong>Fournisseur d'Accès à Internet</strong>.
                         </p>
                     </li>
                     <li>
                         <h6>Routage par le FAI</h6>
                         <p>
-                            Le paquet circule à travers plusieurs routeurs du
-                            réseau du <strong>FAI</strong>, sachant que
-                            chaque
-                            routeur ignore à quoi sont connectés les autres.
-                            Ces routeurs examinent l'IP de destination et
-                            décident du routeur auquel envoyer le paquet pour
-                            le
-                            rapprocher de sa destination finale.
+                            Le paquet circule à travers plusieurs routeurs du réseau du <strong>FAI</strong>, sachant que chaque routeur ignore à quoi sont connectés les autres.
+                            Ces routeurs examinent l'IP de destination et décident du routeur auquel envoyer le paquet pour le rapprocher de sa destination finale.
                         </p>
 
                     </li>
                     <li>
                         <h6>Routage à travers la Dorsale d'internet</h6>
                         <p>
-
                             Une fois que le paquet quitte le réseau du FAI, il
                             passe dans la dorsale d'internet (le
                             backbone),
@@ -326,24 +300,15 @@
                     </figcaption>
                 </figure>
                 <p>
-                    En informatique, on appelle les éléments d'une structure
-                    arborescente des nodes ou noeuds.
-                    Chaque node peut avoir plusieurs descendants ou enfants
-                    (children), mais par définition, n'a qu'un seul
-                    parent, sinon ce ne serait pas un arbre.
-                    Les noeuds d'une arborescence html sont appelé des
-                    éléments.
+                    En informatique, on appelle les éléments d'une structure arborescente des nodes ou noeuds.
+                    Chaque node peut avoir plusieurs descendants ou enfants (children), mais par définition, n'a qu'un seul parent, sinon ce ne serait pas un arbre.
+                    Les noeuds d'une arborescence html sont appelé des éléments.
                 </p>
                 <p>
-                    Tout comme pour les dossiers d'un ordinateur, une autre
-                    façon de se représenter mentalement une
-                    structure
-                    d'arbre consiste à voir les choses comme un emboitement de
+                    Tout comme pour les dossiers d'un ordinateur, une autre façon de se représenter mentalement une
+                    structure d'arbre consiste à voir les choses comme un emboitement de
                     tiroirs.
-                    Dans les deux cas la hiérarchie est la même: Un tiroir peut
-                    contenir plusieurs tiroirs (ses enfants),
-                    mais
-                    ne peut être contenu que par un seul tiroir (le parent).
+                    Dans les deux cas la hiérarchie est la même: Un tiroir peut contenir plusieurs tiroirs (ses enfants), mais ne peut être contenu que par un seul tiroir (le parent).
                 </p>
 
                 <section class="activite cutout-style">
@@ -351,22 +316,11 @@
                 </section>
 
                 <p>Voici un exemple de document au format HTML.
-                    Le contenu est structuré de façon hiérarchique en
-                    imbriquant des éléments à l'intérieur d'autres.
+                    Le contenu est structuré de façon hiérarchique en imbriquant des éléments à l'intérieur d'autres.
                     <br>
-                    Pour délimiter ces "tiroirs" que sont les éléments, la
-                    syntaxe du langage HTML utilise ce qu'on appelle
-                    des
-                    <strong class="keyword">balises</strong> - ou plus
-                    précisément des paires constituées d'une balise
-                    d'ouverture et de sa balise de fermeture
-                    correspondante.
-                    Une balise d'ouverture s'écrit (presque) toujours
-                    <code>&lt;</code> + <code>type de la balise</code> +
-                    <code>&gt;</code>, et une balise de fermeture s'écrit
-                    toujours: <code>&lt;/</code> +
-                    <code>type de la balise</code> + <code>&gt;</code>
-
+                    Pour délimiter ces "tiroirs" que sont les éléments, la syntaxe du langage HTML utilise ce qu'on appelle des <strong class="keyword">balises</strong> - ou plus précisément des paires constituées d'une balise d'ouverture et de sa balise de fermeture correspondante.
+                    Une balise d'ouverture s'écrit (presque) toujours <code>&lt;</code> + <code>type de la balise</code> + <code>&gt;</code>, et une balise de fermeture s'écrit
+                    toujours: <code>&lt;/</code> + <code>type de la balise</code> + <code>&gt;</code>
                 </p>
                 <figure id="sample-html-doc">
                     <pre>
@@ -390,7 +344,6 @@
     &lt;/html&gt;
                         </code>
                     </pre>
-
                     <figcaption class="numbered">
                         Un example minimaliste de document HTML
                     </figcaption>
@@ -594,7 +547,7 @@
                                 <div style="padding:1em;">
                                     <h5 style="margin: 0">Scénario avec balises sémantiques</h5>
                                     <ol>
-                                        <li>Marie active le mode de navigation avec son lecteur d'écran.</li>
+                                        <li>Marie active le mode de navigation avec un logiciel de lecture d'écran, disons NVDA par exemple</li>
                                         <li>NVDA détecte les balises sémantiques dans le code HTML, notamment
                                             <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, et <code>&lt;article&gt;</code>.
                                         </li>
@@ -1530,6 +1483,7 @@ h3{
                                 Groupage de sélecteurs
                             </strong>
                             <br>
+                            Si on veut qu'une même règle de style s'applique à des éléments ciblés par des sélecteurs différents, on peut les grouper en les séparant par une virgule.
 
                         </li>
                         <li>
@@ -1570,8 +1524,8 @@ h3{
                         <br>
                         On utilise pour cela des pseudo-classes, repérables par le préfixe <code> : </code>
                     </p>
-                    <p>
-                        <todo>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo ad at, in soluta consectetur voluptate dolor quod itaque laboriosam suscipit impedit nobis aliquam minima, culpa magni et corporis officiis voluptatibus.</todo>
+                    <p class="todo">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo ad at, in soluta consectetur voluptate dolor quod itaque laboriosam suscipit impedit nobis aliquam minima, culpa magni et corporis officiis voluptatibus.
                     </p>
                 </section>
             </section>
@@ -1721,22 +1675,25 @@ h3{
                     Par défaut lorsque l'on crée une variable et qu'on lance le programme qui la contient, cette variable n'existe nulle part ailleurs que dans la mémoire de l'ordinateur: elle n'a aucune manifestation visible - que ce soit sous forme de texte, d'élément d'interface ou autre.
                 </p>
                 <p>
-
+                    En fait, avant l'invention de la souris et des interfaces graphiques, la seule façon de communiquer avec un ordinateur - ou de le programmer - était de lui envoyer des instructions sous forme de texte.
+                    C'est ce qu'on appelle l'<strong class="keyword">interaction en ligne de commande</strong>, qui se fait dans une fenêtre dédiée appelée <strong class="keyword">console </strong> ou terminal.
                 </p>
-
                 <p>
-
-                <ul>
-                    <li>Utiliser l'inspecteur pour accéder à la console</li>
-                    <li>
-                        Lire la valeur d'une variable avec <code>console.log()</code>
-                    </li>
-                    <li>
-                        Solliciter un <i>input</i> de l'utilisateur avec <code>window.prompt()</code>
-                    </li>
-                </ul>
+                    En fait une console n'est pas si différente d'une calculatrice en terme d'interaction, c'est juste que les instructions sont plus complexes et que le résultat est plus riche.
+                    Evidemment pour coder des sites entiers on a besoin de plus qu'une simple console, mais c'est un bon point de départ pour apprendre les bases de la programmation.
                 </p>
-
+                <p>
+                    Outre les opérateurs et mots clefs abordés jusqu'ici, il y a deux instructions indispensables pour interagir avec un programme JavaScript via la console:
+                    <code>console.log(...)</code> pour afficher une valeur dans la console, et <code>window.prompt(...)</code> pour solliciter la saisie d'une valeur de la part de l'utilisateur.
+                </p>
+                <figure>
+                    <pre>
+                        <code class="language-js">let x = 2;
+console.log(x);
+let y = window.prompt("Entrez un nombre");
+console.log("Le triple de " + y + " est " + y * 3);</code>
+                    </pre>
+                </figure>
             </section>
 
 
@@ -1828,9 +1785,9 @@ h3{
                         <div class="list-icon">≡</div>
                     </h4>
                 </hgroup>
-                <p>Une boucle est une structure de contôle qui permet de répéter un bloc d'instructions de façon répétitive un certain nombre de fois.
+                <p>
+                    Une boucle est une structure de contôle qui permet de répéter un bloc d'instructions de façon répétitive un certain nombre de fois.
                     Le nombre de répétitions - ou itérations, peut être défini de façon explicite par un compteur, ou de façon implicite, en fonction de si oui ou non une certaine condition a été atteinte.
-
                 </p>
 
                 <figure>
@@ -1856,11 +1813,10 @@ while(i&lt;5){
 3 fois;
                                 </code>
                             </pre>
-
-
-
                 </figure>
-
+                <p>
+                    Il existe d'autres façons de répéter un bloc d'instructions, mais elles font appel à la notion de méthodes, qui sont abordées un peu plus loin.
+                </p>
             </section>
 
             <section id="objects-and-lists">
@@ -1905,7 +1861,7 @@ let competences = ["Figma","Blender","shitposting","origamis"]</code></pre>
                     Nous disposons d'une syntaxe pour stocker et organiser de l'information dans des conteneur dédiés, mais dans un programme comme dans une maison, le rangement n'est utile que si l'on peut ré-accéder à ce que l'on a rangé.
                 </p>
                 <p>
-                    JavaScript fourni une syntaxe pour accéder au contenus des listes via la position de l'élément recherché, et au contenu des objets via sa clef.
+                    JavaScript fournit une syntaxe pour accéder au contenus des listes via la position de l'élément recherché, et au contenu des objets via sa clef.
                     <br>Pour accéder au premier élément d'une liste dont l'identifiant serait <code>maListe</code>, on écrit <code>maListe[0]</code>, car en JavaScript le décompte des éléments commence à partir de 0 et non de 1.
                 </p>
                 <p>
@@ -2003,8 +1959,8 @@ console.log(hypothenuse(b3,h3))</code></pre>
                     Par exemple, dans le code suivant, je dote mon objet <code class="language-js">personnage</code> d'une méthode <code class="language-js">direBonjour</code>
                 </p>
                 <figure>
-               
-                        <pre><code class="language-js">let personnage = {
+
+                    <pre><code class="language-js">let personnage = {
     prenom: "Britney",
     direBonjour: function(){
         console.log("it's Britney, b****")
@@ -2030,7 +1986,7 @@ direBonjour: function(){
                     
 personnage.direBonjour()
 </code></pre>
-            </figure>
+                </figure>
             </section>
             <section id="dom-api" data-topic="javascript">
                 <hgroup>
@@ -2214,7 +2170,7 @@ let stickersDuDiv = monDiv.querySelectorAll(".sticker")
     </main>
     <!-- <div id="app"></div> -->
     <script type="module" src="/src/main.js"></script>
-   
+
 </body>
 
 <script>

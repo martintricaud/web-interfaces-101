@@ -9,8 +9,6 @@
 body {
   counter-reset: chapter section figure;
   margin: 0;
-
-  /* padding-bottom: 1rem; */
   background: var(--gradient1);
   background-attachment: fixed;
 }
@@ -42,8 +40,6 @@ h4::before {
   counter-increment: section;
   content: counter(chapter) "." counter(section) " ";
 } */
-
-
 
 
 hgroup{
@@ -121,9 +117,6 @@ h6 {
 section:last-child>h4::before {
   content: "└─ ";
 }
-
-
-
 
 
 p, li {
@@ -369,12 +362,9 @@ pre>code {
   all: revert;
   font-family: initial;
   margin: initial;
-  /* position: absolute;
-  left: 0; */
   width: 100%;
   background-color: white;
 
-  /* width: 100vw; */
   &.out-of-flow {
       &::after {
           position: static;
