@@ -438,7 +438,8 @@ pre>code {
   margin: 4rem auto;
 }
 
-activite>h5 {
+activite>a {
+  margin-top: 0;
   font-size: 1.2em;
   text-align: center;
   font-style: normal;
