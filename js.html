@@ -1,0 +1,507 @@
+<hgroup>
+    <h3>Javascript</h3>
+</hgroup>
+
+<p>
+    Javascript est un langage de programmation qui a été inventé pour permettre la manipulation de contenu multimédia par les navigateurs lors d'une session utilisateur.
+    Auparavant, l'interactivité des pages Web reposait essentiellement sur Flash - qui a été pratiquement remplacée par Javascript.
+    La génération automatique de contenu en réaction a des actions utilisateurs était gérée bien souvent par des programmes écrit en PHP, qui génèrent des pages HTML depuis un serveur.
+</p>
+<!-- <figure>
+    <div class="sidebyside">
+        <canvas>
+
+        </canvas>
+    </div>
+</figure> -->
+<section id="js-concepts">
+    <hgroup>
+        <h4 class="clip-background"><a href="#js-concepts">Concepts de base</a>
+            <div class="list-icon">≡</div>
+        </h4>
+    </hgroup>
+    <p>Un programme est un ensemble d'instructions écrites dans un langage doté de règles strictes - en tout cas plus strictes que le langage humain - afin de garantir que les instructions puissent être interprétées et executées de façon prévisible par un ordinateur.</p>
+
+    <p>
+        Une variable est un conteneur d'information identifiable par un nom, que l'on appelle également l'<strong class="keyword">identifiant</strong> de la variable.
+        Le contenu de ce conteneur d'information est appelé valeur.
+
+    </p>
+
+
+    <p> L'action de créer une variable s'appelle la <strong class="keyword">déclaration</strong>, et le fait de lui attribuer une valeur s'appelle l'<strong class="keyword">assignation</strong>
+        La déclaration se fait avec le mot clef <code class="language-js">let</code> et l'assignation avec le symbole <code>=</code> comme dans <code class="language-js">let a = 124</code>
+    </p>
+
+    <p>
+        Certains langages imposent lors de la déclaration d'une variable de rajouter une annotation qui précise le <strong class="keyword">type</strong> d'informations qu'elle est autorisée à contenir.
+        <br>
+        JavaScript n'impose pas une telle précision, car le langage déduit automatiquement le type de la variable à partir de sa valeur.
+        Ce type peut être
+    </p>
+    <ul>
+        <li>Un nombre (number) comme dans <figure class="inline-fig">
+                <code class="language-js">let x = 123</code>
+            </figure>
+        </li>
+        <li>Une chaine de caractère (string), comme dans <figure class="inline-fig">
+                <code class="language-js">let nom = "Nadia"</code>
+            </figure>
+        </li>
+        <li>
+            Une valeur <strong class="keyword">booléenne</strong>, qui ne peut prendre que deux valeurs: <code>true</code> ou <code>false</code>, comme dans:
+            <figure class="inline-fig">
+                <code class="language-js">let ouvert = false</code>
+            </figure>
+        </li>
+    </ul>
+
+</section>
+
+
+<section>
+    <hgroup>
+        <h4 class="clip-background"><a href="#">Interaction en ligne de commande</a>
+            <div class="list-icon">≡</div>
+        </h4>
+    </hgroup>
+
+    <p>
+        Par défaut lorsque l'on crée une variable et qu'on lance le programme qui la contient, cette variable n'existe nulle part ailleurs que dans la mémoire de l'ordinateur: elle n'a aucune manifestation visible - que ce soit sous forme de texte, d'élément d'interface ou autre.
+    </p>
+    <p>
+        En fait, avant l'invention de la souris et des interfaces graphiques, la seule façon de communiquer avec un ordinateur - ou de le programmer - était de lui envoyer des instructions sous forme de texte.
+        C'est ce qu'on appelle l'<strong class="keyword">interaction en ligne de commande</strong>, qui se fait dans une fenêtre dédiée appelée <strong class="keyword">console </strong> ou terminal.
+    </p>
+    <p>
+        En fait une console n'est pas si différente d'une calculatrice en terme d'interaction, c'est juste que les instructions sont plus complexes et que le résultat est plus riche.
+        Evidemment pour coder des sites entiers on a besoin de plus qu'une simple console, mais c'est un bon point de départ pour apprendre les bases de la programmation.
+    </p>
+    <p>
+        Outre les opérateurs et mots clefs abordés jusqu'ici, il y a deux instructions indispensables pour interagir avec un programme JavaScript via la console:
+        <code>console.log(...)</code> pour afficher une valeur dans la console, et <code>window.prompt(...)</code> pour solliciter la saisie d'une valeur de la part de l'utilisateur.
+    </p>
+    <figure>
+        <pre>
+            <code class="language-js">let x = 2;
+console.log(x);
+let y = window.prompt("Entrez un nombre");
+console.log("Le triple de " + y + " est " + y * 3);</code>
+        </pre>
+    </figure>
+</section>
+
+
+<section id="js-operators">
+    <hgroup>
+        <h4 class="clip-background"><a href="#js-operators">Opérateurs</a>
+            <div class="list-icon">≡</div>
+        </h4>
+    </hgroup>
+    <p>
+        Un opérateur est un est un symbole qui indique à la machine un calcul ou une action à effectuer à partir des valeurs indiquées à sa gauche, à sa droite ou les deux.
+    </p>
+
+    <section>
+        <h6>Les opérateurs arithmétiques</h6>
+        <p> sont probablement l'exemple le plus familier, et permettent de combiner de valeurs de type <code class="language-js">number</code> pour obtenir un autre valeur de type <code class="language-js">number</code>.
+        </p>
+
+        <figure>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <td>Opérateur</td>
+                        <td>Symbole</td>
+                        <td>Exemple</td>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>addition</td>
+                            <td>+</td>
+                            <td><code class="language-js">console.log(2 + 4)</code></td>
+                        </tr>
+                        <tr>
+                            <td>soustraction</td>
+                            <td>-</td>
+                            <td><code class="language-js">console.log(2 - 4)</code></td>
+                        </tr>
+                        <tr>
+                            <td>multiplication</td>
+                            <td>*</td>
+                            <td><code class="language-js">console.log(2 * 4)</code></td>
+                        </tr>
+                        <tr>
+                            <td>division</td>
+                            <td>/</td>
+                            <td><code class="language-js">console.log(2 / 4)</code></td>
+                        </tr>
+                        <tr>
+                            <td>puissance</td>
+                            <td>**</td>
+                            <td><code class="language-js">console.log(2 ** 4)</code></td>
+                        </tr>
+                        <tr>
+                            <td>modulo</td>
+                            <td>%</td>
+                            <td><code class="language-js">console.log(2 ** 4)</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </figure>
+
+    </section>
+
+    <section>
+        <h6>Les opérateurs booleens </h6>
+    </section>
+
+    <section>
+        <h6>Les opérateurs de comparaison </h6>
+    </section>
+
+    <section>
+        <h6>Les opérations sur les chaines de caractère </h6>
+    </section>
+</section>
+<section id="control-structures">
+    <hgroup>
+        <h4 class="clip-background"><a href="#control-structures">Structures conditionnelles</a>
+            <div class="list-icon">≡</div>
+        </h4>
+    </hgroup>
+    <p>Une structure conditionnelle est une instruction qui permet de définir si oui on non le bloc d'instruction qui suit doit être exécuté, en fonctions de la condition précisée.</p>
+</section>
+<section id="loops">
+    <hgroup>
+        <h4 class="clip-background"><a href="#loops">Boucles</a>
+            <div class="list-icon">≡</div>
+        </h4>
+    </hgroup>
+    <p>
+        Une boucle est une structure de contôle qui permet de répéter un bloc d'instructions de façon répétitive un certain nombre de fois.
+        Le nombre de répétitions - ou itérations, peut être défini de façon explicite par un compteur, ou de façon implicite, en fonction de si oui ou non une certaine condition a été atteinte.
+    </p>
+
+    <figure>
+        <div class="sidebyside">
+            <div>
+                <pre><code class="language-js">let i = 0;
+while(i&lt;5){
+console.log(i+" fois");
+i++;
+}</code></pre>
+                <hr>
+                <pre><code class="language-js">for(let i=0; i&lt;5; i++){
+console.log(i + "fois")
+}</code></pre>
+            </div>
+
+
+            <pre>
+                    <code class="console">
+0 fois;
+1 fois;
+2 fois;
+3 fois;
+                    </code>
+                </pre>
+    </figure>
+    <p>
+        Il existe d'autres façons de répéter un bloc d'instructions, mais elles font appel à la notion de méthodes, qui sont abordées un peu plus loin.
+    </p>
+</section>
+
+<section id="objects-and-lists">
+    <hgroup>
+        <h4 class="clip-background"><a href="#">Objets et listes</a>
+            <div class="list-icon">≡</div>
+        </h4>
+    </hgroup>
+    <p>
+        Les objets et les listes sont des structures de données qui se distinguent des types primitifs par leur rôle de conteneur.
+        On peut les voir comme des meubles à tiroirs, dont chaque tiroir peut contenir d'autres tiroirs, ou bien une valeur.
+    </p>
+    <p>Deux choses distinguent les objets des listes.
+    <ul>
+        <li>
+            Premièrement, la syntaxe: un objet est signalé par des accolades: <code>{}</code>, alors qu'une liste est signalé par des crochets carrés" <code>[]</code> (mais dans les deux cas les éléments qu'ils contiennent sont séparés par des virgules <code>,</code> )
+        </li>
+        <li>
+            Deuxièmement, chaque "tiroir" d'un objet doit obligatoirement avoir un nom, un peu comme une étiquette, alors que les éléments d'une liste n'en ont pas.
+
+            Ce nom également appelée clef (<strong class="keyword">key</strong>) ou champ (<strong class="keyword">field</strong>) doit être unique à l'intérieur d'un tiroir.
+        </li>
+        <figure>
+            <pre><code class="language-js">// un exemple d'objet
+let identite = {
+nom : "Razowski",
+prenom: "Bob",
+profession: "monstre",
+nombreYeux: 1
+}
+
+// un exemple de liste
+let competences = ["Figma","Blender","shitposting","origamis"]</code></pre>
+        </figure>
+        <li>
+            Enfin, dans un objet l'ordre dans lequel on déclare les propriétés n'a pas d'importance - car pour accéder au contenu d'un tiroir on a seulement besoin de connaitre sa clef (ou son étiquette).
+            Au contraire, l'ordre dans lequel apparaissent les éléments d'une liste est très important, car c'est via leur position qu'on peut y accéder individuellement.
+        </li>
+    </ul>
+    </p>
+    <p>
+        Nous disposons d'une syntaxe pour stocker et organiser de l'information dans des conteneur dédiés, mais dans un programme comme dans une maison, le rangement n'est utile que si l'on peut ré-accéder à ce que l'on a rangé.
+    </p>
+    <p>
+        JavaScript fournit une syntaxe pour accéder au contenus des listes via la position de l'élément recherché, et au contenu des objets via sa clef.
+        <br>Pour accéder au premier élément d'une liste dont l'identifiant serait <code>maListe</code>, on écrit <code>maListe[0]</code>, car en JavaScript le décompte des éléments commence à partir de 0 et non de 1.
+    </p>
+    <p>
+
+    </p>
+    <figure>
+        <pre><code class="language-js">let monHamster = {
+nom : "Poppy",
+age : 3,
+vaccins: [{
+date: "2023-04-12",
+type: "grippe aviaire"
+},
+{
+date: "2019-02-24",
+type: "tetanos"
+}]
+}</code></pre>
+    </figure>
+</section>
+
+<section id="functions">
+    <hgroup>
+        <h4 class="clip-background"><a href="#functions">Fonctions</a>
+            <div class="list-icon">≡</div>
+        </h4>
+    </hgroup>
+    <p>
+        Lorsqu'une même suite d'instruction est fréquemment utilisée dans un programme, on peut la regrouper dans un sous-programme appelé <strong class="keyword">fonction</strong> - qui joue le rôle de raccourci.
+        Au lieu de devoir répéter la suite d'instruction à chaque fois que l'on en a besoin, il suffit de demander au programme d'exécuter le sous-programme qui contient cette séquence.
+    </p>
+    <p>
+        L'action de regrouper des instructions à l'intérieur d'un bloc réutilisable s'appelle la <strong class="keyword">déclaration de la fonction</strong>.
+        <br>
+        Ces instructions s'exécutent lors d'une étape qu'on appelle - selon les cas de figure - l'<strong class="keyword">évaluation</strong>, l'<strong class="keyword">appel</strong> ou l'<strong class="keyword">exécution de la fonction</strong>.
+        Voici une façon de déclarer une fonction, suivi d'un appel
+    </p>
+    <figure>
+        <pre><code class="language-js">//Declaration de la fonction
+function maFonction(x){
+console.log("bonjour, je m'appelle: "+x)
+}
+
+//Appel de la fonction
+maFonction("Claude")
+
+//La console affiche: "Je m'appelle Claude"
+</code></pre>
+    </figure>
+    <p>La déclaration commence ici par le mot clef <code>function</code>, suivi du nom de la fonction, que l'on peut choisir comme on veut tant que cela respecte les règles de syntaxe.</p>
+    <p>Une fonction peut prendre un ou des <strong class="keyword">paramètres d'entrée</strong>, donnés entre parenthèse juste après le nom de la fonction, qui permette de moduler l'effet de la fonction selon la valeur qui sera affectée à ce paramètre lors de l'appel</p>
+    <p>
+        Par exemple, admettons que je veuille calculer l'hypothénuse de trois triangles rectangles qui ont tous des bases et des hauteurs différentes.</p>
+    <figure>
+        <pre><code class="language-js">let b1 = 4
+let h1 = 3
+let b2 = 10
+let h2 = 2.5
+let b3 = 3.4
+let h3 = 6</code></pre>
+    </figure>
+
+    <p>Pour afficher l'hypothénuse du triangle de dimensions h1, b1, on pourrait écrire:</p>
+    <figure>
+        <pre><code class="language-js">console.log((b1**2 + h1**2)**(1/2))
+console.log((b2**2 + h2**2)**(1/2))
+console.log((b3**2 + h3**2)**(1/2))</code></pre>
+    </figure>
+    <p>
+        Mais on remarque que ces trois expressions ont la même structure.
+        On pourrait donc les remplacer par un appel de fonction de calcul d'hypothénuse - préalablement définie - et dont on ferait varier les paramètres à chaque exécution.
+    </p>
+    <figure>
+        <pre><code class="language-js">function hypothenuse(b,h){
+return (b**2 + h**2)**(1/2)
+}
+console.log(hypothenuse(b1,h1))
+console.log(hypothenuse(b2,h2))
+console.log(hypothenuse(b3,h3))</code></pre>
+    </figure>
+    </p>
+</section>
+
+<section id="methods" data-topic="javascript">
+    <hgroup>
+        <h4 class="clip-background"><a href="#methods">Méthodes</a>
+            <div class="list-icon">≡</div>
+        </h4>
+    </hgroup>
+    <p>
+        Une fonction peut être fournie par un objet, c'est à dire stockée dans l'un de ses champs (qu'on a appelé de façon imagée ses "tiroirs").
+        On y accède donc de la même manière qu'on accède à la valeur d'un champ.
+    </p>
+    <p>
+        Par exemple, dans le code suivant, je dote mon objet <code class="language-js">personnage</code> d'une méthode <code class="language-js">direBonjour</code>
+    </p>
+    <figure>
+
+        <pre><code class="language-js">let personnage = {
+prenom: "Britney",
+direBonjour: function(){
+console.log("it's Britney, b****")
+}
+            
+personnage.direBonjour()
+</code></pre>
+    </figure>
+
+    <p>
+        Si l'on veut que le comportement d'une méthode dépende des propriétés de l'objet à laquelle elle appartient, on peut se référer à celui-ci en utilisant le mot-clef <code>this</code>
+    </p>
+    <p>
+        Par exemple, dans l'exemple précédent, si je veux que la fonction <code class="language-js">direBonjour</code>
+        affiche un message qui dépende de la propriété <code class="language-js">prenom</code>, il faut que je modifie mon objet de la façon suivante.
+    </p>
+    <figure>
+        <pre><code class="language-js">let personnage = {
+prenom: "Britney",
+direBonjour: function(){
+console.log("it's" + this.prenom + ", b****")
+}
+        
+personnage.direBonjour()
+</code></pre>
+    </figure>
+</section>
+<section id="dom-api" data-topic="javascript">
+    <hgroup>
+        <h4 class="clip-background"><a href="#dom-api">Les interfaces applicatives de l'objet Document</a>
+            <div class="list-icon">≡</div>
+        </h4>
+    </hgroup>
+    <p>
+        Lors du chargement d'une page web, le navigateur crée un objet qui sert en quelque sorte "jumeau" de la page HTML en JavaScript, qu'on appelle l'objet document, ou <i>Document Object</i> en anglais.
+        Lorsque nos actions affectent la page par l'intermédiaire de scripts, c'est cet objet qui est manipulé.
+        Le navigateur s'occupe à tout instant de répercuter les modifications faites sur l'un vers l'autre.
+    </p>
+    <p>
+        Cet objet Document n'a pas besoin d'être chargé ou déclaré manuellement dans un script.
+        Il est mis à disposition par défaut par le navigateur - tout comme d'autres objets comme l'objet <i>fenêtre</i> (<strong class="keyword">Window</strong>)
+        Il donne accès à toute l'arborescence des blocs de contenu, leurs attributs et propriétés de style, et fournit de nombreuses fonctions pour les parcourir et les modifier.
+    </p>
+    <p>
+        Quelle que soit la page, l'objet Document correspondant donnera toujours accès aux mêmes propriétés et méthodes, car sa structure respecte le Modèle d'objet document - ou <strong class="keyword">Document Object Model</strong> défini par le World Wide Web Consortium.
+    </p>
+    <p>
+        Par exemple, la méthode suivante permet de récupérer l'élément HTML portant l'identifiant <code>ex1</code> et de le stocker dans une variable appelée <code>a</code>
+    </p>
+
+    <figure>
+        <pre>
+            <code class="language-js">let a = document.getElementById("ex1")</code>
+        </pre>
+    </figure>
+    <p>
+        L'ensemble des fonctionnalités mise à disposition par un objet externe au programme que l'on écrit est appelée <i>Interface de Programmation Applicative</i>, ou en anglais <strong class="keyword">API: Application Programming Interface</strong>.
+    </p>
+    <p>
+        Chacun des éléments de l'arborescence de contenu HTML stockée dans l'objet document est lui même un objet JavaScript, dont les propriétés reflètent (entre autres) les attributs de l'élément HTML correspondant.
+    </p>
+    <p>
+        Par exemple, la propriété <code>classList</code> regroupe l'ensemble des classes déclarées dans l'attribut <code>class</code> de l'élément HTML correspondant.
+        On peut l'afficher en utilisant la syntaxe d'accès à une propriété d'un objet.
+        En admettant que l'on s'intéresse à l'élément stocké dans la variable <code>a</code> de l'exemple précédent, celà donne:
+    </p>
+    <figure>
+        <pre>
+            <code class="language-js">console.log(a.classList)</code>
+        </pre>
+    </figure>
+
+    <section id="dom-access-methods">
+        <h5 class="clip-background">Parcours de page et ciblage d'éléments</h5>
+        <p>
+            L'API du DOM fournit plusieurs méthodes pour parcourir la structure d'une page HTML et cibler des éléments spécifiques.
+        </p>
+        <figure>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <td>Méthode</td>
+                        <td>Utilisation</td>
+                        <td>Exemple</td>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>getElementById</td>
+                            <td>Retourne l'élément dont l'identifiant est passé en paramètre</td>
+                            <td><code>document.getElementById("ex1")</code></td>
+                        </tr>
+                        <tr>
+                            <td>querySelector</td>
+                            <td>Retourne le premier élément correspondant au sélecteur CSS passé en paramètre</td>
+                            <td><code>document.querySelector("div")</code></td>
+                        </tr>
+                        <tr>
+                            <td>querySelectorAll</td>
+                            <td>Retourne une liste de tous les éléments correspondant au sélecteur CSS passé en paramètre</td>
+                            <td><code>document.querySelectorAll("div")</code></td>
+                        </tr>
+                        <tr>
+                            <td>getElementsByTagName</td>
+                            <td>Retourne une liste de tous les éléments de type passé en paramètre</td>
+                            <td><code>document.getElementsByTagName("div")</code></td>
+                        </tr>
+                        <tr>
+                            <td>getElementsByClassName</td>
+                            <td>Retourne une liste de tous les éléments ayant la classe passée en paramètre</td>
+                            <td><code>document.getElementsByClassName("sticker")</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </figure>
+    </section>
+
+
+
+
+    <!-- <section data-topic="javascript html" class="activite cutout-style">Ecrire un script pour supprimer du contenu sur une page </section>
+    <section data-topic="javascript css" class="activite cutout-style">Ecrire un script pour injecter une feuille de style sur une page </section>
+
+    <section class="activite cutout-style">Générer du contenu HTML répétitif de façon automatisée à partir d'un jeu de données </section> -->
+</section>
+
+  <!-- <figure>
+                <pre>
+                    <code class="language-js">
+    document.querySelectorAll('div[class^="ad-"]').forEach(div => div.remove());
+                    </code>
+                </pre>
+            </figure> -->
+
+            <!--        
+            <section id="event-listeners">
+                <h4 href="#">Détecteurs d'évènements
+                </h4>
+            </section>
+            <section class="activite cutout-style">
+                Appliquer des styles à des images
+            </section>
+    
+            <section id="event-api">
+                <h4 href="#event-api">
+                    L'API Event
+                </h4>
+            </section>
+            -->
