@@ -1,4 +1,4 @@
-import './src/style.css'
+import './style.css'
 import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
 import css from 'highlight.js/lib/languages/css';
@@ -23,9 +23,9 @@ function loadChapter(source, target) {
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    loadChapter("src/pages/html.html", "html");
-    loadChapter("src/pages/css.html", "css");
-    loadChapter("src/pages/js.html", "javascript");
+    loadChapter("./pages/html.html", "html");
+    loadChapter("./pages/css.html", "css");
+    loadChapter("./pages/js.html", "javascript");
     hljs.highlightAll();
 });
 
