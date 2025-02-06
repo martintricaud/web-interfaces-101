@@ -348,19 +348,6 @@
     </main>
     <!-- <div id="app"></div> -->
     <script>
-        function loadChapter(source, target) {
-
-            fetch(source)
-                .then(response => response.text())
-                .then(content => {
-                    document.getElementById(target).innerHTML = content;
-                })
-                .catch(error => console.error('Error loading the page:', error));
-        }
-
-        loadChapter("src/pages/html.html", "html");
-        loadChapter("src/pages/css.html", "css");
-        loadChapter("src/pages/js.html", "javascript");
 
     </script>
 
