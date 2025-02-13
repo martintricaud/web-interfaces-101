@@ -3,7 +3,7 @@ import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
 import css from 'highlight.js/lib/languages/css';
 import html from 'highlight.js/lib/languages/xml';
-// import 'highlight.js/styles/github.css';
+import 'highlight.js/styles/github.css';
 
 console.log("test");
 // Register the languages that will be highlighted
@@ -22,10 +22,10 @@ function loadChapter(source, target) {
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    loadChapter("/html.html", "html");
-    loadChapter("/css.html", "css");
-    loadChapter("/js.html", "javascript");
-    // hljs.highlightAll();
+    loadChapter("pages/html.html", "html");
+    loadChapter("pages/css.html", "css");
+    loadChapter("pages/js.html", "javascript");
+    hljs.highlightAll();
 });
 
 

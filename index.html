@@ -4,12 +4,10 @@
     <title>Interfaces Web</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Fira+Code:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/src/style.css">
-    <link rel="stylesheet" href="/src/pages/display-and-position.css">
+    <link rel="stylesheet" href="/src/display-and-position.css">
 </head>
 
 <body>
@@ -21,7 +19,7 @@
                 <div class="navitem"><a href="#intro">Introduction</a></div>
                 <div class="navitem"><a href="#html">HTML</a>
                 </div>
-                <div class="navitem"><a href="#css">CSS</a>
+                <div class="navitem"><a href="#css.html">CSS</a>
                 </div>
                 <div class="navitem"><a href="#javascript">JavaScript</a>
                 </div>
@@ -71,7 +69,7 @@
                     La technologie permettant de gérer cela de manière automatisée est appelée <i>packet switching</i>.
                 </p>
                 <figure class="intext-image">
-                    <img src="/src/assets/packet-switching.gif" alt="" style="background-color: rgb(255, 251, 236);">
+                    <img src="./docs/assets/packet-switching.gif" alt="" style="background-color: rgb(255, 251, 236);">
                 </figure>
                 <p>
                     Le premier réseau qui implémente ce principe de <i class="keyword">packet switching</i>, c'est ARPANET, développé aux États Unis à partir de 1969 par la DARPA, la division R&D du ministère de la défense américain.
@@ -143,7 +141,7 @@
                         </p>
                         <br>
                         <figure>
-                            <img src="/src/assets/wikipedia-internet-backbone.png" alt="">
+                            <img src="./docs/assets/wikipedia-internet-backbone.png" alt="">
                             <figcaption class="numbered">La Dorsale d'internet</figcaption>
                         </figure>
                     </li>
@@ -216,7 +214,7 @@
                         Elles nécessitent plus d'informations de la part du client, par exemple pour authentifier l'utilisateur.
                         <br>
                         <figure>
-                            <img src="/src/assets/wikipedia-requete-http.png" alt="">
+                            <img src="./docs/assets/wikipedia-requete-http.png" alt="">
                             <figcaption class="numbered">
                                 Une requête HTTP et sa réponse
                             </figcaption>
@@ -237,9 +235,9 @@
                 <figure>
                     <div class="sidebyside">
                         <div>
-                            <img style="object-fit: cover; aspect-ratio: 3/2; max-width: 100%;" src="/src/assets/next-browser.jpg" alt="">
+                            <img style="object-fit: cover; aspect-ratio: 3/2; max-width: 100%;" src="./docs/assets/next-browser.jpg" alt="">
                         </div>
-                        <div> <img style="object-fit: cover; aspect-ratio: 3/2; max-width: 100%;" src="/src/assets/next-server.jpg" alt=""></div>
+                        <div> <img style="object-fit: cover; aspect-ratio: 3/2; max-width: 100%;" src="./docs/assets/next-server.jpg" alt=""></div>
 
 
                     </div>
@@ -347,26 +345,12 @@
 
     </main>
     <!-- <div id="app"></div> -->
-    <script>
-        function loadChapter(source, target) {
 
-            fetch(source)
-                .then(response => response.text())
-                .then(content => {
-                    document.getElementById(target).innerHTML = content;
-                })
-                .catch(error => console.error('Error loading the page:', error));
-        }
-
-        loadChapter("src/pages/html.html", "html");
-        loadChapter("src/pages/css.html", "css");
-        loadChapter("src/pages/js.html", "javascript");
-
-    </script>
     <script type="module" src="/src/main.js"></script>
-
 </body>
 
+<link rel="stylesheet" href="src/style.css">
+<link rel="stylesheet" href="src/pages/display-and-position.css">
 <script>
     function changeColor() {
         let a = document.querySelectorAll("h4>a");

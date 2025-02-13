@@ -715,6 +715,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eta@npm:^3.5.0":
+  version: 3.5.0
+  resolution: "eta@npm:3.5.0"
+  checksum: a4734c72b9d62fd0dad56f42e4847515ebad5d0738af70c628b4991b2c5a4519a6ec295b3788c6970c70e12555de9aed5313024406241313ae878f7fa4881437
+  languageName: node
+  linkType: hard
+
 "exponential-backoff@npm:^3.1.1":
   version: 3.1.1
   resolution: "exponential-backoff@npm:3.1.1"
@@ -1761,6 +1768,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web-interfaces-101@workspace:."
   dependencies:
+    eta: ^3.5.0
     gh-pages: ^6.3.0
     highlight.js: ^11.11.1
     vite: ^6.0.5

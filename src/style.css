@@ -6,6 +6,7 @@
   --border-style-1: 2px solid black;
 }
 
+
 body {
   counter-reset: chapter section figure;
   margin: 0;
