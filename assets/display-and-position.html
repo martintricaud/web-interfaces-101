@@ -1,0 +1,247 @@
+<html lang="fr">
+<head>
+    <style>
+        #display-and-position {
+            /* padding: 0 0.5rem;
+            width: 100vw;
+            left: 0;
+            position: absolute;
+            background-color: #fff5;
+            box-sizing: border-box;
+            font-size: 0.8rem; */
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            align-content: center;
+            gap: 0.5rem;
+
+
+            &>section {
+                border: none;
+                margin: 0.5rem 0;
+            }
+
+            & #dummy2 {
+                top: 0;
+                background-color: rgba(0, 240, 255, 0.6);
+            }
+
+            & code {
+                font-weight: bold;
+                background-color: none;
+            }
+
+            & input {
+                vertical-align: middle;
+                height: 1lh;
+            }
+
+            & header {
+                margin-bottom: 20px;
+                display: flex;
+            }
+
+
+
+
+            & .inactive {
+                opacity: 0.5;
+                pointer-events: none;
+            }
+
+
+
+            & & .radio-group>label {
+                display: block;
+                min-width: 10ch;
+            }
+
+            & & p {
+                margin: 1rem;
+            }
+        }
+
+
+        #output {
+            border: 2px outset;
+            height: 100vh;
+            padding: 0.5em;
+
+            width: 50ch;
+            overflow-y: scroll;
+            background-color: #fff;
+        }
+
+        form {
+            font-size: 1em;
+            background-color: #ddd;
+
+            padding: 0;
+            margin-bottom: 0.5rem;
+            /*     
+    border-top: none;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black; */
+            border: 2px outset;
+
+            &>* {
+                border-bottom: 2px outset;
+            }
+
+            &>h1 {
+                font-weight: normal;
+                color: #333;
+                background-color: #ddd;
+                font-size: 1em;
+                vertical-align: middle;
+                padding: 0.5rem;
+                margin: 0;
+                /* border-bottom: 2px solid black;
+        border-top: 2px solid black; */
+                border: none;
+            }
+        }
+
+
+
+        .radio-group {
+            /*   display: grid;
+    grid-template-columns: repeat(auto-fit,1fr);
+    grid-template rows: 1lh; */
+            display: flex;
+            justify-content: space-around;
+            gap: 5px
+        }
+
+        label:has(input[type="range"]) {
+            display: block;
+
+            & input {
+                height: 1lh;
+                vertical-align: middle;
+            }
+        }
+
+        fieldset {
+            border: 2px inset
+        }
+
+        .demo-block {
+            width: 100px;
+            height: 100px;
+            display: block;
+            text-align: center;
+            line-height: 100px;
+            border: 1px solid #000;
+        }
+
+        .demo-block {
+            background-color: rgba(255, 240, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebyside" id="display-and-position">
+        <section id="controls">
+            <form>
+                <h1><code>position</code> property for div 2</h1>
+                <fieldset class="radio-group">
+                    <label><input type="radio" name="position" value="static" checked> static</label>
+                    <label><input type="radio" name="position" value="fixed"> fixed</label>
+                    <label><input type="radio" name="position" value="relative"> relative</label>
+                    <label><input type="radio" name="position" value="absolute"> absolute</label>
+                    <label><input type="radio" name="position" value="sticky"> sticky</label>
+                </fieldset>
+                <h1><code>top</code> and <code>left </code> property for div 2</h1>
+                <fieldset id="position-controls" class="inactive range-group">
+                    <label>top: <input type="range" id="top-range" min="0" max="100" value="0"></label>
+                    <label>left: <input type="range" id="left-range" min="0" max="100" value="0"></label>
+                </fieldset>
+            </form>
+            <form>
+                <h1> <code>display</code> property for all colored blocks</h1>
+                <fieldset class="radio-group">
+                    <label><input type="radio" name="display" value="block" checked> block</label>
+                    <label><input type="radio" name="display" value="inline"> inline</label>
+                    <label><input type="radio" name="display" value="inline-block"> inline-block</label>
+                </fieldset>
+                <h1> <code>width</code> and <code>height</code> for all colored blocks</h1>
+                <fieldset id="size-controls" class="range-group">
+                    <label>width: <input type="range" id="width-range" min="50" max="200" value="100"></label>
+                    <label>height: <input type="range" id="height-range" min="50" max="200" value="100"></label>
+                </fieldset>
+            </form>
+        </section>
+        <section id="output" class="container">
+
+            <div class="demo-block dummy" id="dummy1">one</div>
+            <div class="demo-block target" id="dummy2">two</div>
+            <div class="demo-block dummy" id="dummy3">three</div>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula turpis ut accumsan iaculis. Morbi et imperdiet libero. Sed in lectus velit. Aliquam id tristique sapien. Nullam nulla dui, venenatis sit amet consectetur id, vestibulum non tortor. Duis ac imperdiet risus. Curabitur lacinia ac quam vitae tincidunt. Curabitur vitae condimentum nulla, nec feugiat orci. Nam sit amet sodales sem. Integer malesuada tempor dui, id malesuada nibh dictum a. Donec varius feugiat pellentesque. Pellentesque risus ante, dapibus non lectus et, commodo fringilla quam. Integer sollicitudin feugiat porttitor. Curabitur cursus risus nec nisl fringilla rutrum elementum consequat nulla.</p>
+            <p>
+                Praesent fringilla tincidunt turpis, eu lobortis felis condimentum sit amet. Donec neque diam, lacinia id sodales at, sodales sit amet justo. Nam in mi laoreet ex iaculis viverra. Morbi lacinia ac neque in cursus. Aenean id nibh congue diam commodo sollicitudin et nec dolor. Aenean eget dui nibh. Vestibulum sit amet suscipit odio. Ut faucibus congue nibh nec euismod. Phasellus metus enim, tincidunt vel rutrum non, consectetur ut neque. Sed porta metus sit amet tincidunt dapibus.</p>
+            <p>
+
+                Nulla facilisi. Nunc ut tincidunt nunc. Curabitur sapien dolor, volutpat id aliquet eu, cursus sed eros. In at rhoncus nisi. Donec fermentum justo commodo urna hendrerit, at vulputate dui euismod. Nunc placerat neque at lorem aliquet, et vestibulum augue semper. Vivamus odio dui, accumsan nec mauris vel, egestas vehicula augue.
+            </p>
+            <p>
+                Maecenas blandit magna eu cursus euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et urna non odio auctor ullamcorper. Praesent semper, dolor in vestibulum tristique, risus risus aliquet augue, quis finibus quam felis eget dui. Nullam non diam commodo, facilisis dui ac, blandit libero. Nullam tortor velit, pellentesque nec ultricies in, ullamcorper sit amet velit. Curabitur vulputate, urna ut gravida tincidunt, dolor metus lobortis sapien, a ultrices odio tellus in dui. Ut consectetur placerat porttitor. Nulla commodo, lectus id luctus commodo, massa turpis mattis ante, non egestas eros nulla vitae mauris. Nam vitae enim rutrum, lacinia nisi et, tempus lacus. Nam molestie nisi non quam vulputate condimentum.
+            </p>
+            <p>
+                In vitae lobortis lectus. Donec in laoreet nisl. Vivamus laoreet convallis lacus, eget tincidunt lectus gravida sed. Etiam non lorem lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent molestie gravida tortor. Curabitur vel eros nec neque imperdiet interdum. In sagittis, purus sit amet viverra rhoncus, libero nisi auctor nibh, vitae fringilla tortor urna at erat. In ultrices fringilla leo in varius. Phasellus varius feugiat risus eget finibus.</p>
+        </section>
+    </div>
+    <!-- <div class="full-width">
+        
+    </div> -->
+</body>
+<script>
+    const positionRadios = document.querySelectorAll('input[name="position"]');
+    const displayRadios = document.querySelectorAll('input[name="display"]');
+    const positionControls = document.getElementById('position-controls');
+    const sizeControls = document.getElementById('size-controls');
+    const div2 = document.getElementById('dummy2');
+    const allDivs = document.querySelectorAll('.demo-block');
+    positionRadios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            div2.style.position = radio.value;
+            if (radio.value === 'static') {
+                positionControls.classList.add('inactive');
+            } else {
+                positionControls.classList.remove('inactive');
+            }
+        });
+    });
+    document.getElementById('top-range').addEventListener('input', (e) => {
+        div2.style.top = e.target.value + 'vh';
+    });
+    document.getElementById('left-range').addEventListener('input', (e) => {
+        div2.style.left = e.target.value + 'vw';
+    });
+    displayRadios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            allDivs.forEach(div => {
+                div.style.display = radio.value;
+            });
+            if (radio.value === 'inline') {
+                sizeControls.classList.add('inactive');
+            } else {
+                sizeControls.classList.remove('inactive');
+            }
+        });
+    });
+    document.getElementById('width-range').addEventListener('input', (e) => {
+        allDivs.forEach(div => {
+            div.style.width = e.target.value + 'px';
+        });
+    });
+    document.getElementById('height-range').addEventListener('input', (e) => {
+        allDivs.forEach(div => {
+            div.style.height = e.target.value + 'px';
+            div.style.lineHeight = e.target.value + 'px'; // Adjust line height to center text vertically
+        });
+    });
+</script>
+</html>

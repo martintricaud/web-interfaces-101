@@ -7,8 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Fira+Code:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/web-interfaces-101/assets/index-C8Uj36Pb.js"></script>
-  <link rel="stylesheet" crossorigin href="/web-interfaces-101/assets/style-HAqQFu3O.css">
+  <script type="module" crossorigin src="/web-interfaces-101/assets/index-Dr4am4eT.js"></script>
+  <link rel="stylesheet" crossorigin href="/web-interfaces-101/assets/style-DvsLNlTO.css">
 </head>
 
 <body>
@@ -30,225 +30,7 @@
         </nav>
     </header>
     <main>
-        <section class="chapter cours">
-            <hgroup>
-                <h3>D'Internet au Web</h3>
-            </hgroup>
-            <p>
-                On utilise souvent les mots <strong>internet</strong> et <strong>web</strong> de façon interchangeable, mais ils désignent deux réalités différentes.
-                <strong>Internet</strong> est le réseau physique formé par l'ensemble des appareils qui adhèrent aux mêmes "règles de communication" ou <strong>protocole</strong>, alors que le <strong>web</strong> est l'ensemble des contenus rendus disponible via ces règles de communication.
-            </p>
-            <p>
-                Pour prendre une comparaison, si on imagine un réseau postal d'échange de livres entre particuliers, Internet serait le réseau postal, le Web serait l'ensemble des bibliothèques des individus qui participent au service.
-            </p>
-
-            <!-- <p>
-        Par exemple, si vous m'envoyez du texte sur une feuille de papier je vais spontanément le lire de gauche à droite et de haut en bas - c'est une convention.
-        Si la suite d'opération effectuée par un agent (humain ou non) pour émettre un message est compatible avec la suite d'opération effectuée par un autre agent pour le décoder, on dit qu'ils <i>adhèrent</i> au même <strong>protocole</strong>.
-    </p> -->
-            <hr>
-            <section id="ip">
-                <hgroup>
-                    <h4 class="clip-background"><a href="#ip">La naissance de l'Internet Protocol
-                            (IP)</a>
-                        <div class="list-icon">≡</div>
-                    </h4>
-                </hgroup>
-                <p>
-                    Internet est né de la volonté de certains états, en
-                    particulier les USA, le Royaume Uni et la France, de disposer d'une technologie d'interconnexion entre ordinateurs pour qu'ils puissent s'échanger des données et y accéder de façon partagée.
-                    Pour cela, les données sont envoyées en paquets, c'est à dire un conteneur de taille et format standardisé qui circulent dans les cables et connexions du réseau.
-                </p>
-                <p>
-                    Étant donné que la taille de chacun de ces paquets est standardisée, le transfert d'une ressource dont la taille dépasse cette limite nécessite un système capable de la découper en morceaux plus petits et de la reconstituer correctement à l'arrivée.
-                </p>
-                <p>
-                    Cela fonctionne un peu comme lorsqu'on commande un meuble à monter soi-même et que ses composants arrivent en plusieurs colis séparés et dans le désordre - à quelques différence près:
-                    <br>
-                    La carte réseau - qui s'occupe de traiter les données entrantes et sortantes d'un ordinateur - n'a pas la capacité d'ouvrir les paquets ni de comprendre leur contenu.
-                    Elle se base uniquement sur leurs informations d'en-tête pour les réarranger dans le bon ordre, de façon à ce que la ressource puisse être reconstruite correctement.
-                    La technologie permettant de gérer cela de manière automatisée est appelée <i>packet switching</i>.
-                </p>
-                <figure class="intext-image">
-                    <img src="/web-interfaces-101/assets/packet-switching-CpOZMg2d.gif" alt="" style="background-color: rgb(255, 251, 236);">
-                </figure>
-                <p>
-                    Le premier réseau qui implémente ce principe de <i class="keyword">packet switching</i>, c'est ARPANET, développé aux États Unis à partir de 1969 par la DARPA, la division R&D du ministère de la défense américain.
-                    Mais la technologie de <i>packet switching</i> utilisée dans l'internet moderne a été développée en France, dans le cadre du projet CYCLADES dans les années 1970, et incorporée dans les versions suivantes.
-                </p>
-            </section>
-            <hr>
-            <section id="packet-tracking">
-                <hgroup>
-                    <h4 class="clip-background"><a href="#packet-tracking">Le trajet d'un message à travers le réseau internet</a>
-                        <div class="list-icon">≡</div>
-                    </h4>
-                </hgroup>
-                <p>
-                    Pour mieux comprendre l'intérêt de la technologie TCP/IP, voyons pas à pas ce qu'il se passe lorsque vous tapez une adresse dans votre barre de recherche.
-                </p>
-                <ol>
-                    <li>
-                        <h6>Requête DNS (Optionnel)</h6>
-                        <p>
-                            Lorsque l'on tape une url (par exemple,
-                            <code>www.example.com</code>), l'ordinateur envoie
-                            une requête à un serveur <strong>DNS</strong>
-                            pour
-                            obtenir l'adresse <strong>IP</strong> du site : Un
-                            peu comme si vous consultiez Google Maps pour
-                            avoir
-                            les coordonnées GPS de l'adresse recherchée.
-                            <br />
-                            Le serveur DNS renvoie l'adresse IP (par exemple,
-                            <code>93.184.216.34</code>), et maintenant
-                            l'ordinateur sait où envoyer les futures requêtes.
-                        </p>
-                    </li>
-                    <li>
-                        <h6>Empaquettage de la requête serveur</h6>
-                        <p>
-                            L'ordinateur crée une requête HTTP, l'encapsule dans ce qu'on appelle un paquet TCP/IP.
-                            C'est grosso modo l'équivalent électronique d'une courier en recommandé:
-                            Il est composé d'un <i>header</i> (ou en-tête) - comportant les addresse IP du destinataire et de l'emetteur, ainsi que tout en tas de certificat - et d'une zone de contenu, qui comme une enveloppe, impose des limites sur la taille de ce que l'on peut envoyer.
-                        </p>
-                    </li>
-                    <li>
-                        <h6>Premier routage</h6>
-                        <p>
-                            Le paquet est envoyé vers le <strong>routeur</strong> (la boîte Wifi).
-                            Le routeur consulte sa table de routage. Si l'IP de destination n'est pas sur le réseau local, le paquet est envoyé au réseau du <strong>Fournisseur d'Accès à Internet</strong>.
-                        </p>
-                    </li>
-                    <li>
-                        <h6>Routage par le FAI</h6>
-                        <p>
-                            Le paquet circule à travers plusieurs routeurs du réseau du <strong>FAI</strong>, sachant que chaque routeur ignore à quoi sont connectés les autres.
-                            Ces routeurs examinent l'IP de destination et décident du routeur auquel envoyer le paquet pour le rapprocher de sa destination finale.
-                        </p>
-
-                    </li>
-                    <li>
-                        <h6>Routage à travers la Dorsale d'internet</h6>
-                        <p>
-                            Une fois que le paquet quitte le réseau du FAI, il
-                            passe dans la dorsale d'internet (le
-                            backbone),
-                            un réseau de routeurs haute capacité reliés par des
-                            fibres optiques à travers le globe. Le
-                            paquet
-                            peut transiter par plusieurs régions et opérateurs
-                            selon la destination.
-                        </p>
-                        <br>
-                        <figure>
-                            <img src="/web-interfaces-101/assets/wikipedia-internet-backbone-CDu555vY.png" alt="">
-                            <figcaption class="numbered">La Dorsale d'internet</figcaption>
-                        </figure>
-                    </li>
-
-
-                    <li>
-                        <h6>Réseau du serveur Web</h6>
-                        <p>
-                            Le paquet arrive finalement au réseau appartenant au fournisseur d'hébergement du site internet.
-                            De là il atteint le serveur qui <em>sert</em> la page web (e.g., <code>www.example.com</code>).
-                        </p>
-                    </li>
-                    <li>
-                        <h6>Paquet de réponse</h6>
-                        <p>
-                            Le serveur traite la requête, génère une réponse (par exemple une page web), qu'il encapsule dans un paquet et la renvoie à l'ordinateur en suivant un processus de routage symétrique.
-                        </p>
-                    </li>
-                </ol>
-            </section>
-            <hr>
-            <section id="worldwideweb">
-                <hgroup>
-                    <h4 class="clip-background"><a href="#worldwideweb">Le Web, une bibliothèque partagée
-                        </a>
-                        <div class="list-icon">≡</div>
-                    </h4>
-                </hgroup>
-                <p>
-                    Contrairement à Internet, le <strong class="keyword">web</strong> n'est pas un réseau physique, mais un réseau virtuel, formé par un ensemble de documents multimedias <strong>interconnectés</strong> via des liens "hypertexte", <strong>localisables</strong> de façon unique par une addresse, et accessibles de façon (en générale)
-                    <strong>persistente</strong> via un protocole dédié.
-                </p>
-                <p>
-                    On doit son invention à Tim Berners-Lee (également fondateur de Wikipedia) à la fin des années 1980, alors qu'il travaillait au <abbr title="Centre Européen de Recherche Nucléaire">CERN</abbr>.
-                    Déjà à l'époque, un grand nombre de scientifiques collaboraient dans cet institut de recherche, et ce fut l'un des premiers à être équipé d'un réseau Internet.
-                    Mais étant donné le caractère collectif des activités de recherche du CERN, il devint rapidement indispensable de s'équiper d'un système d'information qui permette de rendre des documents numériques accessibles de façon persistente.
-                </p>
-                <p>
-                    Tim Berners-Lee proposa une solution basée sur trois technologies essentielles, qui forment la base de ce qu'on appelle aujourd'hui le World Wide Web.
-                </p>
-                <ul>
-                    <li id="web-backbone-url">
-                        <h6>le standard <strong class="keyword">url</strong></h6>
-                        <p>pour identifier et localiser de façon unique des ressources sur le web.
-                            <br>
-                            Si l'on reprend la métaphore du service d'échange de livre par courier postal, le standard URL serait l'équivalent du standard de mise en forme des addresses physiques.
-                            <br>
-                            Pour une addresse physique ce standard prend la forme: <code> [numero de la rue] [voie] [nom de la voie] [code postal] [ville] </code>.
-                            <br>
-                            Pour une addresse web, ce standard prend la forme : <code>[protocole]://[nom de domaine]/[chemin]/[ressource]</code>.
-                            <br>
-                        </p>
-                        <p>
-                            Le protocole ( par exemple <code>http</code> ou <code>https</code> ) indique la méthode de communication.
-                            <br>
-                            Le nom de domaine ( par exemple <code>bonjour.com</code> ) identifie le serveur ou
-                            le site web.
-                            <br>
-                            Le <strong class="keyword">chemin</strong> et la <strong class="keyword">ressource</strong> (par exemple <code>/dossier/page.html</code>) précisent l'emplacement exact du contenu souhaité sur le serveur.
-
-                        </p>
-                    </li>
-                    <li id="web-backbone-http">
-                        <h6>Le protocole <strong class="keyword">http</strong></h6> pour
-                        structurer les requêtes et les réponses
-                        entre clients et serveurs.
-                        Sur la figure ci-dessous, la requête émise par l'utilisateur est très simple: il s'agit d'une requête d'accès à une ressource, donc elle nécessite simplement de préciser son addresse url.
-                        <br>
-                        Il existe d'autres types de requêtes pour demander au serveur d'effectuer des opérations de création, suppression ou modification de ressources.
-                        Elles nécessitent plus d'informations de la part du client, par exemple pour authentifier l'utilisateur.
-                        <br>
-                        <figure>
-                            <img src="/web-interfaces-101/assets/wikipedia-requete-http-C5EtRRBE.png" alt="">
-                            <figcaption class="numbered">
-                                Une requête HTTP et sa réponse
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li id="web-backbone-html">
-                        <h6>Le langage <strong class="keyword">html</strong> </h6>
-                        <p>pour la mise en forme de documents multimédias:
-                            <br>
-                            Il permet d'encoder textuellement l'ensemble des infos relatives à la structure et au contenu d'une page
-                        </p>
-                    </li>
-                </ul>
-                <p>
-                    Pour faire la démonstration de ce nouveau système, Tim Berners-Lee développa également le premier navigateur web grâce auquel on pouvait consulter des pages mises à disposition par un serveur - dès lors qu'on était connecté au même réseau que celui-ci.
-                </p>
-
-                <figure>
-                    <div class="sidebyside">
-                        <div>
-                            <img style="object-fit: cover; aspect-ratio: 3/2; max-width: 100%;" src="/web-interfaces-101/assets/next-browser-Bf-v17gI.jpg" alt="">
-                        </div>
-                        <div> <img style="object-fit: cover; aspect-ratio: 3/2; max-width: 100%;" src="/web-interfaces-101/assets/next-server-DnfJl2m_.jpg" alt=""></div>
-
-
-                    </div>
-
-                </figure>
-                <section class="activite cutout-style">
-                    <a href="">Tuto: Examiner comment se charge une page Web en utilisant l'inspecteur</a>
-                </section>
-            </section>
-        </section>
+        <section id="web" class="chapter cours"></section>
         <hr>
         <section id="html" class="chapter cours"></section>
         <hr>
@@ -345,10 +127,8 @@
         </section>
 
     </main>
-    <!-- <div id="app"></div> -->
-
-  
 </body>
+<!-- <script src="/src/display-and-position.js" type="module"></script> -->
 <!-- <link rel="stylesheet" href="/src/display-and-position.css"> -->
 <script>
     function changeColor() {

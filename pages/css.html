@@ -536,7 +536,8 @@ font-size: 1.5rem
         <p>
             Vous pouvez examiner l'effet des différentes valeurs des propriétés <code class="language-css">display</code> et <code class="language-css">position</code> en jouant avec l'exemple suivant
         </p>
-        <div class="full-width">
+        <iframe class="raw" style="margin-top: 1rem; max-height: 80vh; min-height: 400px;" src="./assets/display-and-position.html" frameborder="0"></iframe>
+        <!-- <div class="full-width">
             <div class="sidebyside" id="display-and-position">
                 <section id="controls">
                     <form>
@@ -588,7 +589,7 @@ font-size: 1.5rem
                         In vitae lobortis lectus. Donec in laoreet nisl. Vivamus laoreet convallis lacus, eget tincidunt lectus gravida sed. Etiam non lorem lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent molestie gravida tortor. Curabitur vel eros nec neque imperdiet interdum. In sagittis, purus sit amet viverra rhoncus, libero nisi auctor nibh, vitae fringilla tortor urna at erat. In ultrices fringilla leo in varius. Phasellus varius feugiat risus eget finibus.</p>
                 </section>
             </div>
-        </div>
+        </div> -->
         <section class="activite cutout-style">
             <h5>
                 Centrage d'éléments de contenus
@@ -609,12 +610,16 @@ font-size: 1.5rem
             </h4>
         </hgroup>
         <p>
-            En CSS, il est possible d'appliquer des styles de façon contextuelle, notamment en prenant en compte des interactions qui ont lieu (ou ont eu lieu) sur la page.
+            Lorsqu'on interagit avec une page, ou plus généralement avec un interface graphique, son état change: des éléments peuvent être crées, d'autres supprimés, d'autres déplacés.
+            Une partie du rôle du designer d'interaction est de définir comment ces changements se manifestent visuellement - et plus généralement sensoriellement.
+        </p>
+        <p>
+            En CSS, on peut pour celà appliquer des styles de façon contextuelle, qui prennent compte des interactions qui ont lieu (ou ont eu lieu) sur la page.
             <br>
             Par exemple, on comprend beaucoup plus facilement qu'un élément est cliquable si son apparence change lorsque la souris passe dessus, ou alors qu'un lien a déjà été visité si il est de couleur différente des liens qui ne l'ont pas été.
         </p>
         <p>
-            On utilise pour celà ce qu'on appelle des pseudo-classes, qui sont des sélecteurs qui ne s'activent que dans certaines conditions automatiquement détectées par le navigateur.
+            Pour obtenir ce type d'effet, on utilise ce qu'on appelle des pseudo-classes, qui sont des sélecteurs qui ne s'activent que dans certaines conditions automatiquement détectées par le navigateur.
 
             Par exemple, les instructions de style contenues dans <code>.foobar:active</code> ne s'activent que un élément de classe <code class="language-html">foobar</code> est "activé" par le pointeur (c'est à dire lorsque l'on clique dessus)
         </p>
@@ -672,6 +677,18 @@ border-bottom: 8px solid black;
             <h5>
                 Utiliser les tranistions pour améliorer le feedback
             </h5>
+            <p>
+                L'exemple du clic pris plus haut n'était pas très réaliste, car l'action de cliquer n'avait aucune autre conséquence que la modification de l'état du bouton.
+                De plus, cette modification était transiente - perceptible uniquement quand le clic se produit.
+            </p>
+            <p>
+                Si par exemple je clique sur un lien de navigation qui pointe vers une section de ma page, la fenêtre se déplace vers la zone ciblée - c'est une modification persistente.
+            </p>
+            <p>
+                Lorsque la conséquence d'une action est persistente, il est important que le feedback de cette action fournisse de l'information sur le changement qui vient de se produire.
+            </p>
+          
+
         </section>
 
 
@@ -784,17 +801,16 @@ border-bottom: 8px solid black;
             mise en page dynamique qui adapte la
             présentation du contenu aux conditions de visionnage
             est fondamental.
-
-            Utiliser des unités relative, définir des largeurs
-            minimales
+            Celà passe par redimensionner intelligement le contenu en fonction de la largeur de la fenêtre - comme on l'a vu avec les conteneurs flexibles, les grilles, les largeurs minimales et maximales ou encore les unités relatives - mais pas seulement.
+            CSS offre la possibilité de tenir compte du medium ou de l'appareil utilisé pour consulter le contenu, en utilisant ce qu'on appelle une <strong class="keyword">Media query</strong>
         </p>
+
         <p>
             <i>Media query </i> signifie requête media en anglais -
             autrement dit il s'agit d'une requête
             d'informations sur les propriétés du medium de
             consultation, afin de pouvoir ajuster la mise en
             forme en fonction du résultat de cette requête.
-
         </p>
         <figure>
             <pre>
@@ -807,7 +823,9 @@ border-bottom: 8px solid black;
                 </pre>
         </figure>
 
-        </p>
+<p>
+  
+</p>
 
         <section class="activite cutout-style">
             <a href="">Réaliser un thème jour/nuit avec des media-queries</a>
