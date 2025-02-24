@@ -12,7 +12,7 @@ hljs.registerLanguage('css', css);
 hljs.registerLanguage('html', html);
 
 function loadChapter(source, target) {
-    fetch(source)
+    return fetch(source)
         .then(response => response.text())
         .then(content => {
             document.getElementById(target).innerHTML = content;
@@ -20,12 +20,15 @@ function loadChapter(source, target) {
         .catch(error => console.error('Error loading the page:', error));
 }
 
-
 document.addEventListener('DOMContentLoaded', (event) => {
-    loadChapter("pages/html.html", "html");
-    loadChapter("pages/css.html", "css");
-    loadChapter("pages/js.html", "javascript");
-    hljs.highlightAll();
+    Promise.all([
+        loadChapter("pages/html.html", "html"),
+        loadChapter("pages/css.html", "css"),
+        loadChapter("pages/js.html", "javascript")
+    ]).then(() => {
+        hljs.highlightAll();
+        // import('./display-and-position.js');
+    });
 });
 
 
