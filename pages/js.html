@@ -14,10 +14,10 @@
         </canvas>
     </div>
 </figure> -->
-<section id="js-concepts">
+<section class="level4" id="js-concepts">
     <hgroup>
         <h4 class="clip-background"><a href="#js-concepts">Concepts de base</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
     <p>Un programme est un ensemble d'instructions écrites dans un langage doté de règles strictes - en tout cas plus strictes que le langage humain - afin de garantir que les instructions puissent être interprétées et executées de façon prévisible par un ordinateur.</p>
@@ -25,19 +25,17 @@
     <p>
         Une variable est un conteneur d'information identifiable par un nom, que l'on appelle également l'<strong class="keyword">identifiant</strong> de la variable.
         Le contenu de ce conteneur d'information est appelé valeur.
-
     </p>
 
-
-    <p> L'action de créer une variable s'appelle la <strong class="keyword">déclaration</strong>, et le fait de lui attribuer une valeur s'appelle l'<strong class="keyword">assignation</strong>
-        La déclaration se fait avec le mot clef <code class="language-js">let</code> et l'assignation avec le symbole <code>=</code> comme dans <code class="language-js">let a = 124</code>
+    <p> L'action de créer une variable s'appelle la <strong class="keyword">déclaration</strong>, et le fait de lui attribuer une valeur s'appelle l'<strong class="keyword">assignation</strong> ou <strong class="keyword">affectation</strong>.
+    La déclaration se fait avec le mot clef <code class="language-js">let</code> et l'assignation avec le symbole <code>=</code> comme dans <code class="language-js">let a = 124</code>
     </p>
 
     <p>
         Certains langages imposent lors de la déclaration d'une variable de rajouter une annotation qui précise le <strong class="keyword">type</strong> d'informations qu'elle est autorisée à contenir.
         <br>
         JavaScript n'impose pas une telle précision, car le langage déduit automatiquement le type de la variable à partir de sa valeur.
-        Ce type peut être
+        Ce type peut être:
     </p>
     <ul>
         <li>Un nombre (number) comme dans <figure class="inline-fig">
@@ -59,10 +57,10 @@
 </section>
 
 
-<section>
+<section class="level4" id="command-line">
     <hgroup>
         <h4 class="clip-background"><a href="#">Interaction en ligne de commande</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
 
@@ -92,10 +90,10 @@ console.log("Le triple de " + y + " est " + y * 3);</code>
 </section>
 
 
-<section id="js-operators">
+<section class="level4" id="js-operators">
     <hgroup>
         <h4 class="clip-background"><a href="#js-operators">Opérateurs</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
     <p>
@@ -171,7 +169,7 @@ console.log("Le triple de " + y + " est " + y * 3);</code>
                         <tr>
                             <td>Et</td>
                             <td>&&</td>
-                            <td><code class="language-js">console.log(2 + 4)</code></td>
+                            <td><code class="language-js">console.log(true && false)</code></td>
                         </tr>
                         <tr>
                             <td>Ou inclusif</td>
@@ -183,24 +181,8 @@ console.log("Le triple de " + y + " est " + y * 3);</code>
                             <td>*</td>
                             <td><code class="language-js">console.log(2 * 4)</code></td>
                         </tr>
-                        <tr>
-                            <td>division</td>
-                            <td>/</td>
-                            <td><code class="language-js">console.log(2 / 4)</code></td>
-                        </tr>
-                        <tr>
-                            <td>puissance</td>
-                            <td>**</td>
-                            <td><code class="language-js">console.log(2 ** 4)</code></td>
-                        </tr>
-                        <tr>
-                            <td>modulo</td>
-                            <td>%</td>
-                            <td><code class="language-js">console.log(2 ** 4)</code></td>
-                        </tr>
                     </tbody>
                 </table>
-
             </div>
         </figure>
     </section>
@@ -222,22 +204,22 @@ console.log("Le triple de " + y + " est " + y * 3);</code>
                     <tbody>
                         <tr>
                             <td>Strictement Inférieur</td>
-                            <td>&&</td>
-                            <td><code class="language-js">console.log()</code></td>
+                            <td>&lt;</td>
+                            <td><code class="language-js">console.log(2>5)</code></td>
                         </tr>
                         <tr>
                             <td>Inférieur ou égal</td>
-                            <td>||</td>
+                            <td>&lt;=</td>
                             <td><code class="language-js">console.log()</code></td>
                         </tr>
                         <tr>
                             <td>Strictement supérieur</td>
-                            <td>*</td>
+                            <td>&gt;</td>
                             <td><code class="language-js">console.log()</code></td>
                         </tr>
                         <tr>
                             <td>Supérieur ou égal</td>
-                            <td>/</td>
+                            <td>&gt;=</td>
                             <td><code class="language-js">console.log()</code></td>
                         </tr>
                         <tr>
@@ -246,7 +228,7 @@ console.log("Le triple de " + y + " est " + y * 3);</code>
                             <td><code class="language-js">console.log()</code></td>
                         </tr>
                         <tr>
-                            <td>inégal / différent de</td>
+                            <td>Inégal / différent de</td>
                             <td>!=</td>
                             <td><code class="language-js">console.log()</code></td>
                         </tr>
@@ -261,10 +243,10 @@ console.log("Le triple de " + y + " est " + y * 3);</code>
         <h6>Les opérations sur les chaines de caractère </h6>
     </section>
 </section>
-<section id="control-structures">
+<section class="level4" id="control-structures">
     <hgroup>
         <h4 class="clip-background"><a href="#control-structures">Structures conditionnelles</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
     <p>Une structure conditionnelle est une instruction qui permet de définir si oui on non le bloc d'instruction qui suit doit être exécuté, en fonctions de la condition précisée.</p>
@@ -272,10 +254,10 @@ console.log("Le triple de " + y + " est " + y * 3);</code>
         Une condition est une valeur booléenne - ou plus généralement, une formule qui, une fois calculée, se ramène à une valeur booléenne.
     </p>
 </section>
-<section id="loops">
+<section class="level4" id="loops">
     <hgroup>
         <h4 class="clip-background"><a href="#loops">Boucles</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
     <p>
@@ -312,10 +294,10 @@ console.log(i + "fois")
     </p>
 </section>
 
-<section id="objects-and-lists">
+<section class="level4" id="objects-and-lists">
     <hgroup>
         <h4 class="clip-background"><a href="#">Objets et listes</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
     <p>
@@ -376,10 +358,10 @@ type: "tetanos"
     </figure>
 </section>
 
-<section id="functions">
+<section class="level4" id="functions">
     <hgroup>
         <h4 class="clip-background"><a href="#functions">Fonctions</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
     <p>
@@ -438,10 +420,10 @@ console.log(hypothenuse(b3,h3))</code></pre>
     </p>
 </section>
 
-<section id="methods" data-topic="javascript">
+<section class="level4" id="methods" data-topic="javascript">
     <hgroup>
         <h4 class="clip-background"><a href="#methods">Méthodes</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
     <p>
@@ -481,10 +463,10 @@ personnage.direBonjour()
 </code></pre>
     </figure>
 </section>
-<section id="dom-api" data-topic="javascript">
+<section class="level4" id="dom-api" data-topic="javascript">
     <hgroup>
         <h4 class="clip-background"><a href="#dom-api">Les interfaces applicatives de l'objet Document</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
     <p>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centering Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .form-container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .form-container select {
+            padding: 5px;
+        }
+        .solutions-container {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+        }
+        .solution {
+            flex: 1;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .preview {
+            flex: 1;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+        .preview .A {
+            width: 100px;
+            height: 100px;
+            background-color: #f0f0f0;
+            position: relative;
+        }
+        .preview .B {
+            width: 50px;
+            height: 50px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div>
+            <label for="displayA">Display pour A:</label>
+            <select id="displayA">
+                <option value="block">block</option>
+                <option value="flex">flex</option>
+                <option value="grid">grid</option>
+                <option value="inline-block">inline-block</option>
+                <option value="inline-flex">inline-flex</option>
+                <option value="inline-grid">inline-grid</option>
+                <option value="inline">inline</option>
+            </select>
+        </div>
+        <div>
+            <label for="displayB">Display pour B:</label>
+            <select id="displayB">
+                <option value="block">block</option>
+                <option value="inline-block">inline-block</option>
+                <option value="inline">inline</option>
+            </select>
+        </div>
+    </div>
+    <div class="solutions-container">
+        <div class="solution" id="verticalSolution">
+            <h3>Solution de centrage vertical de B dans A</h3>
+            <textarea id="verticalCode"></textarea>
+        </div>
+        <div class="solution" id="horizontalSolution">
+            <h3>Solution de centrage horizontal de B dans A</h3>
+            <textarea id="horizontalCode"></textarea>
+        </div>
+        <div class="preview" id="preview">
+            <div class="A">
+                <div class="B"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/css/css.min.js"></script>
+    <script>
+        const displayA = document.getElementById('displayA');
+        const displayB = document.getElementById('displayB');
+        const verticalCode = CodeMirror.fromTextArea(document.getElementById('verticalCode'), {
+            mode: 'css',
+            lineNumbers: true,
+            readOnly: true
+        });
+        const horizontalCode = CodeMirror.fromTextArea(document.getElementById('horizontalCode'), {
+            mode: 'css',
+            lineNumbers: true,
+            readOnly: true
+        });
+        const preview = document.getElementById('preview');
+        const A = preview.querySelector('.A');
+        const B = preview.querySelector('.B');
+
+        function updateSolutions() {
+            const displayAValue = displayA.value;
+            const displayBValue = displayB.value;
+
+            let verticalSolution = '';
+            let horizontalSolution = '';
+
+            switch (displayAValue) {
+                case 'block':
+                    verticalSolution = `A {
+    position: relative;
+}
+B {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}`;
+                    horizontalSolution = `A {
+    position: relative;
+}
+B {
+    margin: 0 auto;
+}`;
+                    break;
+                case 'flex':
+                    verticalSolution = `A {
+    display: flex;
+    align-items: center;
+}
+B {
+    /* No additional styles needed */
+}`;
+                    horizontalSolution = `A {
+    display: flex;
+    justify-content: center;
+}
+B {
+    /* No additional styles needed */
+}`;
+                    break;
+                case 'grid':
+                    verticalSolution = `A {
+    display: grid;
+    align-items: center;
+}
+B {
+    /* No additional styles needed */
+}`;
+                    horizontalSolution = `A {
+    display: grid;
+    justify-items: center;
+}
+B {
+    /* No additional styles needed */
+}`;
+                    break;
+                case 'inline-block':
+                    verticalSolution = `A {
+    position: relative;
+    height: 100px; /* Example height */
+}
+B {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}`;
+                    horizontalSolution = `A {
+    position: relative;
+    width: 200px; /* Example width */
+}
+B {
+    margin: 0 auto;
+}`;
+                    break;
+                case 'inline-flex':
+                    verticalSolution = `A {
+    display: inline-flex;
+    align-items: center;
+    height: 100px; /* Example height */
+}
+B {
+    /* No additional styles needed */
+}`;
+                    horizontalSolution = `A {
+    display: inline-flex;
+    justify-content: center;
+    width: 200px; /* Example width */
+}
+B {
+    /* No additional styles needed */
+}`;
+                    break;
+                case 'inline-grid':
+                    verticalSolution = `A {
+    display: inline-grid;
+    align-items: center;
+    height: 100px; /* Example height */
+}
+B {
+    /* No additional styles needed */
+}`;
+                    horizontalSolution = `A {
+    display: inline-grid;
+    justify-items: center;
+    width: 200px; /* Example width */
+}
+B {
+    /* No additional styles needed */
+}`;
+                    break;
+                case 'inline':
+                    verticalSolution = `A {
+    line-height: 100px; /* Example line height */
+}
+B {
+    vertical-align: middle;
+}`;
+                    horizontalSolution = `A {
+    text-align: center;
+}
+B {
+    display: inline-block;
+}`;
+                    break;
+            }
+
+            verticalCode.setValue(verticalSolution);
+            horizontalCode.setValue(horizontalSolution);
+
+            A.style.display = displayAValue;
+            B.style.display = displayBValue;
+        }
+
+        displayA.addEventListener('change', updateSolutions);
+        displayB.addEventListener('change', updateSolutions);
+
+        updateSolutions();
+    </script>
+</body>
+</html>
