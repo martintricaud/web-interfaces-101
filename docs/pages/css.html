@@ -2,10 +2,10 @@
     <h3>Fondamentaux du CSS</h3>
 </hgroup>
 
-<section id="stylesheet-structure">
+<section class="level4" id="stylesheet-structure">
     <hgroup>
         <h4 class="clip-background"><a href="#stylesheet-structure">Structure d'une feuille de style</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
     <p>
@@ -41,10 +41,10 @@ border: 2px solid black;
     </li>
     </ul>
 </section>
-<section id="selectors">
+<section class="level4" id="selectors">
     <hgroup>
         <h4 class="clip-background"><a href="#selectors">Fonctionnement d'un sélecteur</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
     <p>
@@ -120,11 +120,11 @@ background-color:rgba(255,255,255,0.5)
         </div> -->
 </section>
 <hr>
-<section id="cascade">
+<section class="level4" id="cascade">
     <hgroup>
         <h4 class="clip-background"><a href="#cascade">Pourquoi des feuilles de style en
                 "cascade"?</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
 
@@ -163,112 +163,93 @@ color: blue;
     <table>
         <thead>
             <tr>
-                <td>Property</td>
+                <td>Propriété</td>
                 <td>Description</td>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>color</td>
-                <td>Sets the text color of an element.</td>
+                <td><code>color</code></td>
+                <td>Définit la couleur du texte d'un élément.</td>
             </tr>
             <tr>
-                <td>cursor</td>
-                <td>The cursor property sets the appearance of the mouse cursor when hovering over an element.</td>
+                <td><code>cursor</code></td>
+                <td>Définit l'apparence du curseur de la souris lorsqu'il survole un élément.</td>
             </tr>
             <tr>
-                <td>font</td>
-                <td>Sets an element’s font properties in a single declaration.</td>
+                <td><code>font</code></td>
+                <td>Définit les propriétés de police d'un élément en une seule déclaration.</td>
             </tr>
             <tr>
-                <td>font-family</td>
-                <td>Specifies a font typeface in a ruleset.</td>
+                <td><code>font-family</code></td>
+                <td>Spécifie une police de caractères dans un ensemble de règles.</td>
             </tr>
             <tr>
-                <td>background</td>
-                <td>Specifies the background properties of an element.</td>
+                <td><code>background</code></td>
+                <td>Spécifie les propriétés de l'arrière-plan d'un élément.</td>
             </tr>
             <tr>
-                <td>font-size</td>
-                <td>Sets the font size of an element’s text.</td>
+                <td><code>font-size</code></td>
+                <td>Définit la taille de la police du texte d'un élément.</td>
             </tr>
             <tr>
-                <td>font-style</td>
-                <td>To set the font style in which text will appear.</td>
+                <td><code>font-style</code></td>
+                <td>Définit le style de police dans lequel le texte apparaîtra.</td>
             </tr>
-
             <tr>
-                <td>font-weight</td>
-                <td>To set the text to be thicker or thinner.</td>
+                <td><code>font-weight</code></td>
+                <td>Définit l'épaisseur du texte.</td>
             </tr>
-
             <tr>
-                <td>letter-spacing</td>
-                <td>Set the horizontal spacing between the individual characters in an element.</td>
+                <td><code>letter-spacing</code></td>
+                <td>Définit l'espacement horizontal entre les caractères individuels dans un élément.</td>
             </tr>
-
             <tr>
-                <td>line-height</td>
-                <td>Set the vertical spacing between lines of text.</td>
+                <td><code>line-height</code></td>
+                <td>Définit l'espacement vertical entre les lignes de texte.</td>
             </tr>
-
             <tr>
-                <td>text-align</td>
-                <td>To set the text alignment of inline contents.</td>
+                <td><code>text-align</code></td>
+                <td>Définit l'alignement du texte des contenus en ligne.</td>
             </tr>
-
             <tr>
-                <td>text-indent</td>
-                <td>Indents (leaves empty space) the first line in a text-block.</td>
+                <td><code>text-indent</code></td>
+                <td>Indente (laisse un espace vide) la première ligne d'un bloc de texte.</td>
             </tr>
-
             <tr>
-                <td>text-justify</td>
-                <td>Sets the justification method of text when text-align: justify; is applied to an element.</td>
+                <td><code>text-justify</code></td>
+                <td>Définit la méthode de justification du texte lorsque text-align: justify; est appliqué à un élément.</td>
             </tr>
-
             <tr>
-                <td>text-shadow</td>
-                <td>Adds shadow to text.</td>
+                <td><code>text-shadow</code></td>
+                <td>Ajoute une ombre au texte.</td>
             </tr>
-
             <tr>
-                <td>text-transform</td>
-                <td>Specifies how to capitalize an element’s text.</td>
+                <td><code>text-transform</code></td>
+                <td>Spécifie comment capitaliser le texte d'un élément.</td>
             </tr>
         </tbody>
-
     </table>
-
-
 </section>
 <!-- Attention, la ==**référence du selecteur ne peut pas contenir de majuscule, ni d'espace**== ! -->
 <!-- Un des principes fondamentaux en développement web - et en informatique en général - est ce qu'on appelle en
     anglais la <strong class="keyword"><i>separation of concerns</i></strong> - ou séparation des problèmes en
     français. -->
 <hr>
-<section id="units">
+<section class="level4" id="units">
     <hgroup>
         <h4 class="clip-background"><a href="#units">Unités Absolues et Relatives</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
     <p>
-        Toutes les propriétés du styles qui définissent des tailles
-        et des distances doivent avoir leur valeur
-        déclarée dans une unité donnée:
-        Par exemple, si je décrète que les bordures d'un élément
-        doivent faire 5 de largeur, c'est une
-        information insuiffisante car elle ne précise pas si il
-        s'agit de centimètres, de pixels ou d'autre
+        Toutes les propriétés du styles qui définissent des tailles et des distances doivent avoir leur valeur déclarée dans une unité donnée:
+        Par exemple, si je décrète que les bordures d'un élément doivent faire 5 de largeur, c'est une information insuiffisante car elle ne précise pas si il s'agit de centimètres, de pixels ou d'autre
         chose.
     </p>
     <p>
-        Pour apporter ce niveau de précision, CSS propose plusieurs
-        unités de grandeur.
-        Certaines sont dites absolues: elles ont une valeur fixe,
-        qui ne varie pas avec le support, alors que
-        d'autres sont relatives à une référence.
+        Pour apporter ce niveau de précision, CSS propose plusieurs unités de grandeur.
+        Certaines sont dites absolues: elles ont une valeur fixe, qui ne varie pas avec le support, alors que d'autres sont relatives à une référence.
     </p>
     <figure>
         <div class="table-container">
@@ -367,10 +348,10 @@ color: blue;
 
 </section>
 <hr>
-<section id="text-layout">
+<section class="level4" id="text-layout">
     <hgroup>
         <h4 class="clip-background"><a href="#text-layout">Mise en page de texte</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
     <p>
@@ -480,10 +461,10 @@ font-size: 1.5rem
     </section>
 </section>
 <hr>
-<section id="box-model">
+<section class="level4" id="box-model">
     <hgroup>
         <h4 class="clip-background"><a href="#box-model">Le Box Model</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
 
@@ -530,17 +511,17 @@ font-size: 1.5rem
         <li>La marge ne compte pas dans la définition de la taille ou de la hauteur d'un élément</li>
         <li>On peut décider si la bordure est inclue ou non dans la définition de la hauteur et la largeur d'un élément avec l'instruction: <code>box-sizing:content-box</code> ou <code>box-sizing:border-box</code></li>
         <li>
-            Le point de coordonnées <var>0;0</var> d'une boite se situe en haut à gauche de la zone de bordure,
+            Le point de coordonnées <var>0;0</var> d'une boite se situe en haut à gauche
         </li>
     </ul>
 
 
 </section>
 <hr>
-<section id="positioning">
+<section class="level4" id="positioning">
     <hgroup>
         <h4 class="clip-background"><a href="#positioning">Positionnement d'éléments</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
     <p>
@@ -616,77 +597,34 @@ font-size: 1.5rem
     <p>
         Vous pouvez examiner l'effet des différentes valeurs des propriétés <code class="language-css">display</code> et <code class="language-css">position</code> en jouant avec l'exemple suivant
     </p>
-    <iframe class="raw" style="margin-top: 1rem; max-height: 80vh; min-height: 400px;" src="./assets/display-and-position.html" frameborder="0"></iframe>
-    <!-- <div class="full-width">
-            <div class="sidebyside" id="display-and-position">
-                <section id="controls">
-                    <form>
-                        <h1><code>position</code> property for div 2</h1>
-                        <fieldset class="radio-group">
-                            <label><input type="radio" name="position" value="static" checked> static</label>
-                            <label><input type="radio" name="position" value="fixed"> fixed</label>
-                            <label><input type="radio" name="position" value="relative"> relative</label>
-                            <label><input type="radio" name="position" value="absolute"> absolute</label>
-                            <label><input type="radio" name="position" value="sticky"> sticky</label>
-                        </fieldset>
-                        <h1><code>top</code> and <code>left </code> property for div 2</h1>
-                        <fieldset id="position-controls" class="inactive range-group">
-                            <label>top: <input type="range" id="top-range" min="0" max="100" value="0"></label>
-                            <label>left: <input type="range" id="left-range" min="0" max="100" value="0"></label>
-                        </fieldset>
-                    </form>
-                    <form>
-                        <h1> <code>display</code> property for all colored blocks</h1>
-                        <fieldset class="radio-group">
-                            <label><input type="radio" name="display" value="block" checked> block</label>
-                            <label><input type="radio" name="display" value="inline"> inline</label>
-                            <label><input type="radio" name="display" value="inline-block"> inline-block</label>
-                        </fieldset>
-                        <h1> <code>width</code> and <code>height</code> for all colored blocks</h1>
-                        <fieldset id="size-controls" class="range-group">
-                            <label>width: <input type="range" id="width-range" min="50" max="200" value="100"></label>
-                            <label>height: <input type="range" id="height-range" min="50" max="200" value="100"></label>
-                        </fieldset>
-                    </form>
-                </section>
-                <section id="output" class="container">
+    <iframe class="cutout-style full-width" style="margin-top: 1rem; max-height: 80vh; min-height: 400px;" src="./assets/display-and-position.html" frameborder="0"></iframe>
 
-                    <div class="demo-block dummy" id="dummy1">one</div>
-                    <div class="demo-block target" id="dummy2">two</div>
-                    <div class="demo-block dummy" id="dummy3">three</div>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula turpis ut accumsan iaculis. Morbi et imperdiet libero. Sed in lectus velit. Aliquam id tristique sapien. Nullam nulla dui, venenatis sit amet consectetur id, vestibulum non tortor. Duis ac imperdiet risus. Curabitur lacinia ac quam vitae tincidunt. Curabitur vitae condimentum nulla, nec feugiat orci. Nam sit amet sodales sem. Integer malesuada tempor dui, id malesuada nibh dictum a. Donec varius feugiat pellentesque. Pellentesque risus ante, dapibus non lectus et, commodo fringilla quam. Integer sollicitudin feugiat porttitor. Curabitur cursus risus nec nisl fringilla rutrum elementum consequat nulla.</p>
-                    <p>
-                        Praesent fringilla tincidunt turpis, eu lobortis felis condimentum sit amet. Donec neque diam, lacinia id sodales at, sodales sit amet justo. Nam in mi laoreet ex iaculis viverra. Morbi lacinia ac neque in cursus. Aenean id nibh congue diam commodo sollicitudin et nec dolor. Aenean eget dui nibh. Vestibulum sit amet suscipit odio. Ut faucibus congue nibh nec euismod. Phasellus metus enim, tincidunt vel rutrum non, consectetur ut neque. Sed porta metus sit amet tincidunt dapibus.</p>
-                    <p>
-
-                        Nulla facilisi. Nunc ut tincidunt nunc. Curabitur sapien dolor, volutpat id aliquet eu, cursus sed eros. In at rhoncus nisi. Donec fermentum justo commodo urna hendrerit, at vulputate dui euismod. Nunc placerat neque at lorem aliquet, et vestibulum augue semper. Vivamus odio dui, accumsan nec mauris vel, egestas vehicula augue.
-                    </p>
-                    <p>
-                        Maecenas blandit magna eu cursus euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et urna non odio auctor ullamcorper. Praesent semper, dolor in vestibulum tristique, risus risus aliquet augue, quis finibus quam felis eget dui. Nullam non diam commodo, facilisis dui ac, blandit libero. Nullam tortor velit, pellentesque nec ultricies in, ullamcorper sit amet velit. Curabitur vulputate, urna ut gravida tincidunt, dolor metus lobortis sapien, a ultrices odio tellus in dui. Ut consectetur placerat porttitor. Nulla commodo, lectus id luctus commodo, massa turpis mattis ante, non egestas eros nulla vitae mauris. Nam vitae enim rutrum, lacinia nisi et, tempus lacus. Nam molestie nisi non quam vulputate condimentum.
-                    </p>
-                    <p>
-                        In vitae lobortis lectus. Donec in laoreet nisl. Vivamus laoreet convallis lacus, eget tincidunt lectus gravida sed. Etiam non lorem lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent molestie gravida tortor. Curabitur vel eros nec neque imperdiet interdum. In sagittis, purus sit amet viverra rhoncus, libero nisi auctor nibh, vitae fringilla tortor urna at erat. In ultrices fringilla leo in varius. Phasellus varius feugiat risus eget finibus.</p>
-                </section>
-            </div>
-        </div> -->
     <section class="activite cutout-style">
         <h5>
             Centrage d'éléments de contenus
         </h5>
+
     </section>
+    <iframe class="cutout-style full-width" style="margin-top: 1rem; max-height: 80vh; min-height: 400px;" src="./assets/centering.html" frameborder="0"></iframe>
     <section class="activite cutout-style">
         <h5>
             Mettre en forme un bloc de contenu au format carte ou
             vignette
         </h5>
+        <p>
+            Les cartes ou vignettes de contenu sont un composant incontournable lorsque l'on veut présenter de façon synthétique des blocs d'information et de contenu qui suivent une structure similaire.
+        </p>
+        <p>
+            Elles jouent également souvent un rôle similaire aux liens de navigation (<code>&gt;a href=""&lt;...&gt;\a&lt;...</code>), au sens ou leur raison d'être est de rediriger l'utilisateur vers une autre page ou vue.
+            Elles ont cependant l'avantage de pouvoir contenir plus d'information qu'un simple lien, et de pouvoir être stylisées de façon plus riche.
+        </p>
+      
     </section>
 </section>
-<hr>
-<section id="interaction-pseudo-classes">
+<section class="level4" id="interaction-pseudo-classes">
     <hgroup>
         <h4 class="clip-background"><a href="#interaction-pseudo-classes">Feedback, feedforward</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
     <p>
@@ -755,7 +693,7 @@ border-bottom: 8px solid black;
 
     <section class="activite cutout-style">
         <h5>
-            Utiliser les tranistions pour améliorer le feedback
+            Utiliser les transitions pour améliorer le feedback
         </h5>
         <p>
             L'exemple du clic pris plus haut n'était pas très réaliste, car l'action de cliquer n'avait aucune autre conséquence que la modification de l'état du bouton.
@@ -767,7 +705,10 @@ border-bottom: 8px solid black;
         <p>
             Lorsque la conséquence d'une action est persistente, il est important que le feedback de cette action fournisse de l'information sur le changement qui vient de se produire.
         </p>
-
+        <p>
+            Dans le cas d'une navigation interne à la page, le fait de rendre le déplacement vers la zone ciblée continu plutôt que brusque renseigne les utilisateur•ices sur la magnitude de la distance qui vient d'être parcourue.
+            Pour obtenir cet effet, on utilise la propriété <code>scroll-behaviour</code>
+        </p>
 
     </section>
 
@@ -775,10 +716,10 @@ border-bottom: 8px solid black;
 
 </section>
 <hr>
-<section id="advanced-selectors">
+<section class="level4" id="advanced-selectors">
     <hgroup>
         <h4 class="clip-background"><a href="#advanced-selectors">Sélecteurs avancés</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
     <section>
@@ -839,21 +780,21 @@ border-bottom: 8px solid black;
     </section>
 </section>
 <hr>
-<section>
+<section class="level4">
     <hgroup>
         <h4 class="clip-background"><a href="#">Arrières plans et superpositions
                 d'éléments</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
 </section>
 <hr>
-<section id="flex-and-grid">
+<section class="level4" id="flex-and-grid">
     <hgroup>
         <h4 class="clip-background"><a href="#flex-and-grid">
                 Conteneurs flexibles et en grille
             </a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
     <p>
@@ -878,17 +819,29 @@ border-bottom: 8px solid black;
             Voici quelques liens et ressources en attendant que cette section soit construite:
         </p>
         <ul>
-            
+            <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/">Guide pour les conteneurs en Grille</a></li>
+            <li>
+                <a href="https://www.joshwcomeau.com/css/interactive-guide-to-grid/">Une autre tutoriel exhaustif sur les grilles, par Josh Comeau</a>
+            </li>
+            <li>
+                <a href="https://cssgrid-generator.netlify.app">Un outil interactif pour générer le code CSS d'un template de grille</a>
+            </li>
+            <li>
+                <a href="https://grid.layoutit.com">
+                    Un autre outil interactif de génération de code CSS pour les grilles
+                </a>
+
+            </li>
         </ul>
     </section>
     <section class="activite cutout-style">Disposer des éléments en mosaïque </section>
 </section>
 <hr>
-<section id="media-queries">
+<section class="level4" id="media-queries">
     <hgroup>
         <h4 class="clip-background"><a href="#media-queries">Contextualiser la mise en forme
                 à l'aide des media queries</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
     <p>
@@ -927,11 +880,11 @@ border-bottom: 8px solid black;
     </section>
 </section>
 <hr>
-<section id="modular-css">
+<section class="level4" id="modular-css">
     <hgroup>
         <h4 class="clip-background"><a href="#modular-css">Bonnes pratiques pour la modularisation
                 de code CSS</a>
-            <div class="list-icon">≡</div>
+            <span class="list-icon">≡</span>
         </h4>
     </hgroup>
 </section>

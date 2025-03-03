@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Apply Applet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        #source{
+            display: flex;
+            gap: 0.5em;
+        }
+        .codemirror-container {
+            margin-bottom: 20px;
+            border: 1px solid black;
+        }
+        .codemirror-container button {
+            margin-top: 10px;
+        }
+        #viewport {
+            border: 1px solid #ccc;
+            width: 100%;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        #A {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            position: relative;
+        }
+        #B {
+            width: 50px;
+            height: 50px;
+            background-color: lightcoral;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <section id="source">
+        <div class="codemirror-container">
+            <h3>Vertical Centering</h3>
+            <textarea id="cssA"></textarea>
+            <button onclick="applyCss()">Apply</button>
+        </div>
+        <div class="codemirror-container">
+            <h3>Horizontal Centering</h3>
+            <textarea id="cssB"></textarea>
+            <button onclick="applyCss()">Apply</button>
+        </div>
+    </section>
+  
+    <div id="viewport">
+        <div id="A">
+            <div id="B"></div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/css/css.min.js"></script>
+    <script>
+        const cssAEditor = CodeMirror.fromTextArea(document.getElementById('cssA'), {
+            mode: 'css',
+            lineNumbers: false
+        });
+        const cssBEditor = CodeMirror.fromTextArea(document.getElementById('cssB'), {
+            mode: 'css',
+            lineNumbers: false
+        });
+
+        function applyCss() {
+            const cssCodeA = cssAEditor.getValue();
+            const cssCodeB = cssBEditor.getValue();
+            const combinedCss = cssCodeA + cssCodeB;
+
+            const styleElement = document.createElement('style');
+            styleElement.textContent = combinedCss;
+            document.head.appendChild(styleElement);
+
+            // Apply styles to #A and #B
+            const A = document.getElementById('A');
+            const B = document.getElementById('B');
+
+            // Clear existing styles
+            A.style.cssText = '';
+            B.style.cssText = '';
+
+            // Apply new styles
+            const cssRules = combinedCss.split('}');
+            cssRules.forEach(rule => {
+                const [selectors, styles] = rule.split('{');
+                if (selectors && styles) {
+                    selectors.split(',').forEach(selector => {
+                        selector = selector.trim();
+                        if (selector === '#A') {
+                            A.style.cssText += styles.trim();
+                        } else if (selector === '#B') {
+                            B.style.cssText += styles.trim();
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>

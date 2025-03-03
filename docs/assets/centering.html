@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centering Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Fira+Code:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            font-size: clamp(16px, calc(100vw/128), 24px);
+            font-family: "Bitter";
+        }
+
+        figure{
+            font-size: 0.8rem;
+            background-color: white;
+        }
+        figcaption {
+            
+            color: white;
+            font-family: Bitter;
+            font-style: italic;
+            padding: 0.5rem;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            margin: 0;
+        }
+
+        .CodeMirror {
+            height: min-content;
+            padding: 0.5rem;
+          
+        }
+
+
+        form {
+            display: flex;
+            justify-content: center;
+            font-size: 1em;
+
+            padding: 0;
+            margin-bottom: 0.5rem;
+         
+            &>* {
+                border-bottom: 2px outset;
+            }
+
+            &>h1 {
+                font-weight: normal;
+                color: #333;
+                background-color: #ddd;
+                font-size: 1em;
+                vertical-align: middle;
+                padding: 0.5rem;
+                margin: 0;
+                /* border-bottom: 2px solid black;
+        border-top: 2px solid black; */
+                border: none;
+            }
+        }
+
+      label{
+        font-size: 1em;
+      }
+
+        fieldset{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .solutions-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+            align-items: stretch;
+            align-content: center;
+            gap: 0.5rem;
+        }
+
+        .solution {
+            border: 1px solid green;
+
+            box-sizing: border-box;
+        }
+
+        .preview {
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            position: relative;
+            /* display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px; */
+        }
+
+        .preview .A {
+            /* width: 100px;
+            height: 100px; */
+           padding: 0.5rem; ;
+            position: relative;
+           background-color: blue
+        }
+
+        .preview .B {
+             background-color: red
+            /* width: 50px;
+            height: 50px; */
+           
+        }
+
+        .source{
+            gap: 0.5em;
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <form class="form-container">
+        <fieldset>
+            <label for="displayA">Display pour A:</label>
+            <select id="displayA">
+                <option value="block">block</option>
+                <option value="flex">flex</option>
+                <option value="grid">grid</option>
+                <option value="inline-block">inline-block</option>
+                <option value="inline-flex">inline-flex</option>
+                <option value="inline-grid">inline-grid</option>
+                <option value="inline">inline</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <label for="displayB">Display pour B:</label>
+            <select id="displayB">
+                <option value="block">block</option>
+                <option value="inline-block">inline-block</option>
+                <option value="inline">inline</option>
+            </select>
+        </fieldset>
+    </form>
+    <div class="sidebyside solutions-container">
+        <div class="source">
+            <figure class="solution" id="verticalSolution">
+                <figcaption>Solution de centrage vertical de B dans A</figcaption>
+                <textarea id="verticalCode"></textarea>
+            </figure>
+            <figure class="solution" id="horizontalSolution">
+                <figcaption>Solution de centrage horizontal de B dans A</figcaption>
+                <textarea id="horizontalCode"></textarea>
+            </figure>
+        </div>
+
+        <div class="preview" id="preview">
+            <div id="A" class="A">
+                <div id="B" class="B">Portez ce vieux whisky au juge blond qui fume</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/css/css.min.js"></script>
+    <script>
+        // Retrieve 
+        const [displayA, displayB, preview] = ['displayA', 'displayB', 'preview'].map(document.getElementById);
+        const [verticalCode, horizontalCode] = ['verticalCode', 'horizontalCode'].map(id => CodeMirror.fromTextArea(document.getElementById(id), {
+            mode: 'css',
+            lineNumbers: false,
+            readOnly: false
+        }));
+        const [A, B] = ['#A', '#B'].map(preview.querySelector);
+
+        function updateSolutions() {
+            const [displayAValue, displayBValue] = [displayA, displayB].map(select => select.value);
+    
+            let [verticalSolution, horizontalSolution] = ['',''];
+        
+            switch (displayAValue) {
+                case 'block':
+                    verticalSolution = `A {
+    position: relative;
+}
+B {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}`;
+                    horizontalSolution = `A {
+    position: relative;
+}
+B {
+    margin: 0 auto;
+}`;
+                    break;
+                case 'flex':
+                    verticalSolution = `A {
+    display: flex;
+    align-items: center;
+}
+B {
+    /* No additional styles needed */
+}`;
+                    horizontalSolution = `A {
+    display: flex;
+    justify-content: center;
+}
+B {
+    /* No additional styles needed */
+}`;
+                    break;
+                case 'grid':
+                    verticalSolution = `A {
+    display: grid;
+    align-items: center;
+}
+B {
+    /* No additional styles needed */
+}`;
+                    horizontalSolution = `A {
+    display: grid;
+    justify-items: center;
+}
+B {
+    /* No additional styles needed */
+}`;
+                    break;
+                case 'inline-block':
+                    verticalSolution = `A {
+    position: relative;
+    height: 100px; /* Example height */
+}
+B {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}`;
+                    horizontalSolution = `A {
+    position: relative;
+    width: 200px; /* Example width */
+}
+B {
+    margin: 0 auto;
+}`;
+                    break;
+                case 'inline-flex':
+                    verticalSolution = `A {
+    display: inline-flex;
+    align-items: center;
+    height: 100px; /* Example height */
+}
+B {
+    /* No additional styles needed */
+}`;
+                    horizontalSolution = `A {
+    display: inline-flex;
+    justify-content: center;
+    width: 200px; /* Example width */
+}
+B {
+    /* No additional styles needed */
+}`;
+                    break;
+                case 'inline-grid':
+                    verticalSolution = `A {
+    display: inline-grid;
+    align-items: center;
+    height: 100px; /* Example height */
+}
+B {
+    /* No additional styles needed */
+}`;
+                    horizontalSolution = `A {
+    display: inline-grid;
+    justify-items: center;
+    width: 200px; /* Example width */
+}
+B {
+    /* No additional styles needed */
+}`;
+                    break;
+                case 'inline':
+                    verticalSolution = `A {
+    line-height: 200px; /* Example line height */
+}
+B {
+    vertical-align: middle;
+}`;
+                    horizontalSolution = `A {
+    text-align: center;
+}
+B {
+    display: inline-block;
+}`;
+                    break;
+            }
+
+            verticalCode.setValue(verticalSolution);
+            horizontalCode.setValue(horizontalSolution);
+
+            A.style.display = displayAValue;
+            console.log(A.style.display);
+            B.style.display = displayBValue;
+        }
+
+        function applyStyles() {
+            console.log("test !")
+            const [verticalStyles, horizontalStyles] = [verticalCode, horizontalCode].map(editor => editor.getValue());
+            A.style.cssText = verticalStyles;
+            B.style.cssText = horizontalStyles;
+        }
+
+        verticalCode.on('change', applyStyles);
+        horizontalCode.on('change', applyStyles);
+
+        displayA.addEventListener('change', () => {
+            updateSolutions();
+            applyStyles();
+        });
+        displayB.addEventListener('change', () => {
+            updateSolutions();
+            applyStyles();
+        });
+
+        updateSolutions();
+        applyStyles();
+    </script>
+</body>
+</html>

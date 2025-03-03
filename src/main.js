@@ -22,12 +22,12 @@ function loadChapter(source, target) {
 
 document.addEventListener('DOMContentLoaded', (event) => {
     Promise.all([
+        loadChapter("pages/web.html", "web"),
         loadChapter("pages/html.html", "html"),
         loadChapter("pages/css.html", "css"),
         loadChapter("pages/js.html", "javascript")
     ]).then(() => {
         hljs.highlightAll();
-        // import('./display-and-position.js');
     });
 });
 
