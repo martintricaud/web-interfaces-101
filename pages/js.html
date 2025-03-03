@@ -561,6 +561,32 @@ personnage.direBonjour()
 
     <section class="activite cutout-style">Générer du contenu HTML répétitif de façon automatisée à partir d'un jeu de données </section> -->
 </section>
+<section class="level4" id="template-litterals">
+    <hgroup>
+        <h4 class="clip-background"><a href="#template-litterals">Template Litterals</a>
+            <span class="list-icon">≡</span>
+        </h4>
+    </hgroup>
+    <p>
+        Les <i>Template Litterals</i> sont une syntaxe qui permet d'insérer des variables dans une chaîne de caractères sans avoir à les concaténer.
+        <br>
+        Cette syntaxe est très utile pour générer du contenu HTML de façon dynamique, en fonction de données stockées dans des objets ou des listes.
+    </p>
+    <p>
+        La syntaxe des <i>Template Litterals</i> est très simple: il suffit d'entourer la chaîne de caractères par des backticks <code>`</code> au lieu des guillemets simples ou doubles.
+        <br>
+        Les variables à insérer sont entourées de <code>${}</code>
+    </p>
+    <figure>
+        <pre>
+            <code class="language-js">let nom = "Nadia"\;
+let age = 24;
+let presentation = `Bonjour, je m'appelle ${nom} et j'ai ${age} ans`
+console.log(presentation)</code>
+        </pre>
+    </figure>
+</section>
+
 
   <!-- <figure>
                 <pre>
