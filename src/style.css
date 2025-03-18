@@ -13,12 +13,6 @@
   --border-style-1: 0.125rem solid black;
 }
 
-.collapse-nav{
-  float: right;
-}
-.collapse-nav-items{
-  width: 0;
-}
 
 *{
   box-sizing: border-box;
@@ -129,7 +123,7 @@ hgroup {
   z-index: 1;
   &:has(h4){
     position: sticky;
-    top: 0;
+    top: calc(1rlh + 2rem);
   }
 }
 
@@ -187,34 +181,47 @@ p, li {
 }
 
 header {
-  /* position: sticky; */
+  position: sticky;
   top: 0;
   display: flex;
-  background-color: #fffc;
+  z-index: 100
+
+}
+
+
+#navbar {
+  background-color: white;
+  padding-bottom: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#navitems {
+  overflow-x: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
 }
 
 #navbar>*{
   padding-top: 1rem;
 }
-#navbar {
-  padding-bottom: 1rem;
-  width: 100%;
-  display: flex;
-  align-items: flex-end;
-  /* gap: 0.5rem; */
-  flex-wrap: wrap;
-  justify-content: space-around;
 
-  &>#navitems {
-    overflow-x: auto;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
+#navbar:has(.shrunk){
+  justify-content: space-between;
+  gap: calc(100vw - 10rem);
 
-  }
 }
 
 #navitems>*{
+  padding: 0 0.2rem;
+  max-width: 11ch;
+  overflow-x: hidden;
+}
+#navitems>*>a{
   padding: 0 0.2rem;
 }
 #navitems>*:not(:last-child) {
@@ -222,7 +229,15 @@ header {
   border-right: 2px solid blue;
 }
 
-/* .navitems > *:not(:last-child)::after {
+
+#navitems.shrunk{
+  float: right;
+  &>*{
+    max-width: 0ch;
+  }
+}
+/* 
+.navitems > *:not(:last-child)::after {
   content: "|";
   vertical-align: middle;
   color: blue;
@@ -604,7 +619,7 @@ section:has(h3)>section:has(h4+.shrink) {
 
 }
 
-body:has(.content-list-item) {
+/* body:has(.content-list-item) {
   height: 100vh;
   overflow: scroll;
   scroll-snap-type: y mandatory;
@@ -616,7 +631,7 @@ body:has(.content-list-item)::before {
   content: "";
   overflow: hidden;
   scroll-snap-type: y mandatory;
-}
+} */
 
 .full-width {
   width: calc(100vw - 2rem);

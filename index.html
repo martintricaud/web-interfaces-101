@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Fira+Code:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="styles/normalize.css"> -->
+
 </head>
 
 <body>
@@ -15,6 +16,7 @@
         <nav id="navbar">
             <div id="page-title">Introduction aux Technologies Web pour le
                 Design Interactif</div>
+
             <div id="navitems">
                 <div class="navitem"><a href="#intro">Introduction</a></div>
                 <div class="navitem"><a href="#html">HTML</a>
@@ -39,7 +41,7 @@
         <section id="javascript" class="chapter cours l3"></section>
         <hr>
 
-        <section>
+        <!-- <section>
             <hgroup>
                 <h3>Tutoriels</h3>
             </hgroup>
@@ -51,7 +53,7 @@
             <section class="activite cutout-style">Interaction drag and drop </section>
             <section class="activite cutout-style">Créer une interface de tri </section>
             <section class="activite cutout-style">Interface instrumentale pour personaliser son site </section>
-        </section>
+        </section> -->
         <hr>
         <section id="ressources">
             <hgroup>
@@ -155,6 +157,9 @@
                         <a href="https://www.geoffreylitt.com">Le site personnel de Geoffrey Litt</a>
                     </li>
                     <li>
+                        Le portfolio de<a href="https://www.florianzumbrunn.com">Florian Zumbrunn</a>
+                    </li>
+                    <li>
                         <a href="https://www.dropbox.com"></a>
                     </li>
                     <li>
@@ -167,40 +172,31 @@
                 <!-- <paper class="js"></paper> -->
             </nav>
         </section>
-        <section id="librairies">
-            <ul>
-                <li>
-                    <a href="https://impress.js.org/">Impress JS</a>
-                </li>
-            </ul>
-        </section>
+
     </main>
 </body>
+
 <script type="module" src="/src/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/umbrellajs"></script>
 <!-- <script src="/src/display-and-position.js" type="module"></script> -->
 <link rel="stylesheet" href="/src/style.css">
-<!-- <link rel="stylesheet" href="/src/display-and-position.css"> -->
-<script>
-
-function adjustStickyPos(e,p,c){
-    const parent = document.querySelector(`#${p}`);
-    const children = document.querySelector(`#${c}`);
-    if (parent && children) {
+<link rel="stylesheet" href="/src/animations.css">
+<script type="module">
+    //Custom handling of sticky position that handles variable heights.
+    const adjustStickyPos = (p, c) => e => {
+        const parent = u(`#${p}`).first();
+        const children = u(`#${c}`).first();
+        if (parent && children) {
             //regardez la difference d'offsetTop entre le header et la barre de liens
-            const difference=parent.getBoundingClientRect().top - children.getBoundingClientRect().top;
+            const difference = parent.getBoundingClientRect().top - children.getBoundingClientRect().top;
             parent.style.top = `${difference}px`
-            
         }
-}
-    window.addEventListener('load',e=>adjustStickyPos(e,"header","navitems"))
-    window.addEventListener('resize',e=>adjustStickyPos(e,"header","navitems"))
-    function changeColor() {
-        let a = document.querySelectorAll("h4>a");
-        for (let i = 0; i < a.length; i++) {
-            a[i].style.color = "red";
-        }
-
     }
+
+    window.addEventListener('load', adjustStickyPos("header", "navitems"))
+    window.addEventListener('resize', adjustStickyPos("header", "navitems"))
+
+
 
     function displayContent(e) {
         let h4 = e.target.parentElement
@@ -226,18 +222,22 @@ function adjustStickyPos(e,p,c){
         section.scrollIntoView()
     }
 
+    // Not working at the moment
     function collapseSectionToTitleLevels(titleTags) {
         titleTags.forEach(
             titleTag => { document.querySelectorAll("hgroup:has(" + titleTag + ")~*").forEach(elem => { elem.classList.add("shrink") }) }
         )
     }
-    Array.from(document.querySelectorAll("h4>.list-icon")).forEach(x => {
-        x.addEventListener("click", toggleMenu);
-    })
 
-    Array.from(document.querySelectorAll("h4>a")).forEach(x => {
-        x.addEventListener("click", displayContent);
-    })
+    // // Not working at the moment
+    // Array.from(document.querySelectorAll("h4>.list-icon")).forEach(x => {
+    //     x.addEventListener("click", toggleMenu);
+    // })
+
+    // // Not working at the moment
+    // Array.from(document.querySelectorAll("h4>a")).forEach(x => {
+    //     x.addEventListener("click", displayContent);
+    // })
 
 
 
