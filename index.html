@@ -8,16 +8,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Fira+Code:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="styles/normalize.css"> -->
-  <script type="module" crossorigin src="/web-interfaces-101/assets/index-Wp8MDRGs.js"></script>
-  <link rel="stylesheet" crossorigin href="/web-interfaces-101/assets/style-Dn1Ta7jc.css">
+
+  <script type="module" crossorigin src="/web-interfaces-101/assets/index-CsHgOvLZ.js"></script>
+  <link rel="stylesheet" crossorigin href="/web-interfaces-101/assets/style-v6om-hDe.css">
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
+    <header id="header">
+        <nav id="navbar">
             <div id="page-title">Introduction aux Technologies Web pour le
                 Design Interactif</div>
-            <div class="navitems">
+
+            <div id="navitems">
                 <div class="navitem"><a href="#intro">Introduction</a></div>
                 <div class="navitem"><a href="#html">HTML</a>
                 </div>
@@ -32,16 +34,16 @@
     </header>
 
     <main>
-        <section id="web" class="chapter cours"></section>
+        <section id="web" class="chapter cours l3"></section>
         <hr>
-        <section id="html" class="chapter cours"></section>
+        <section id="html" class="chapter cours l3"></section>
         <hr>
-        <section id="css" class="chapter cours"></section>
+        <section id="css" class="chapter cours l3"></section>
         <hr>
-        <section id="javascript" class="chapter cours"></section>
+        <section id="javascript" class="chapter cours l3"></section>
         <hr>
 
-        <section>
+        <!-- <section>
             <hgroup>
                 <h3>Tutoriels</h3>
             </hgroup>
@@ -53,7 +55,7 @@
             <section class="activite cutout-style">Interaction drag and drop </section>
             <section class="activite cutout-style">Créer une interface de tri </section>
             <section class="activite cutout-style">Interface instrumentale pour personaliser son site </section>
-        </section>
+        </section> -->
         <hr>
         <section id="ressources">
             <hgroup>
@@ -157,6 +159,9 @@
                         <a href="https://www.geoffreylitt.com">Le site personnel de Geoffrey Litt</a>
                     </li>
                     <li>
+                        Le portfolio de<a href="https://www.florianzumbrunn.com">Florian Zumbrunn</a>
+                    </li>
+                    <li>
                         <a href="https://www.dropbox.com"></a>
                     </li>
                     <li>
@@ -169,64 +174,10 @@
                 <!-- <paper class="js"></paper> -->
             </nav>
         </section>
-        <section id="librairies">
-            <ul>
-                <li>
-                    <a href="https://impress.js.org/">Impress JS</a>
-                </li>
-            </ul>
-        </section>
+
     </main>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/umbrellajs"></script>
 <!-- <script src="/src/display-and-position.js" type="module"></script> -->
-<!-- <link rel="stylesheet" href="/src/display-and-position.css"> -->
-<script>
-    function changeColor() {
-        let a = document.querySelectorAll("h4>a");
-        for (let i = 0; i < a.length; i++) {
-            a[i].style.color = "red";
-        }
-
-    }
-
-    function displayContent(e) {
-        let h4 = e.target.parentElement
-        const initialOffset = h4.getBoundingClientRect().top;
-        document.querySelectorAll("*").forEach(element => element.classList.remove("hidden", "content-list-item", "shrink"))
-        const newOffset = h4.getBoundingClientRect().top + window.scrollY;
-        h4.parentElement.scrollIntoView()
-
-    }
-    function toggleMenu(e) {
-        let target = e.target
-        let h4 = e.target.parentElement
-        let hgroup = h4.parentElement
-        let section = hgroup.parentElement
-        const initialOffset = hgroup.getBoundingClientRect().top;
-
-        document.querySelectorAll('hr').forEach(element => (
-            element.classList.add("shrink")
-        ))
-        collapseSectionToTitleLevels(["h4", "h5", "h6"]);
-        document.querySelectorAll("hgroup:has(h4), h4, h4>a, h4>.list-icon").forEach(element => element.classList.add("content-list-item"))
-
-        section.scrollIntoView()
-    }
-
-    function collapseSectionToTitleLevels(titleTags) {
-        titleTags.forEach(
-            titleTag => { document.querySelectorAll("hgroup:has(" + titleTag + ")~*").forEach(elem => { elem.classList.add("shrink") }) }
-        )
-    }
-    Array.from(document.querySelectorAll("h4>.list-icon")).forEach(x => {
-        x.addEventListener("click", toggleMenu);
-    })
-
-    Array.from(document.querySelectorAll("h4>a")).forEach(x => {
-        x.addEventListener("click", displayContent);
-    })
-
-
-
-</script>
 </html>
